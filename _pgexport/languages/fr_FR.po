@@ -1,0 +1,1197 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pg_starter\n"
+"POT-Creation-Date: 2016-06-07 10:31+0200\n"
+"PO-Revision-Date: 2016-06-07 10:38+0200\n"
+"Last-Translator: Emmanuel ARNOUD <emmanuel@pinegrow.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: _pgexport/404.php:10
+msgid "We&#39;re sorry, something has gone wrong ..."
+msgstr "Désolé, un problème est survenu."
+
+#: _pgexport/404.php:16 _pgexport/lib.php:69
+msgid "What could have caused this?"
+msgstr "Quelle peut être l'origine du problème ?"
+
+#: _pgexport/404.php:19 _pgexport/lib.php:72
+msgid "Well, something technical went wrong on our site."
+msgstr "Un problème technique est survenu sur le site."
+
+#: _pgexport/404.php:22 _pgexport/lib.php:75
+msgid "We might have removed the page when we redesigned our website."
+msgstr ""
+"Nous avons éventuellement retiré une page lors du redesign de notre site."
+
+#: _pgexport/404.php:25 _pgexport/lib.php:78
+msgid "Or the link you clicked might be old and does not work anymore."
+msgstr ""
+"Le lien sur lequel vous avez cliqué est probablement trop ancien et ne "
+"fonctionne plus."
+
+#: _pgexport/404.php:28 _pgexport/lib.php:81
+msgid "Or you might have accidentally typed the wrong URL in the address bar."
+msgstr ""
+"Ou enfin, vous avez accidentellement demandé une URL erronée depuis la barre "
+"d'adresse de votre navigateur."
+
+#: _pgexport/404.php:31 _pgexport/lib.php:84
+msgid "What you can do?"
+msgstr "Que pouvez vous faire ?"
+
+#: _pgexport/404.php:34 _pgexport/lib.php:87
+msgid "You might try retyping the URL and trying again."
+msgstr ""
+"Vous pourriez essayer de re-saisir l'adresse afin d'essayer encore une fois."
+
+#: _pgexport/404.php:37 _pgexport/lib.php:90
+msgid "Or we could take you back to the"
+msgstr "Nous pouvons également vous re-diriger vers la "
+
+#: _pgexport/404.php:38 _pgexport/lib.php:92
+msgid "Homepage"
+msgstr "Page d'acceuil"
+
+#: _pgexport/404.php:38
+msgid "."
+msgstr "."
+
+#: _pgexport/archive-download.php:13 _pgexport/archive-jetpack-portfolio.php:13
+#: _pgexport/archive-jetpack-testimonial.php:13 _pgexport/archive.php:13
+#: _pgexport/attachment.php:13 _pgexport/author.php:21 _pgexport/bbpress.php:13
+#: _pgexport/category.php:13 _pgexport/front-page.php:21
+#: _pgexport/header-sliderheader.php:100 _pgexport/home.php:13
+#: _pgexport/index.php:13 _pgexport/lib.php:13 _pgexport/lib.php:20
+#: _pgexport/lib.php:27 _pgexport/lib.php:34 _pgexport/lib.php:41
+#: _pgexport/lib.php:48 _pgexport/lib.php:55 _pgexport/lib.php:64
+#: _pgexport/page-nosidebar.php:18 _pgexport/page-sidebarleft.php:25
+#: _pgexport/page-slider.php:18 _pgexport/page-templates/page-nosidebar.php:18
+#: _pgexport/page-templates/page-sidebarleft.php:25
+#: _pgexport/page-templates/template-store.php:64
+#: _pgexport/page-videoheader.php:18 _pgexport/page.php:13
+#: _pgexport/search.php:13 _pgexport/single-download.php:13
+#: _pgexport/single-jetpack-portfolio.php:13
+#: _pgexport/single-jetpack-testimonial.php:13 _pgexport/single.php:13
+#: _pgexport/tag.php:13 _pgexport/taxonomy-download_category.php:13
+#: _pgexport/taxonomy-download_tag.php:13
+#: _pgexport/taxonomy-jetpack-portfolio-tag.php:13
+#: _pgexport/taxonomy-jetpack-portfolio-type.php:13
+#: _pgexport/taxonomy-portfolio_category.php:13
+#: _pgexport/taxonomy-projects.php:13 _pgexport/taxonomy.php:13
+#: _pgexport/template-store.php:20 _pgexport/template-store.php:65
+msgid "Sorry, no posts matched your criteria."
+msgstr "Désolé, aucun article ne correspond à votre recherche."
+
+#: _pgexport/archive-download.php:23 _pgexport/archive-jetpack-portfolio.php:23
+#: _pgexport/archive-jetpack-testimonial.php:23 _pgexport/archive.php:23
+#: _pgexport/author.php:31 _pgexport/category.php:23 _pgexport/home.php:16
+#: _pgexport/index.php:23 _pgexport/lib.php:141 _pgexport/search.php:23
+#: _pgexport/tag.php:23 _pgexport/taxonomy-download_category.php:23
+#: _pgexport/taxonomy-download_tag.php:23
+#: _pgexport/taxonomy-jetpack-portfolio-tag.php:23
+#: _pgexport/taxonomy-jetpack-portfolio-type.php:23
+#: _pgexport/taxonomy-portfolio_category.php:23
+#: _pgexport/taxonomy-projects.php:23 _pgexport/taxonomy.php:23
+msgid "Newer Posts"
+msgstr "Nouveau articles"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:10
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:453 _pgexport/breadcrumb.php:10
+#: _pgexport/breadcrumb.php:453 assets/breadcrumbs/breadcrumb.php:10
+#: assets/breadcrumbs/breadcrumb.php:453
+msgid "You are here:"
+msgstr "Vous êtes ici:"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:34 _pgexport/breadcrumb.php:34
+#: assets/breadcrumbs/breadcrumb.php:34
+msgid "Home"
+msgstr "Acceuil"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:196 _pgexport/breadcrumb.php:196
+#: assets/breadcrumbs/breadcrumb.php:196
+#, php-format
+msgid "Search Results For: %s"
+msgstr "Résultats pour la recherche : %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:201 _pgexport/breadcrumb.php:201
+#: assets/breadcrumbs/breadcrumb.php:201
+msgid "Page not found"
+msgstr "Erreur 404: Page introuvable"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:207 _pgexport/breadcrumb.php:207
+#: assets/breadcrumbs/breadcrumb.php:207
+#, php-format
+msgctxt "%s: author name"
+msgid "About %s"
+msgstr "À Propos de %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:225 _pgexport/breadcrumb.php:225
+#: assets/breadcrumbs/breadcrumb.php:225
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:226 _pgexport/breadcrumb.php:226
+#: assets/breadcrumbs/breadcrumb.php:226
+#, php-format
+msgctxt "daily archive title, %s = date"
+msgid "Archives %s"
+msgstr "Archives : %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:227 _pgexport/breadcrumb.php:227
+#: assets/breadcrumbs/breadcrumb.php:227
+msgid "Daily archives"
+msgstr "Archives journalières"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:231 _pgexport/breadcrumb.php:231
+#: assets/breadcrumbs/breadcrumb.php:231
+msgid "F, Y"
+msgstr "F, Y"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:232 _pgexport/breadcrumb.php:232
+#: assets/breadcrumbs/breadcrumb.php:232
+#, php-format
+msgctxt "monthly archive title, %s = date"
+msgid "Archives %s"
+msgstr "Archives : %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:233 _pgexport/breadcrumb.php:233
+#: assets/breadcrumbs/breadcrumb.php:233
+msgid "Monthly archives"
+msgstr "Archives mensuelles"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:238 _pgexport/breadcrumb.php:238
+#: assets/breadcrumbs/breadcrumb.php:238
+#, php-format
+msgctxt "yearly archive title, %s = date"
+msgid "Archives %s"
+msgstr "Archives : %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:239 _pgexport/breadcrumb.php:239
+#: assets/breadcrumbs/breadcrumb.php:239
+msgid "Yearly archives"
+msgstr "Archives Annuelles"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:401 _pgexport/breadcrumb.php:401
+#: assets/breadcrumbs/breadcrumb.php:401
+msgid "Posts page"
+msgstr "Page d'articles"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:417 _pgexport/breadcrumb.php:417
+#: assets/breadcrumbs/breadcrumb.php:417
+#, php-format
+msgctxt "post type archive title, %s = post type plural name"
+msgid "%s page"
+msgstr "Page de %s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:441 _pgexport/breadcrumb.php:441
+#: assets/breadcrumbs/breadcrumb.php:441
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s, %2$s"
+
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:495
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:502
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:508
+#: _pgexport/assets/breadcrumbs/breadcrumb.php:516 _pgexport/breadcrumb.php:494
+#: _pgexport/breadcrumb.php:501 _pgexport/breadcrumb.php:507
+#: _pgexport/breadcrumb.php:515 assets/breadcrumbs/breadcrumb.php:495
+#: assets/breadcrumbs/breadcrumb.php:502 assets/breadcrumbs/breadcrumb.php:508
+#: assets/breadcrumbs/breadcrumb.php:516
+msgid "Current page"
+msgstr "Page courante"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:327
+#: _pgexport/class-tgm-plugin-activation.php:327
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:333
+#: assets/tgmpa/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Installez les extensions requises"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:328
+#: _pgexport/class-tgm-plugin-activation.php:328
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:334
+#: assets/tgmpa/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Installez les extensions"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:330
+#: _pgexport/class-tgm-plugin-activation.php:330
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:335
+#: assets/tgmpa/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installation d’extension: %s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:332
+#: _pgexport/class-tgm-plugin-activation.php:332
+#: assets/tgmpa/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Mise à jour Plugin %s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:333
+#: _pgexport/class-tgm-plugin-activation.php:333
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:336
+#: assets/tgmpa/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Quelque chose s’est mal passé avec l’API des extensions."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:336
+#: _pgexport/class-tgm-plugin-activation.php:336
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:338
+#: assets/tgmpa/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Ce thème nécessite l'extension suivante: %1$s."
+msgstr[1] "Ce thème nécessite les extensions suivantes: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:342
+#: _pgexport/class-tgm-plugin-activation.php:342
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:343
+#: assets/tgmpa/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Ce thème recommande l'installation de l'extension suivante: %1$s."
+msgstr[1] "Ce thème recommande l'installation des extensions suivantes: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:348
+#: _pgexport/class-tgm-plugin-activation.php:348
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:353
+#: assets/tgmpa/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"L'extension doit être mises à jour dans sa dernière version afin d’assurer "
+"une compatibilité maximale avec ce thème: %1$s."
+msgstr[1] ""
+"Les extensions suivantes doivent être mises à jour dans leur dernière "
+"version afin d’assurer une compatibilité maximale avec ce thème: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:354
+#: _pgexport/class-tgm-plugin-activation.php:354
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:358
+#: assets/tgmpa/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Il y a une mise à jour disponible pour: %1$s."
+msgstr[1] ""
+"Il y a des mises à jour disponibles pour les extensions suivantes: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:360
+#: _pgexport/class-tgm-plugin-activation.php:360
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:368
+#: assets/tgmpa/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "L'extension requise est actuellement inactive: %1$s."
+msgstr[1] "Les extensions requises sont actuellement inactives: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:366
+#: _pgexport/class-tgm-plugin-activation.php:366
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:373
+#: assets/tgmpa/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "L'extension recommandée est actuellement inactive: %1$s."
+msgstr[1] "Les extensions recommandées sont actuellement inactives: %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:371
+#: _pgexport/class-tgm-plugin-activation.php:371
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:383
+#: assets/tgmpa/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Commencer l’installation de l’extension"
+msgstr[1] ""
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:376
+#: _pgexport/class-tgm-plugin-activation.php:376
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:388
+#: assets/tgmpa/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Commencer à mettre à jour l'extension"
+msgstr[1] ""
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:381
+#: _pgexport/class-tgm-plugin-activation.php:381
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:393
+#: assets/tgmpa/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Commencez l’activation de l'extension"
+msgstr[1] ""
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:385
+#: _pgexport/class-tgm-plugin-activation.php:385
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:397
+#: assets/tgmpa/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "Retour au programme d’installation des plugins nécessaires"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:386
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:827
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2533
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3580
+#: _pgexport/class-tgm-plugin-activation.php:386
+#: _pgexport/class-tgm-plugin-activation.php:827
+#: _pgexport/class-tgm-plugin-activation.php:2533
+#: _pgexport/class-tgm-plugin-activation.php:3580
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:828
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3438
+#: assets/tgmpa/class-tgm-plugin-activation.php:386
+#: assets/tgmpa/class-tgm-plugin-activation.php:827
+#: assets/tgmpa/class-tgm-plugin-activation.php:2533
+#: assets/tgmpa/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "Revenir au Tableau de bord"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:387
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3159
+#: _pgexport/class-tgm-plugin-activation.php:387
+#: _pgexport/class-tgm-plugin-activation.php:3159
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:399
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3029
+#: assets/tgmpa/class-tgm-plugin-activation.php:387
+#: assets/tgmpa/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "L’extension a été activée avec succès"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:388
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2952
+#: _pgexport/class-tgm-plugin-activation.php:388
+#: _pgexport/class-tgm-plugin-activation.php:2952
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:400
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2832
+#: assets/tgmpa/class-tgm-plugin-activation.php:388
+#: assets/tgmpa/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "L’extension suivante a été activée avec succès"
+msgstr[1] ""
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:390
+#: _pgexport/class-tgm-plugin-activation.php:390
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:401
+#: assets/tgmpa/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+"Pas d'action requise. L’extension %1$s était déjà active\n"
+"."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:392
+#: _pgexport/class-tgm-plugin-activation.php:392
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:402
+#: assets/tgmpa/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Extension non activée. Une version plus récente de %s est requise pour ce "
+"thème. Veuillez mettre à jour l’extension."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:394
+#: _pgexport/class-tgm-plugin-activation.php:394
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:403
+#: assets/tgmpa/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Toutes les extensions ont été installées et activées avec sucées. %s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:395
+#: _pgexport/class-tgm-plugin-activation.php:395
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:404
+#: assets/tgmpa/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Ignorer cette notification"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:396
+#: _pgexport/class-tgm-plugin-activation.php:396
+#: assets/tgmpa/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Il y a une ou plusieurs extensions requise ou recommandées à installer, "
+"mettez-les à jour ou activez-les."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:397
+#: _pgexport/class-tgm-plugin-activation.php:397
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:405
+#: assets/tgmpa/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Veuillez contacter l’administrateur de ce site pour obtenir de l’aide."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:522
+#: _pgexport/class-tgm-plugin-activation.php:522
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:520
+#: assets/tgmpa/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Cette extension doit être mise à jour pour être compatible avec votre thème."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:523
+#: _pgexport/class-tgm-plugin-activation.php:523
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:521
+#: assets/tgmpa/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr "Mise à jour nécessaire"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:934
+#: _pgexport/class-tgm-plugin-activation.php:934
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:935
+#: assets/tgmpa/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Le pack d’extension distant ne contient pas de dossier avec le nom désiré et "
+"le re-nommage ne fonctionne pas."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:934
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:937
+#: _pgexport/class-tgm-plugin-activation.php:934
+#: _pgexport/class-tgm-plugin-activation.php:937
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:935
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:938
+#: assets/tgmpa/class-tgm-plugin-activation.php:934
+#: assets/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Veuillez contacter le fournisseur de l’extension et lui demander "
+"d’empaqueter son extension en respectant les instructions de WordPress."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:937
+#: _pgexport/class-tgm-plugin-activation.php:937
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:938
+#: assets/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Le pack d’extensions distant se compose de plus d’un fichier, mais les "
+"fichiers ne sont pas regroupés dans un dossier."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:1121
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2948
+#: _pgexport/class-tgm-plugin-activation.php:1121
+#: _pgexport/class-tgm-plugin-activation.php:2948
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:1116
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2828
+#: assets/tgmpa/class-tgm-plugin-activation.php:1121
+#: assets/tgmpa/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "et"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:1982
+#: _pgexport/class-tgm-plugin-activation.php:1982
+#: assets/tgmpa/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2273
+#: _pgexport/class-tgm-plugin-activation.php:2273
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2167
+#: assets/tgmpa/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr "Requise"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2276
+#: _pgexport/class-tgm-plugin-activation.php:2276
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2170
+#: assets/tgmpa/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Recommandée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2292
+#: _pgexport/class-tgm-plugin-activation.php:2292
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2186
+#: assets/tgmpa/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "Dépôt WordPress"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2295
+#: _pgexport/class-tgm-plugin-activation.php:2295
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2189
+#: assets/tgmpa/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr "Source Externe"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2298
+#: _pgexport/class-tgm-plugin-activation.php:2298
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2192
+#: assets/tgmpa/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Pré-integrée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2315
+#: _pgexport/class-tgm-plugin-activation.php:2315
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2209
+#: assets/tgmpa/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Non installée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2319
+#: _pgexport/class-tgm-plugin-activation.php:2319
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2213
+#: assets/tgmpa/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Installée Mais Désactivée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2321
+#: _pgexport/class-tgm-plugin-activation.php:2321
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2215
+#: assets/tgmpa/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr "Activée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2327
+#: _pgexport/class-tgm-plugin-activation.php:2327
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2221
+#: assets/tgmpa/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr "Mise à jour requise non disponible"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2330
+#: _pgexport/class-tgm-plugin-activation.php:2330
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2224
+#: assets/tgmpa/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr "Mise à Jour requise"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2333
+#: _pgexport/class-tgm-plugin-activation.php:2333
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2227
+#: assets/tgmpa/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr "Mise à jour Recommandée"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2342
+#: _pgexport/class-tgm-plugin-activation.php:2342
+#: assets/tgmpa/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2388
+#: _pgexport/class-tgm-plugin-activation.php:2388
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2280
+#: assets/tgmpa/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Tous <span class=\"count\">(%s)</span>"
+msgstr[1] "Tous <span class=\"count\">(%s)</span>"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2392
+#: _pgexport/class-tgm-plugin-activation.php:2392
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2283
+#: assets/tgmpa/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Pour installer <span class=\"count\">(%s)</span>"
+msgstr[1] "Pour installer <span class=\"count\">(%s)</span>"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2396
+#: _pgexport/class-tgm-plugin-activation.php:2396
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2286
+#: assets/tgmpa/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Mise à jour disponible <span class=\"count\">(%s)</span>"
+msgstr[1] "Mises à jour disponibles <span class=\"count\">(%s)</span>"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2400
+#: _pgexport/class-tgm-plugin-activation.php:2400
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2289
+#: assets/tgmpa/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Pour activer <span class=\"count\">(%s)</span>"
+msgstr[1] "Pour activer <span class=\"count\">(%s)</span>"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2482
+#: _pgexport/class-tgm-plugin-activation.php:2482
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2371
+#: assets/tgmpa/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "Inconnu"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2490
+#: _pgexport/class-tgm-plugin-activation.php:2490
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2379
+#: assets/tgmpa/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr "Version Installée:"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2498
+#: _pgexport/class-tgm-plugin-activation.php:2498
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2387
+#: assets/tgmpa/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr "Version minimale requise:"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2510
+#: _pgexport/class-tgm-plugin-activation.php:2510
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2399
+#: assets/tgmpa/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr "Version disponible :"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2533
+#: _pgexport/class-tgm-plugin-activation.php:2533
+#: assets/tgmpa/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr "Aucune extensions à installer, à mettre à jour ou à activer."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2547
+#: _pgexport/class-tgm-plugin-activation.php:2547
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2436
+#: assets/tgmpa/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Extension"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2548
+#: _pgexport/class-tgm-plugin-activation.php:2548
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2437
+#: assets/tgmpa/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr "Source"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2549
+#: _pgexport/class-tgm-plugin-activation.php:2549
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2438
+#: assets/tgmpa/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr "Type"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2553
+#: _pgexport/class-tgm-plugin-activation.php:2553
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2442
+#: assets/tgmpa/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr "Version"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2554
+#: _pgexport/class-tgm-plugin-activation.php:2554
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2443
+#: assets/tgmpa/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Etat"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2603
+#: _pgexport/class-tgm-plugin-activation.php:2603
+#: assets/tgmpa/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr "Installer %2$s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2608
+#: _pgexport/class-tgm-plugin-activation.php:2608
+#: assets/tgmpa/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr "Mettre à jour %2$s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2614
+#: _pgexport/class-tgm-plugin-activation.php:2614
+#: assets/tgmpa/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr "Activer %2$s"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2684
+#: _pgexport/class-tgm-plugin-activation.php:2684
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2570
+#: assets/tgmpa/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr "Message de mise à niveau de l'auteur de l'extension :"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2717
+#: _pgexport/class-tgm-plugin-activation.php:2717
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2603
+#: assets/tgmpa/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr "Installer"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2723
+#: _pgexport/class-tgm-plugin-activation.php:2723
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2609
+#: assets/tgmpa/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2726
+#: _pgexport/class-tgm-plugin-activation.php:2726
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2612
+#: assets/tgmpa/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr "Activer"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2757
+#: _pgexport/class-tgm-plugin-activation.php:2757
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2643
+#: assets/tgmpa/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+"Aucune extension n'a été sélectionnée pour être installée. Aucune action "
+"effectuée."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2759
+#: _pgexport/class-tgm-plugin-activation.php:2759
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2645
+#: assets/tgmpa/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+"Aucune extension n'a été sélectionnée pour être mise à jour. Aucune action "
+"effectuée."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2800
+#: _pgexport/class-tgm-plugin-activation.php:2800
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2681
+#: assets/tgmpa/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+"Aucune extension n'est disponibles pour être installé à l'heure actuelle."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2802
+#: _pgexport/class-tgm-plugin-activation.php:2802
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2683
+#: assets/tgmpa/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr "Aucune extension n’est disponible à la mise à jour pour le moment."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2908
+#: _pgexport/class-tgm-plugin-activation.php:2908
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2788
+#: assets/tgmpa/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+"Aucune extension n’a été sélectionnée pour être activée. Aucune action "
+"effectuée."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:2934
+#: _pgexport/class-tgm-plugin-activation.php:2934
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2814
+#: assets/tgmpa/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+"Aucune extension n’est disponible pour être mise à jour pour le moment."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3158
+#: _pgexport/class-tgm-plugin-activation.php:3158
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3028
+#: assets/tgmpa/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Échec d'activation de l'extension."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3498
+#: _pgexport/class-tgm-plugin-activation.php:3498
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3362
+#: assets/tgmpa/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Mise à jour extension %1$s (%2$d/%3$d)"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3501
+#: _pgexport/class-tgm-plugin-activation.php:3501
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3364
+#: assets/tgmpa/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Une erreur est survenue lors de l’installation de %1$s: <strong>%2$s</"
+"strong>."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3503
+#: _pgexport/class-tgm-plugin-activation.php:3503
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3365
+#: assets/tgmpa/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Échec de l'installation de %1$s."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3507
+#: _pgexport/class-tgm-plugin-activation.php:3507
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3369
+#: assets/tgmpa/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Le processus d’installation et d’activation commence. Ce processus peut "
+"prendre un certain temps. Merci de votre patience."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3509
+#: _pgexport/class-tgm-plugin-activation.php:3509
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3370
+#: assets/tgmpa/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installé et activé avec succès."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3509
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php:3509
+#: _pgexport/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3370
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3376
+#: assets/tgmpa/class-tgm-plugin-activation.php:3509
+#: assets/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Afficher les détails"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3509
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php:3509
+#: _pgexport/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3370
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3376
+#: assets/tgmpa/class-tgm-plugin-activation.php:3509
+#: assets/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Masquer les Détails"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3510
+#: _pgexport/class-tgm-plugin-activation.php:3510
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3371
+#: assets/tgmpa/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Toutes les installations et activations ont été effectuées."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3512
+#: _pgexport/class-tgm-plugin-activation.php:3512
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3372
+#: assets/tgmpa/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installation et activation de l’extension %1$s (%2$d/%3$d)"
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3515
+#: _pgexport/class-tgm-plugin-activation.php:3515
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3375
+#: assets/tgmpa/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Le processus d’installation et d’activation commence. Ce processus peut "
+"prendre un certain temps. Merci de votre patience."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php:3517
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3376
+#: assets/tgmpa/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s installée avec succès."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3518
+#: _pgexport/class-tgm-plugin-activation.php:3518
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3377
+#: assets/tgmpa/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Toutes les installations ont été effectuées."
+
+#: _pgexport/assets/tgmpa/class-tgm-plugin-activation.php:3520
+#: _pgexport/class-tgm-plugin-activation.php:3520
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:3378
+#: assets/tgmpa/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installation de l’extension %1$s (%2$d/%3$d)"
+
+#: _pgexport/author.php:15
+msgid "All posts by"
+msgstr "Toutes les publications de"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:348
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour "
+"installer l’extension %1$s ."
+msgstr[1] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour "
+"installer les extensions %1$s ."
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:363
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour mettre "
+"à jour l'extension %1$s ."
+msgstr[1] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour mettre "
+"à jour les extensions %1$s ."
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:378
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour activer "
+"l'extension %1$s ."
+msgstr[1] ""
+"Désolé, mais vous ne disposez pas des autorisations nécessaires pour activer "
+"les extensions %1$s ."
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:398
+msgid "Return to the dashboard"
+msgstr "Retourner au panneau d’administration"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr "Spécifiez la variable parent_slug à la place."
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:1881
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2235
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2422
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"Aucune extensions à installer, à mettre à jour ou à activer. <a href=\"%1$s"
+"\">Retourner au tableau de bord</a>"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2491
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr "Installer %2$s"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2495
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr "Mettre à jour %2$s"
+
+#: _pgexport/class-tgm-plugin-activation.php.bak.php:2500
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr "Activer %2$s"
+
+#: _pgexport/comments.php:9
+#, php-format
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 commentaire sur  &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commentaires sur &ldquo;%2$s&rdquo;"
+
+#: _pgexport/comments.php:15
+msgid "Comments are closed"
+msgstr "Les commentaires sont fermés"
+
+#: _pgexport/front-page.php:7
+msgid "Designed with Pinegrow"
+msgstr "Conçu avec Pinegrow"
+
+#: _pgexport/functions.php:31 functions.php:33
+msgid "Primary Menu"
+msgstr "Menu Primaire"
+
+#: _pgexport/functions.php:32 functions.php:34
+msgid "Social Links Menu"
+msgstr "Menu Liens Sociaux"
+
+#: _pgexport/functions.php:94 functions.php:96
+msgid "Sidebar"
+msgstr "Barre latérale / sidebar"
+
+#: _pgexport/functions.php:103 functions.php:105
+msgid "Footer #01"
+msgstr "Pied de page #01"
+
+#: _pgexport/functions.php:112 functions.php:114
+msgid "Footer #02"
+msgstr "Pied de page #02"
+
+#: _pgexport/functions.php:121 functions.php:123
+msgid "Footer #03"
+msgstr "Pied de page #03"
+
+#: _pgexport/functions.php:130 functions.php:132
+msgid "Footer #04"
+msgstr "Pied de page #04"
+
+#: _pgexport/header-sliderheader.php:25 _pgexport/header-smallheader.php:24
+#: _pgexport/header-smallheader.php:47 _pgexport/header-videoheader.php:25
+#: _pgexport/header.php:25
+msgid "Toggle navigation"
+msgstr "Afficher la navigation"
+
+#: _pgexport/header-videoheader.php:49
+msgid "Your browser does not support the HTML5 video tag."
+msgstr "Votre navigateur n’est pas compatible avec la balise video HTML."
+
+#: _pgexport/header-videoheader.php:54
+#: _pgexport/template-parts/content-eddmain.php:16
+#: _pgexport/template-parts/content-home.php:21
+#: _pgexport/template-parts/content-jetpackarchive.php:21
+#: _pgexport/template-parts/content-test.php:11
+#: _pgexport/template-parts/content_eddmain.php:18
+#: _pgexport/template-parts/edd-main.php:17
+msgid "Read More"
+msgstr "Lire la suite ..."
+
+#: _pgexport/header.php:48
+msgid "Read more"
+msgstr "Lire la suite ..."
+
+#: _pgexport/home.php:17
+msgid "Older Posts"
+msgstr "Articles plus anciens"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:16
+msgid "<i class=\"glyphicon glyphicon-chevron-left\"></i>"
+msgstr "<i class=\"glyphicon glyphicon-chevron-left\"></i>"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:17
+msgid "<i class=\"glyphicon glyphicon-chevron-right\"></i>"
+msgstr "<i class=\"glyphicon glyphicon-chevron-right\"></i>"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:18
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:64
+msgid "First"
+msgstr "Premier"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:19
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:86
+msgid "Last"
+msgstr "Dernier"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:66
+msgid "previous"
+msgstr "Précédent"
+
+#: _pgexport/inc/bootstrap/wp_bootstrap_pagination.php:82
+msgid "next"
+msgstr "Suivant"
+
+#: _pgexport/lib.php:67
+msgid "We’re sorry, something has gone"
+msgstr "Désolé, un problème est "
+
+#: _pgexport/lib.php:67
+msgid "wrong ..."
+msgstr "survenu."
+
+#: _pgexport/lib.php:126 _pgexport/lib.php:129 _pgexport/single-download.php:18
+#: _pgexport/single-download.php:21 _pgexport/single-jetpack-portfolio.php:18
+#: _pgexport/single-jetpack-portfolio.php:21
+#: _pgexport/single-jetpack-testimonial.php:18
+#: _pgexport/single-jetpack-testimonial.php:21 _pgexport/single.php:21
+#: _pgexport/single.php:24
+msgid "%title"
+msgstr "%title"
+
+#: _pgexport/template-parts/content-attachment.php:5
+#: _pgexport/template-parts/content-eddmain.php:5
+#: _pgexport/template-parts/content-eddsingle.php:5
+#: _pgexport/template-parts/content-home.php:5
+#: _pgexport/template-parts/content-home.php:8
+#: _pgexport/template-parts/content-jetpackarchive.php:5
+#: _pgexport/template-parts/content-jetpacksingle.php:5
+#: _pgexport/template-parts/content-page.php:5
+#: _pgexport/template-parts/content-single.php:5
+msgid " &#40;Edit&#41;"
+msgstr " &#40;Editer&#41;"
+
+#: _pgexport/template-parts/content-eddmain.php:8
+#: _pgexport/template-parts/content-eddsingle.php:8
+msgid "Filed in:"
+msgstr "Classé dans:"
+
+#: _pgexport/template-parts/content-eddmain.php:8
+#: _pgexport/template-parts/content-eddsingle.php:8
+msgid "Tags:"
+msgstr "Mot-clés:"
+
+#: _pgexport/template-parts/content-home.php:8
+#: _pgexport/template-parts/content-single.php:8
+#: _pgexport/template-parts/content-test.php:4
+msgid "Filed in"
+msgstr "Classé dans:"
+
+#: _pgexport/template-parts/content-home.php:8
+#: _pgexport/template-parts/content-single.php:8
+#: _pgexport/template-parts/content-test.php:4
+msgid "| Posted by"
+msgstr "| Publié par"
+
+#: _pgexport/template-parts/content-home.php:8
+#: _pgexport/template-parts/content-jetpacksingle.php:8
+#: _pgexport/template-parts/content-single.php:8
+#: _pgexport/template-parts/content-test.php:6
+#: _pgexport/template-parts/jetpack-single.php:6
+#: _pgexport/template-parts/jp-single.php:5
+msgid "on"
+msgstr "en date du"
+
+#: _pgexport/template-parts/content-jetpacksingle.php:8
+#: _pgexport/template-parts/jetpack-single.php:4
+#: _pgexport/template-parts/jp-single.php:3
+msgid "Posted by"
+msgstr "Publié par"

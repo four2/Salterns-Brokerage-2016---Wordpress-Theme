@@ -1,0 +1,57 @@
+# LANGUAGE French translation for Mash theme for WordPress (partial).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mash 1.2.1\n"
+"Report-Msgid-Bugs-To: Grégory Viguier <i18n@screenfeed.fr>\n"
+"POT-Creation-Date: 2014-02-23 22:13+0100\n"
+"PO-Revision-Date: 2015-08-05 23:35+0200\n"
+"Last-Translator: Grégory Viguier <i18n@screenfeed.fr>\n"
+"Language-Team: Grégory Viguier <i18n@screenfeed.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: fr_FR\n"
+"X-Generator: Poedit 1.8.3\n"
+
+#: breadcrumb.php
+#: ------------------------------------------------------------------------------
+msgid  "You are here:"
+msgstr "Vous êtes ici&#160;:"
+
+msgid  "Search Results For: %s"
+msgstr "Résultats de recherche pour&#160;: %s"
+
+msgctxt "%s: author name"
+msgid   "About %s"
+msgstr  "À propos de %s"
+
+msgctxt "daily archive title, %s = date"
+msgid   "Archives %s"
+msgstr  "Archive du %s"
+
+msgid  "Daily archives"
+msgstr "Archives quotidiennes"
+
+msgctxt "monthly archive title, %s = date"
+msgid   "Archives %s"
+msgstr  "Archive de %s"
+
+msgid  "Monthly archives"
+msgstr "Archives mensuelles"
+
+msgctxt "yearly archive title, %s = date"
+msgid   "Archives %s"
+msgstr  "Archive de %s"
+
+msgid  "Yearly archives"
+msgstr "Archives annuelles"
+
+msgctxt "post type archive title, %s = post type plural name"
+msgid   "%s page"
+msgstr  "Page des %s"
+
+msgid  "Current page"
+msgstr "Page actuelle"

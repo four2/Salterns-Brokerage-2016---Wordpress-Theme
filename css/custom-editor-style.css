@@ -1,0 +1,23 @@
+/*
+TinyMCE editor stylesheet "loader"
+https://developer.wordpress.org/reference/functions/add_editor_style/
+You can customize the editor styles from the style.css file
+*/
+body#tinymce.wp-editor {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: black;
+  background-color: white;
+  line-height: 1.42857143; }
+
+p#tinymce.wp-editor {
+  margin: 0 0 10px; }
+
+h1, h2, h3, h4, h5, h6#tinymce.wp-editor {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit; }
+
+body#tinymce.wp-editor a {
+  color: #286090; }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" wp-site wp-site-master-page="index.html" wp-site-no-export>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Settings</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="style.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body class="settings-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info text-center lead">
+                        This page contains the WordPress Global settings for the Theme
+</div>
+                    <p class="lead">The settings page help you to free your templates from the global WordPress settings like the Custom Post types action, the Customizer sections, the Taxonomies, the Register Sidebars action and the scripts and CSS enqueuing.</p>
+                    <p class="lead">Please <a href="#">read our documentation</a> about the Settings Page</p>
+                    <hr />
+                    <h3>Sidebars</h3>
+                    <dl>
+                        <dt wp-register-sidebar="Sidebar" wp-register-sidebar-id="right_sidebar">Sidebar</dt>
+                        <dd>This is the sidebar located on the right side.</dd>
+                        <dt wp-register-sidebar="Footer #01" wp-register-sidebar-id="footer01_sidebar">Footer #01</dt>
+                        <dd>Footer sidebar 01</dd>
+                        <dt wp-register-sidebar="Footer #02" wp-register-sidebar-id="footer02_sidebar">Footer #02</dt>
+                        <dd>Footer sidebar 02</dd>
+                        <dt wp-register-sidebar="Footer #03" wp-register-sidebar-id="footer03_sidebar">Footer #03</dt>
+                        <dd>Footer sidebar 03</dd>
+                        <dt wp-register-sidebar="Footer #04" wp-register-sidebar-id="footer04_sidebar">Footer #04</dt>
+                        <dd>Footer sidebar 04</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Post Types</h3>
+                    <dl data-pg-collapsed>
+                        <dt>Description lists</dt>
+                        <dd>A description list is perfect for defining terms.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Taxonomies</h3>
+                    <dl data-pg-collapsed>
+                        <dt>Description lists</dt>
+                        <dd>A description list is perfect for defining terms.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

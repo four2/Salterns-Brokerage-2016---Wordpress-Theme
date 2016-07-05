@@ -1,0 +1,31 @@
+// !compileOnSave
+// compileOnSave: false
+// ==========================================================================
+//    Variables
+// ==========================================================================
+$anti-flash-white: rgb(241, 242, 244);
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$base-color: #286090; //rgb(47, 121, 185)
+$base-background: $white;
+$borders-color: rgb(238, 238, 238);
+$caption-color: rgb(105, 105, 105);
+$shadow-color: rgba(0, 0, 0, 0.25);
+$jumbotron-background: rgb(62, 50, 50);
+$footer-background: rgb(34, 34, 34); // rgb(34, 34, 34)
+$footer-link-color: rgb(157, 157, 157);
+$footer-color: rgb(241, 242, 244);
+$dimmer-color: rgba(34, 9, 60, 0.5); // rgba(34, 9, 60, 0.5)
+$test-background: rgba(201, 110, 189, 0.57);
+
+// Misc variables
+$breadcrumbs-background: rgb(238, 238, 238);
+$breadcrumbs-border: rgb(217, 217, 217);
+$featured-color: rgb(224, 30, 30);
+$navbar-a-active-background: rgb(68, 68, 68); // 444444
+$navbar-a-active-dropdownn-background: rgb(99, 99, 99); // 646464
+$screen-reader-text-focus-background: rgb(241, 241, 241);
+$screen-reader-text-focus-color: rgb(33, 118, 156);
+$screen-reader-box-shadow: rgba(0, 0, 0, 0.6);
+$edd-price-background: rgb(137, 198, 0);
+$no-comments-background: $base-color;
