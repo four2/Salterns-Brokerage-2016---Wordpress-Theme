@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en" wp-site wp-site-theme-name="" wp-site-theme-slug="" wp-site-themes-folder="" wp-site-no-export wp-site-master-page="index.html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pinegrow Web Editor">
+        <title wp-no-export>Page Title</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom styles for this template -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body wp-body-class>
+        <div class="site-container" data-pg-name="site-container">
+            <header data-pgc-define="master.header" data-pgc-define-name="Master Header" data-pgc-define-description="Master Header" data-pgc-define-photo-preview-only id="masthead" class="site-header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-pgc-define="main.navbar" data-pgc-define-name="Navigation Bar" data-pgc-define-description="Navigation Bar" data-pgc-define-photo-preview-only>
+                    <div class="container-fluid">
+                        <div class="navbar-header site-branding">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand site-title" href="#" wp-site-name wp-if-custom="has_custom_logo()" wp-if-custom-not="true" wp-home-url wp-home-url-set="href">STARTER THEME 1.2</a>
+                            <a class="navbar-brand logo-navbar-brand" href="#" wp-call-function="pg_starter_the_custom_logo()" wp-hide wp-else-if>
+                                <img src="images/starter_custom_logo@2x.png" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <div class="boat_make container-fluid col-md-2">
+                                <select class="form-control input-lg" wp-call-function="makeWidget()"> 
+                                    <option>Find a boat</option>                                     
+                                    <option>2</option>                                     
+                                    <option>3</option>                                     
+                                </select>
+                            </div>
+                            <ul class="nav navbar-nav navbar-right" wp-nav-menu wp-nav-menu-type="bootstrap" wp-nav-menu-theme-location="primary" wp-nav-menu-depth="2">
+                                <li>
+                                    <a href="#">Link</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="jumbotron jumbo-bkg" wp-featured-bck wp-featured-bck-size="full" data-pgc-define="main.jumbotron" data-pgc-define-name="Main Jumbotron" data-pgc-define-description="Main Jumbotron" data-pgc-define-photo-preview-only wp-featured-bck-size-use-default-header="true" wp-call-function="'#'.get_header_textcolor()" wp-call-function-echo="true" wp-call-function-set="style" wp-call-function-set-style="color">
+                    <div class="container dimmer jumbotron-inner">
+                        <h1 wp-site-name>PG WP Starter Theme</h1>
+                        <p wp-site-desc>A Bootstrap Starter Theme Template for Pinegrow WP</p>
+                        <p><a class="btn btn-primary btn-lg btn-outline" role="button" href="#more" wp-call-function="'#'.get_header_textcolor()" wp-call-function-echo="true" wp-call-function-set="style" wp-call-function-set-style="color" wp-call-function-2="'#'.get_header_textcolor()" wp-call-function-echo-2="true" wp-call-function-2-set="style" wp-call-function-2-set-style="border-color">Read more</a></p>
+                    </div>
+                </div>
+                <div class="container-fluid breadcrumbs-section" id="more" data-pg-name="Breadcrumbs" data-pgc-define="std.breadcrumbs" data-pgc-define-name="Breadcrumbs" data-pgc-define-photo-preview-only data-pgc-define-description="Breadcrumbs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumbs-cnt" data-pg-name="Breadcrumbs">
+                                <p wp-include-template-part wp-include-template-part-slug="assets/breadcrumbs/breadcrumb">Breadcrumbs ≫ Placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div wp-call-function="wp_enqueue_script( 'comment-reply' );" wp-if-is-singular></div>
+            </header>
+            <main class="site-inner" wp-site-content data-pg-name="site-inner">
+                <section>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert lead text-center alert-info">
+                                    This page contains Smart Components and Partial Template definitions that are used in the Starter Theme.
+</div>
+                                <p class="lead">Please, read our documentation to learn How to create and use <a href="#">Smart Components</a> and <a href="#">WordPress Template Parts in your WordPress themes</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="hero jumbotron" data-pgc-define="hero.video" data-pgc-define-name="Hero Video" data-pgc-define-description="A Hero with a HTML5 video in the Background. IMPORTANT: Video is NOT visible within Pinegrow, only on live site." data-pgc-define-photo-preview-only>
+                        <div class="hero-content">
+                            <video loop autoplay muted poster="<?php echo get_template_directory_uri(); ?>/videos/video_background.jpg" class="hero-video">
+                                <source src="<?php echo get_template_directory_uri(); ?>/videos/video_background.mp4" type="video/mp4" data-pg-name="Source video/mp4" />
+                                <source src="<?php echo get_template_directory_uri(); ?>/videos/video_background.ogg" type="video/ogg" data-pg-name="Source video/ogg" />
+                                <source src="<?php echo get_template_directory_uri(); ?>/videos/video_background.webm" type="video/webm" data-pg-name="Source video/webm" />
+                                Your browser does not support the HTML5 video tag.
+                            </video>
+                            <div class="hero-text">
+                                <h1 wp-site-name>PG WP Starter Theme</h1>
+                                <p wp-site-desc>A Bootstrap Starter Theme Template for Pinegrow WP</p>
+                                <a class="btn btn-primary btn-lg btn-outline" href="#more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="slider01" class="carousel slide header-carousel" data-ride="carousel" data-pause="hover" data-interval="20000" data-pgc-define="slider_01" data-pgc-define-name="Home Slider" data-pgc-define-photo-preview-only data-pgc-define-description="The component for displaying a Slider">
+                        <!-- Bulles -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider01" data-slide-to="0" class="active" wp-loop="sliderloop" wp-loop-first-classes="active" wp-loop-category-name="Home Slider" wp-loop-posts-per-page="10" wp-loop-order="ASC" wp-loop-orderby="modified" wp-loop-show-empty-text="false" wp-call-function="$sliderloop_item_number" wp-call-function-set="attr" wp-call-function-echo="true" wp-call-function-set-attr="data-slide-to" wp-loop-post-type="post" wp-loop-post-status="publish"></li>
+                            <li data-target="#slider01" data-slide-to="1" wp-no-export></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <!-- Page 1 -->
+                            <div class="item active" wp-loop="sliderloop" wp-loop-posts-per-page="10" wp-loop-first-classes="active" wp-loop-category-name="Home Slider" wp-loop-ignore-sticky="true" wp-loop-order="ASC" wp-loop-orderby="modified" wp-loop-post-type="post" wp-loop-post-status="publish">
+                                <a href="http://" wp-the-permalink-href wp-the-permalink-href-set="href">
+                                    <div class="slider">
+                                        <img class="img-responsive" wp-the-post-thumbnail="full" src="images/unsplash_1200x600/photo-1417918524616-056b3724bf06.jpeg" />
+                                        <div class="carousel-caption">
+                                            <h1 wp-the-title>Post Title</h1>
+                                            <p wp-the-excerpt wp-the-excerpt-set="content">The Excerpt</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item" wp-no-export>
+                                <a href="http://">
+                                    <div class="slider">
+                                        <img src="images/unsplash_1200x600/photo-1418946164206-282e1ddd4fb8.jpeg" class="img-responsive" />
+                                        <div class="carousel-caption">
+                                            <h1>Post Title</h1>
+                                            <p class="lead">Paragraph</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#slider01" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#slider01" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                    <hr />
+                    <div data-pgc-define="designedwithpg" data-pgc-define-name="Designed with Pinegrow" data-pgc-define-description="Share the love with the Designed with Pinegrow badge" data-pgc-define-photo-preview-only>
+                        <a href="http://pinegrow.com/">
+                            <div class="designed-with">Designed with Pinegrow
+                                <img src="images/pg_logo.svg" class="designed-with-image">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc-define="jetpack.sharingbuttons" data-pgc-define-name="JP Sharing Buttons" data-pgc-define-description="Jetpack Sharing and Like buttons. Jetpack Sharing MUST be activated." data-pgc-define-photo-preview-only>
+                                    <php>
+                                        // Move the Jetpack Sharing and Like buttons //
+                                        // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                    
+                                        if ( function_exists( 'sharing_display' ) ) {
+                                        sharing_display( '', true );
+                                    }
+                                    
+                                    if ( class_exists( 'Jetpack_Likes' ) ) {
+                                        $custom_likes = new Jetpack_Likes;
+                                        echo $custom_likes->post_likes( '' );
+                                    }
+                                    </php>
+                                    <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                </div>
+                                <div data-pgc-define="jp.relatedposts" data-pgc-define-name="JP Related Posts" data-pgc-define-description="Jetpack Related Posts section" data-pgc-define-photo-preview-only class="jetpack-related-posts" wp-if-custom="class_exists( 'Jetpack_RelatedPosts' )">
+                                    <php>
+                                    echo do_shortcode( '[jetpack-related-posts]' );
+                                    </php>
+                                    <img src="previews/jp.relatedposts.png" width="600" wp-no-export />
+                                </div>
+                                <div wp-call-function="pg_starter_social_menu();" wp-call-function-echo="true" data-pgc-define="jp_socialmenu" data-pgc-define-name="JP Social Menu" data-pgc-define-description="Jetpack Social Menu" data-pgc-define-photo-preview-only wp-if-custom="function_exists( 'pg_starter_social_menu' ) ">
+                                    <nav class="jetpack-social-navigation" role="navigation" wp-no-export>
+                                        <div class="menu-social-menu-container">
+                                            <ul id="menu-social-menu" class="menu">
+                                                <li id="menu-item-2189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2189">
+                                                    <a href="https://www.facebook.com/pinegrow/"><i class="fa fa-facebook-square"></i></a>
+                                                </li>
+                                                <li id="menu-item-2190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2190">
+                                                    <a href="http://twitter.com/earnoud"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                                <li id="menu-item-2191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2191">
+                                                    <a href="https://plus.google.com/u/0/"><i class="fa fa-google-plus"></i></a>
+                                                </li>
+                                                <li id="menu-item-2192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2192">
+                                                    <a href="https://www.linkedin.com/"><i class="fa fa-linkedin-square"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div wp-template-part wp-template-part-slug="template-parts/content-page" wp-template-part-content wp-include-template-part wp-include-template-part-slug="template-parts/content-page" wp-loop wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" data-pgc-define="content_page" data-pgc-define-name="Content PAGE" data-pgc-define-photo-preview-only data-pgc-define-description="The template used for displaying page content">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 wp-the-title class="entry-title">The Title</h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                            <hr />
+                                        </header>
+                                        <div data-pg-name="Entry Content" class="entry-content">
+                                            <div class="lead" wp-the-excerpt wp-the-excerpt-set="content" wp-if-has-excerpt>
+                                                <p>ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                            </div>
+                                            <p wp-the-content>Repository-hosted Themes are required to support display of comments on static Pages as well as on single blog Posts.  This static Page has comments, and these comments should be displayed.<br />
+If the Theme includes a custom option to prevent static Pages from displaying comments, such option must be disabled (i.e. so that static Pages display comments) by default.<br />
+Also, verify that this Page does not display taxonomy information (e.g. categories or tags) or time-stamp information (Page publish date/time).</p>
+                                        </div>
+                                        <footer data-pg-name="Entry Footer" class="entry-footer">
+                                            <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc="jetpack.sharingbuttons">
+                                                <php>
+                                                    // Move the Jetpack Sharing and Like buttons //
+                                                    // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                                
+                                                    if ( function_exists( 'sharing_display' ) ) {
+                                                    sharing_display( '', true );
+                                                }
+                                                
+                                                if ( class_exists( 'Jetpack_Likes' ) ) {
+                                                    $custom_likes = new Jetpack_Likes;
+                                                    echo $custom_likes->post_likes( '' );
+                                                }
+                                                </php>
+                                                <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                            </div>
+                                        </footer>
+                                    </article>
+                                </div>
+                                <div wp-template-part wp-template-part-slug="template-parts/content-home" wp-template-part-content wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" wp-include-template-part wp-include-template-part-slug="template-parts/content-home" data-pgc-define="content_home" data-pgc-define-name="Content" wp-loop data-pgc-define-photo-preview-only data-pgc-define-description="The template part for displaying content">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 class="entry-title"><a href="#" wp-the-permalink-href wp-the-permalink-href-set="href" wp-the-title>The Title</a></h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div class="entry-meta" data-pg-name="Entry Meta">
+                                            <p>Filed in <span wp-the-category=", ">CATEGORY</span> | Posted by <a href="http://" wp-href="author_posts"><span wp-the-author="">AUTHOR</span></a> on <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')); ?>"><span wp-the-date="" wp-the-date-set="content" wp-the-date-show-same="true">DATE</span></a><span data-pg-name="Edit"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span></p>
+                                            <hr>
+                                        </div>
+                                        <div class="post-thumbnail" data-pg-name="Post Thumbnail">
+                                            <a href="http://" wp-the-permalink-href wp-the-permalink-href-set="href">
+                                                <img src="images/unsplash_1200x600/photo-1441318642124-abd0aed5b9dc.jpeg" wp-the-post-thumbnail="post-thumbnail">
+                                            </a>
+                                        </div>
+                                        <div class="entry-content" data-pg-name="Entry Content">
+                                            <p wp-the-excerpt wp-the-excerpt-set="content">ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                            <div wp-if-has-tag wp-the-tags wp-the-tags-set="content" class="entry-meta tags-meta">tags: tag1 tag2 tag3 </div>
+                                            <a class="btn btn-readmore btn-default" href="#" wp-the-permalink-href wp-the-permalink-href-set="href" data-pg-name="Read More" data-pgc-define="readmore" data-pgc-define-name="Read More Button" data-pgc-define-description="Read More (Permalink) button" data-pgc-define-photo-preview-only>Read More</a>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer">
+</footer>
+                                    </article>
+                                </div>
+                                <div wp-template-part wp-template-part-slug="template-parts/content-single" wp-include-template-part wp-include-template-part-slug="template-parts/content-single" wp-template-part-content wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" wp-loop data-pgc-define="content_single" data-pgc-define-name="Content SINGLE" data-pgc-define-photo-preview-only data-pgc-define-description="The template part for displaying single posts">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header data-pg-name="Entry Header" class="entry-header">
+                                            <h2 wp-the-title class="entry-title">The Title</h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div data-pg-name="Entry Meta" class="entry-meta">
+                                            <p>Filed in <span wp-the-category=", ">CATEGORY</span> | Posted by <a href="http://" wp-href="author_posts"><span wp-the-author="">AUTHOR</span></a> on <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')); ?>"><span wp-the-date="" wp-the-date-set="content" wp-the-date-show-same="true">DATE</span></a></p>
+                                            <hr />
+                                        </div>
+                                        <div data-pg-name="Entry Content" class="entry-content">
+                                            <p wp-the-content>Repository-hosted Themes are required to support display of comments on static Pages as well as on single blog Posts.  This static Page has comments, and these comments should be displayed.<br />
+If the Theme includes a custom option to prevent static Pages from displaying comments, such option must be disabled (i.e. so that static Pages display comments) by default.<br />
+Also, verify that this Page does not display taxonomy information (e.g. categories or tags) or time-stamp information (Page publish date/time).</p>
+                                        </div>
+                                        <footer data-pg-name="Entry Footer" class="entry-footer">
+                                            <div wp-link-pages>
+                                                <p>Pages: 1 2 3 4</p>
+                                            </div>
+                                            <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc="jetpack.sharingbuttons">
+                                                <php>
+                                                    // Move the Jetpack Sharing and Like buttons //
+                                                    // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                                
+                                                    if ( function_exists( 'sharing_display' ) ) {
+                                                    sharing_display( '', true );
+                                                }
+                                                
+                                                if ( class_exists( 'Jetpack_Likes' ) ) {
+                                                    $custom_likes = new Jetpack_Likes;
+                                                    echo $custom_likes->post_likes( '' );
+                                                }
+                                                </php>
+                                                <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                            </div>
+                                            <div class="jetpack-related-posts" wp-if-custom="class_exists( 'Jetpack_RelatedPosts' )" data-pgc="jp.relatedposts">
+                                                <php>
+                                                echo do_shortcode( '[jetpack-related-posts]' );
+                                                </php>
+                                                <img src="previews/jp.relatedposts.png" width="600" wp-no-export />
+                                            </div>
+                                        </footer>
+                                    </article>
+                                </div>
+                                <div wp-template-part wp-template-part-slug="template-parts/content-jetpacksingle" wp-template-part-content wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" wp-include-template-part wp-include-template-part-slug="template-parts/content-jetpacksingle" wp-loop data-pgc-define="jetpack_single" data-pgc-define-name="Content JP SINGLE" data-pgc-define-photo-preview-only data-pgc-define-description="The template part for displaying Jetpack related single posts">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 wp-the-title class="entry-title">The Title</h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div data-pg-name="Entry Meta" class="entry-meta">
+                                            <p>Posted by <a href="http://" wp-href="author_posts"><span wp-the-author="">AUTHOR</span></a> on <span wp-the-date="" wp-the-date-set="content" wp-the-date-show-same="true">DATE</span></p>
+                                            <hr />
+                                        </div>
+                                        <div data-pg-name="Entry Content" class="entry-content">
+                                            <p wp-the-content>Repository-hosted Themes are required to support display of comments on static Pages as well as on single blog Posts.  This static Page has comments, and these comments should be displayed.<br />
+If the Theme includes a custom option to prevent static Pages from displaying comments, such option must be disabled (i.e. so that static Pages display comments) by default.<br />
+Also, verify that this Page does not display taxonomy information (e.g. categories or tags) or time-stamp information (Page publish date/time).</p>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer">
+                                            <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc="jetpack.sharingbuttons">
+                                                <php>
+                                                    // Move the Jetpack Sharing and Like buttons //
+                                                    // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                                
+                                                    if ( function_exists( 'sharing_display' ) ) {
+                                                    sharing_display( '', true );
+                                                }
+                                                
+                                                if ( class_exists( 'Jetpack_Likes' ) ) {
+                                                    $custom_likes = new Jetpack_Likes;
+                                                    echo $custom_likes->post_likes( '' );
+                                                }
+                                                </php>
+                                                <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                            </div>
+                                        </footer>
+                                    </article>
+                                </div>
+                                <div data-pgc-edit="part[wp-include-template-part-set, no_content]" wp-include-template-part wp-include-template-part-slug="template-parts/content-jetpackarchive" wp-loop data-pgc-define="jetpack_archive" data-pgc-define-name="Content JP ARCHIVE" data-pgc-define-photo-preview-only wp-template-part wp-template-part-slug="template-parts/content-jetpackarchive" wp-template-part-content wp-template-part-component data-pgc-define-description="The template part for displaying Jetpack related archives posts">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header data-pg-name="Entry Header" class="entry-header">
+                                            <h2 class="entry-title"><a href="#" wp-the-permalink-href wp-the-permalink-href-set="href" wp-the-title>The Title</a></h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div data-pg-name="Entry Meta" class="entry-meta">
+                                            <p wp-no-export>Posted by <a href="http://" wp-href="author_posts"><span wp-the-author="">AUTHOR</span></a> on <span wp-the-date="" wp-the-date-set="content" wp-the-date-show-same="true">DATE</span></p>
+                                            <p wp-the-taxonomies wp-the-taxonomies-before="<p class=\&quot;meta\&quot;>" wp-the-taxonomies-sep=" | " wp-the-taxonomies-after="<p class=\&quot;meta\&quot;>" wp-the-taxonomies-set="content" wp-the-taxonomies-template="%s: %l">Project Types: <span><a href="#">Pinegrow</a></span>, <span><a href="#">Webdesign</a></span> and <span><a href="#">Website</a></span></p>
+                                            <hr />
+                                        </div>
+                                        <div class="post-thumbnail" data-pg-name="Post Thumbnail">
+                                            <a href="http://" wp-the-permalink-href wp-the-permalink-href-set="href">
+                                                <img src="images/unsplash_1200x600/photo-1441318642124-abd0aed5b9dc.jpeg" wp-the-post-thumbnail="post-thumbnail" />
+                                            </a>
+                                        </div>
+                                        <div data-pg-name="Entry Content" class="entry-content">
+                                            <p wp-the-excerpt>Repository-hosted Themes are required to support display of comments on static Pages as well as on single blog Posts.  This static Page has comments, and these comments should be displayed.<br />
+If the Theme includes a custom option to prevent static Pages from displaying comments, such option must be disabled (i.e. so that static Pages display comments) by default.<br />
+Also, verify that this Page does not display taxonomy information (e.g. categories or tags) or time-stamp information (Page publish date/time).</p>
+                                            <a class="btn btn-readmore btn-default" href="#" wp-the-permalink-href wp-the-permalink-href-set="href" data-pg-name="Read More" data-pgc="readmore">Read More</a>
+                                        </div>
+                                        <footer data-pg-name="Entry Footer" class="entry-footer"></footer>
+                                    </article>
+                                </div>
+                                <article class="article" wp-loop data-pgc-define="eddmain_tpl" data-pgc-define-name="Content EDD" data-pgc-define-photo-preview-only data-pgc-edit="part[wp-include-template-part-set, no_content]" wp-template-part wp-template-part-slug="template-parts/content-eddmain" wp-template-part-component wp-include-template-part wp-include-template-part-slug="template-parts/content-eddmain" wp-template-part-content data-pgc-define-description="The component for displaying the Categories and Tags post for Easy Digital Downloads">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 class="entry-title"><a href="#" wp-the-permalink-href wp-the-permalink-href-set="href" wp-the-title>The Title</a></h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div class="entry-meta" data-pg-name="Entry Meta">
+                                            <p>Filed in: <span wp-call-function="the_terms( $post->ID, 'download_category', '', ', ', '' );"><a href="#">WordPress Themes</a></span> Tags: <span wp-call-function="the_terms( $post->ID, 'download_tag', '', ', ', '' );"><a href="#">EDD</a></span></p>
+                                            <hr>
+                                        </div>
+                                        <div data-pg-name="Post Thumbnail" class="post-thumbnail">
+                                            <img src="images/unsplash_1200x600/photo-1432633782529-7014a8b4bf6d.jpeg" wp-the-post-thumbnail="post-thumbnail">
+                                        </div>
+                                        <div class="entry-content" data-pg-name="Entry Content">
+                                            <p wp-the-excerpt="" wp-the-excerpt-set="content">ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                            <a class="btn btn-readmore btn-default" href="#" wp-the-permalink-href wp-the-permalink-href-set="href" data-pg-name="Read More" data-pgc="readmore">Read More</a>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer"></footer>
+                                    </article>
+                                </article>
+                                <article class="article" wp-loop wp-template-part wp-template-part-slug="template-parts/content-eddsingle" wp-include-template-part wp-include-template-part-slug="template-parts/content-eddsingle" data-pgc-define="eddsingle_tpl" data-pgc-define-name="Content EDD SINGLE" data-pgc-define-photo-preview-only wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" wp-template-part-content data-pgc-define-description="The template part for displaying Easy Digital Downloads related single posts">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header data-pg-name="Entry Header" class="entry-header">
+                                            <h2 wp-the-title="" class="entry-title">The Title</h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div data-pg-name="Entry Meta" class="entry-meta">
+                                            <p>Filed in: <span wp-call-function="the_terms( $post->ID, 'download_category', ' ', ', ', '' );"><a href:"#">Pictures</a></span> Tags: <span wp-call-function="the_terms( $post->ID, 'download_tag', '', ', ', '' );"><a href="#">Misc</a></span></p>
+                                            <hr>
+                                        </div>
+                                        <div data-pg-name="Entry Content" class="entry-content">
+                                            <p wp-the-content>ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer">
+                                            <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc="jetpack.sharingbuttons">
+                                                <php>
+                                                    // Move the Jetpack Sharing and Like buttons //
+                                                    // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                                
+                                                    if ( function_exists( 'sharing_display' ) ) {
+                                                    sharing_display( '', true );
+                                                }
+                                                
+                                                if ( class_exists( 'Jetpack_Likes' ) ) {
+                                                    $custom_likes = new Jetpack_Likes;
+                                                    echo $custom_likes->post_likes( '' );
+                                                }
+                                                </php>
+                                                <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                            </div>
+                                        </footer>
+                                    </article>
+                                </article>
+                                <div wp-template-part wp-template-part-slug="comments" wp-template-part-component wp-if-comments-open wp-if-get-comments-number data-pgc-define="comments" data-pgc-define-name="Section COMMENTS" data-pgc-define-photo-preview-only wp-template-part-content wp-comments-template data-pgc-define-description="The template part for displaying the Comments form">
+                                    <php>
+                                    if ( post_password_required() ) {
+                                    	return;
+                                    }
+                                    </php>
+                                    <div class="comments-area" id="comments">
+                                        <h3 wp-comments-title="One comment on &ldquo;%2$s&rdquo;" wp-if-have-comments wp-comments-title-multiple="%1$s comments on &ldquo;%2$s&rdquo;">Comments Title</h3>
+                                        <div wp-list-comments wp-list-comments-style="ul" wp-with-prev-if></div>
+                                        <p wp-if-custom="! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) " class="no-comments label label-warning">Comments are closed</p>
+                                        <div wp-paginate-comments-links wp-paginate-comments-links-set="content" id="comments-pagination">« Previous 1 2 3 4 5 Next »</div>
+                                        <h3 wp-call-function="comment_form(array('title_reply'=>'Leave a comment'));">Leave a cool comment</h3>
+                                    </div>
+                                </div>
+                                <article wp-loop wp-template-part wp-template-part-slug="template-parts/content-attachment" wp-include-template-part wp-include-template-part-slug="template-parts/content-attachment" data-pgc-define="pgimgattach_tpl" data-pgc-define-name="Content IMG ATC" data-pgc-define-photo-preview-only wp-template-part-component data-pgc-edit="part[wp-include-template-part-set,no_content]" wp-template-part-content data-pgc-define-description="The template part for displaying Image attachments">
+                                    <article wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 wp-the-title class="entry-title">The Title</h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                            <hr />
+                                        </header>
+                                        <div class="post-thumbnail" data-pg-name="Post Thumbnail">
+                                            <img src="images/unsplash_1200x600/photo-1437457928365-39e3587db3cc.jpeg" wp-attachment-image wp-if-wp-attachment-is-image wp-attachment-image-size="full" />
+                                        </div>
+                                        <div class="entry-content" data-pg-name="Entry Content">
+                                            <p wp-the-content wp-the-content-set="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer">
+                                            <div data-pg-name="JP Sharing Button" class="jetpack-sharing-buttons" data-pgc="jetpack.sharingbuttons">
+                                                <php>
+                                                    // Move the Jetpack Sharing and Like buttons //
+                                                    // https://jetpack.com/2013/06/10/moving-sharing-icons/ //
+                                                
+                                                    if ( function_exists( 'sharing_display' ) ) {
+                                                    sharing_display( '', true );
+                                                }
+                                                
+                                                if ( class_exists( 'Jetpack_Likes' ) ) {
+                                                    $custom_likes = new Jetpack_Likes;
+                                                    echo $custom_likes->post_likes( '' );
+                                                }
+                                                </php>
+                                                <img src="previews/jp.sharingbuttons.png" wp-no-export />
+                                            </div>
+                                        </footer>
+                                    </article>
+                                </article>
+                                <article data-pgc-define="content_404" data-pgc-define-name="Content 404" data-pgc-define-photo-preview-only data-pgc-define-description="The template part for displaying the 404 page content">
+                                    <header data-pg-name="Entry Header" class="entry-header">
+                                        <h2>We&#39;re sorry, something has gone <b>wrong ...</b></h2>
+                                    </header>
+                                    <div class="post-thumbnail" data-pg-name="Post Thumbnail">
+                                        <img src="images/404.jpg" class="img-responsive" />
+                                    </div>
+                                    <div class="entry-content" data-pg-name="Entry Content">
+                                        <h3>What could have caused this?</h3>
+                                        <ul>
+                                            <li>Well, something technical went wrong on our site.
+</li>
+                                            <li>We might have removed the page when we redesigned our website.</li>
+                                            <li>Or the link you clicked might be old and does not work anymore.</li>
+                                            <li>Or you might have accidentally typed the wrong URL in the address bar.</li>
+                                        </ul>
+                                        <h3>What you can do?</h3>
+                                        <ul>
+                                            <li>You might try retyping the URL and trying again.
+</li>
+                                            <li>Or we could take you back to the
+                                                <span><a href="#" wp-home-url wp-home-url-set="href">Homepage</a></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                                <div data-pgc-define="content_eddstore" data-pgc-define-name="Content EDD STORE" data-pgc-define-photo-preview-only data-pgc-define-description="The custom template for displaying Easy Digital Downloads Sample store">
+                                    <article wp-post-class wp-the-id>
+                                        <div class="edd_download_inner" data-pg-name="edd_download_inner">
+                                            <div class="entry-image" data-pg-name="entry-image">
+                                                <a href="http://" wp-the-permalink-href wp-the-permalink-href-set="href">
+                                                    <img src="images/PGproduct_image.jpg" wp-the-post-thumbnail="edd-thumbnail" wp-the-post-thumbnail-if="true" data-pgc-edit="eddproduct_image[src]" />
+                                                </a>
+                                                <span class="edd_price" wp-call-function="edd_price(get_the_ID())">8.00EU</span>
+                                            </div>
+                                            <header class="entry-header" data-pg-name="entry-header" id="edd">
+                                                <h2 class="entry-title"><a href="#" wp-the-permalink-href wp-the-permalink-href-set="href" wp-the-title>The Title</a></h2>
+                                                <div class="entry-excerpt">
+                                                    <p wp-the-excerpt wp-if-has-excerpt>ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                                </div>
+                                            </header>
+                                        </div>
+                                    </article>
+                                </div>
+                                <ul class="pager posts-navigation text-uppercase" wp-if-have-posts data-pgc-define="pg_singlepost_pager" data-pgc-define-name="Single Post Pager" data-pgc-define-photo-preview-only data-pgc-define-description="The component for displaying the single post Pager">
+                                    <li class="previous">
+                                        <a href="#" wp-prev-post-link="%link" wp-prev-post-link-link="%title">PREVIOUS POST TITLE</a>
+                                    </li>
+                                    <li class="next">
+                                        <a href="#" wp-next-post-link="%link" wp-next-post-link-link="%title">NEXT POST TITLE</a>
+                                    </li>
+                                </ul>
+                                <ul class="pager posts-navigation text-uppercase" data-pgc-define="pg_posts_pager" data-pgc-define-name="Posts Pager" data-pgc-define-photo-preview-only data-pgc-define-description="The component for displaying the multi posts Pager">
+                                    <li wp-if-custom="get_next_posts_link()" class="previous">
+                                        <a href="#" wp-next-posts-link="Older Posts">Older Posts</a>
+                                    </li>
+                                    <li wp-if-custom="get_previous_posts_link()" class="next">
+                                        <a href="#" wp-prev-posts-link="Newer Posts">Newer Posts</a>
+                                    </li>
+                                </ul>
+                                <ul class="pagination" data-pgc-define="pg_navigation" data-pgc-define-name="Posts Navigation" data-pgc-define-description="The component for displaying the Posts Navigation" data-pgc-define-photo-preview-only wp-bs-post-pagination wp-bs-pagination-first="Newer Posts" wp-bs-pagination-last="Older Posts">
+                                    <li>
+                                        <a href="#">&laquo;</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#">1 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <aside wp-dynamic-sidebar="right_sidebar" id="main_sidebar" data-pgc-define="PG_right_sidebar" data-pgc-define-name="Sidebar" data-pgc-define-photo-preview-only>
+                                    <h3>Widget Title</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="site-footer" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div wp-dynamic-sidebar="footer01_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #01</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer02_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #02</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer03_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #03</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer04_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #04</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

@@ -45,26 +45,6 @@
                         </div>
                     </div>
                 </nav>
-                <?php
-                    $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-                    if( !$image_attributes  && ( $header_image = get_header_image() ) ) $image_attributes = array( $header_image );
-                ?>
-                <div class="jumbotron jumbo-bkg" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>;color:<?php echo '#'.get_header_textcolor() ?>;">
-                    <div class="container dimmer jumbotron-inner">
-                        <h1><?php bloginfo( 'name' ); ?></h1>
-                        <p><?php bloginfo( 'description' ); ?></p>
-                        <p><a class="btn btn-primary btn-lg btn-outline" role="button" href="#more" style="color:<?php echo '#'.get_header_textcolor() ?>;border-color:<?php echo '#'.get_header_textcolor() ?>;"><?php _e( 'Read more', 'sb2016' ); ?></a></p>
-                    </div>
-                </div>
-                <div class="container-fluid breadcrumbs-section" id="more">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="breadcrumbs-cnt">
-                                <?php get_template_part( 'assets/breadcrumbs/breadcrumb' ); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php if ( is_singular() ) : ?>
                     <?php wp_enqueue_script( 'comment-reply' ); ?>
                 <?php endif; ?>

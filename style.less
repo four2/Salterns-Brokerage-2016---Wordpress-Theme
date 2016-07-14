@@ -1,4 +1,5 @@
 @jumboTB: 50px;
+@SalternsBlue: #1c355e;
 
 
 /*
@@ -438,10 +439,8 @@ a img.aligncenter
 .site-inner
 {
     overflow: hidden;
-    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 15px;
     padding-bottom: 30px;
 }
 
@@ -570,7 +569,7 @@ body.author .avatar
 
 .btn-outline:active
 {
-    background-color: rgba(255, 255, 255, 0.19)  !important;
+    background-color: rgba(255, 255, 255, 0.19)                            !important;
     border: 2px solid white !important;
 }
 
@@ -950,6 +949,7 @@ input.search-field
     max-height: 510px;
     background-color: transparent;
     color: white;
+    vertical-align: middle;
 }
 
 .carousel-caption
@@ -1408,5 +1408,45 @@ div.bbp-template-notice p
     width: auto;
     border: none;
     margin: 0;
+}
+
+.site-inner-width-1100
+{
+    max-width: 1100px;
+}
+
+.makeModel
+{
+    width: 350px;
+}
+
+@media (min-width: 768px)
+{
+    .boat_make
+    {
+        z-index: 5;
+        text-align: center;
+        margin-top: 100px;
+        position: relative;
+        margin-bottom: -145px;
+    }
+}
+
+.SalternsBlue
+{
+    background: @SalternsBlue;
+    color: #ffffff;
+}
+
+@media (max-width: 767px)
+{
+    .boat_make
+    {
+        z-index: 5;
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+        margin-bottom: -50px;
+    }
 }
 

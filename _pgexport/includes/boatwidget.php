@@ -36,7 +36,7 @@ function makeWidget() {
 
 		} else {
 		//Uncomment the line below for debugging.
-		//showWsdl($result);	
+		//showWsdl($result);
 
 		//Put list of manufacturers into array (how deep NuSoap nests the array depends on whether there are zero, one or mulitple records).
 			if(!is_array($result["Manufacturers"])){
@@ -55,21 +55,22 @@ function makeWidget() {
 
 
 	if($manufacturers) : ?>
-	<form method="post" action="<?= site_url('boat-search-template'); ?>">
-	<select name="makeModel" id="makeModel" onchange="this.form.submit()">
-		<option value="">Any</option>
-		<?php
+    <form method="post" action="<?= site_url('boat-search-template'); ?>">
+        <select name="makeModel" id="makeModel" class="makeModel input-lg" onchange="this.form.submit()">
+            <option value="">Find a boat</option>
+            <?php
 		foreach ($manufacturers as $value) {
 			$manufacturerEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML); ?>
-			<option value="<?= $manufacturerEncoded; ?>"><?= $manufacturerEncoded; ?></option>
-		<?php }
+                <option value="<?= $manufacturerEncoded; ?>">
+                    <?= $manufacturerEncoded; ?>
+                </option>
+            <?php }
 		?>
-	</select>
-	<input type="hidden" name="postBack" value="true">
-	</form>
+        </select>
+        <input type="hidden" name="postBack" value="true">
+    </form>
 <?php else :
 	echo 'No Manufacturers';
 endif;
 
 }
-

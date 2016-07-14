@@ -179,6 +179,9 @@ if ( ! function_exists( 'pg_starter_enqueue_scripts' ) ) :
 
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', null, '1.2', 'all' );
 
+    wp_deregister_style( 'fontawesome' );
+    wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css', false, null, 'all');
+
     /* Pinegrow generated Enqueue Styles End */
 
     }

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" wp-site wp-site-is-master-page wp-site-theme-name="SB2016" wp-site-themes-folder="/Users/peterdent/Desktop/sites/brokerage_2016/wp-content/themes/sb2016" wp-site-theme-slug="sb2016" wp-site-preview-url="http://localhost/brokerage_2016/">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pinegrow Web Editor">
+        <title wp-no-export>Page Title</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" wp-enqueue-style wp-enqueue-style-version="3.3.6">
+        <link href="assets/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="4.6.3">
+        <!-- Custom styles for this template -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link href="style.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="1.2">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    </head>
+    <body wp-body-class>
+        <div class="site-container" data-pg-name="site-container">
+            <header id="masthead" class="site-header" data-pgc="master.header">
+                <nav class="navbar navbar-default" role="navigation" data-pgc="main.navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header site-branding">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand site-title" href="#" wp-site-name wp-if-custom="has_custom_logo()" wp-if-custom-not="true" wp-home-url wp-home-url-set="href">STARTER THEME 1.2</a>
+                            <a class="navbar-brand logo-navbar-brand" href="#" wp-call-function="pg_starter_the_custom_logo()" wp-hide wp-else-if>
+                                <img src="images/starter_custom_logo@2x.png" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right" wp-nav-menu wp-nav-menu-type="bootstrap" wp-nav-menu-theme-location="primary" wp-nav-menu-depth="2">
+                                <li>
+                                    <a href="#">Link</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="jumbotron jumbo-bkg" wp-featured-bck wp-featured-bck-size="full" wp-featured-bck-size-use-default-header="true" wp-call-function="'#'.get_header_textcolor()" wp-call-function-echo="true" wp-call-function-set="style" wp-call-function-set-style="color" data-pgc="main.jumbotron">
+                    <div class="container dimmer jumbotron-inner">
+                        <h1 wp-site-name>PG WP Starter Theme</h1>
+                        <p wp-site-desc>A Bootstrap Starter Theme Template for Pinegrow WP</p>
+                        <p><a class="btn btn-primary btn-lg btn-outline" role="button" href="#more" wp-call-function="'#'.get_header_textcolor()" wp-call-function-echo="true" wp-call-function-set="style" wp-call-function-set-style="color" wp-call-function-2="'#'.get_header_textcolor()" wp-call-function-echo-2="true" wp-call-function-2-set="style" wp-call-function-2-set-style="border-color">Read more</a></p>
+                    </div>
+                </div>
+                <div class="container-fluid breadcrumbs-section" id="more" data-pg-name="Breadcrumbs" data-pgc="std.breadcrumbs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumbs-cnt" data-pg-name="Breadcrumbs">
+                                <p wp-include-template-part wp-include-template-part-slug="assets/breadcrumbs/breadcrumb">Breadcrumbs ≫ Placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div wp-call-function="wp_enqueue_script( 'comment-reply' );" wp-if-is-singular></div>
+            </header>
+            <main class="site-inner site-content" wp-site-content data-pg-name="site-inner">
+                <section class="">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-9 col-xs-12">
+                                <div wp-include-template-part wp-include-template-part-slug="template-parts/content-home" wp-loop data-pgc="content_home" data-pgc-field="part">
+                                    <article class="article" wp-post-class wp-the-id>
+                                        <header class="entry-header" data-pg-name="Entry Header">
+                                            <h2 class="entry-title"><a href="#" wp-the-permalink-href wp-the-permalink-href-set="href" wp-the-title>The Title</a></h2>
+                                            <span data-pg-name="Edit Post"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span>
+                                        </header>
+                                        <div class="entry-meta" data-pg-name="Entry Meta">
+                                            <p>Filed in <span wp-the-category=", ">CATEGORY</span> | Posted by <a href="http://" wp-href="author_posts"><span wp-the-author="">AUTHOR</span></a> on <a href="<?php echo get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')); ?>"><span wp-the-date="" wp-the-date-set="content" wp-the-date-show-same="true">DATE</span></a><span data-pg-name="Edit"><a href="http://" wp-edit-post-link=" &#40;Edit&#41;"> (Edit)</a></span></p>
+                                            <hr>
+                                        </div>
+                                        <div class="post-thumbnail" data-pg-name="Post Thumbnail">
+                                            <a href="http://" wp-the-permalink-href wp-the-permalink-href-set="href">
+                                                <img src="images/unsplash_1200x600/photo-1441318642124-abd0aed5b9dc.jpeg" wp-the-post-thumbnail="post-thumbnail">
+                                            </a>
+                                        </div>
+                                        <div class="entry-content" data-pg-name="Entry Content">
+                                            <p wp-the-excerpt wp-the-excerpt-set="content">ParagraphLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
+                                            <div wp-if-has-tag wp-the-tags wp-the-tags-set="content" class="entry-meta tags-meta">tags: tag1 tag2 tag3 </div>
+                                            <a class="btn btn-readmore btn-default" href="#" wp-the-permalink-href wp-the-permalink-href-set="href" data-pg-name="Read More" data-pgc="readmore">Read More</a>
+                                        </div>
+                                        <footer class="entry-footer" data-pg-name="Entry Footer">
+</footer>
+                                    </article>
+                                </div>
+                                <ul class="pager posts-navigation text-uppercase" data-pgc="pg_posts_pager">
+                                    <li wp-if-custom="get_next_posts_link()" class="previous">
+                                        <a href="#" wp-next-posts-link="Older Posts">Older Posts</a>
+                                    </li>
+                                    <li wp-if-custom="get_previous_posts_link()" class="next">
+                                        <a href="#" wp-prev-posts-link="Newer Posts">Newer Posts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3 col-xs-12">
+                                <aside wp-dynamic-sidebar="right_sidebar" id="main_sidebar" data-pgc="PG_right_sidebar">
+                                    <h3>Widget Title</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="site-footer" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div wp-dynamic-sidebar="footer01_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #01</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer02_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #02</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer03_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #03</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer04_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #04</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js" wp-enqueue-script></script>
+        <script src="bootstrap/js/bootstrap.min.js" wp-enqueue-script wp-enqueue-script-version="3.3.6"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js" wp-enqueue-script></script>
+    </body>
+</html>

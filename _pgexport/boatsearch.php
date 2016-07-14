@@ -212,152 +212,172 @@ if ($err) {
 		}
 	}
 }
-?> 
-<?php get_header(); ?> 
-<div id="main-content" class="main-content"> 
-    <div id="primary" class="content-area"> 
-        <div id="content" class="site-content" role="main"> 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-                <?php
+?>
+
+<?php get_header(); ?>
+
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<?php
 				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?> 
-                <div class="entry-content"> 
-                    <hr /> 
-                    <form class="genericForm" method="post" action="<?php echo($_SERVER["REQUEST_URI"]);?>"> 
-                        <label for="saleCharter">For sale / charter:</label>                         
-                        <select name="saleCharter" id="saleCharter"> 
-                            <option value="">Any</option>                             
-                            <option value="sale" ?php echo(isoptionselected("sale", $salecharter));?>For sale</option>                             
-                            <option value="charter" ?php echo(isoptionselected("charter", $salecharter));?>For charter</option>                             
-                        </select>                         
-                        <br /> 
-                        <label for="newUsed">New / used:</label>                         
-                        <select name="newUsed" id="newUsed"> 
-                            <option value="">Any</option>                             
-                            <option value="used" ?php echo(isoptionselected("used", $newused));?>Used</option>                             
-                            <option value="new" ?php echo(isoptionselected("new", $newused));?>New</option>                             
-                        </select>                         
-                        <br /> 
-                        <label for="sailPower">Sail / power / commercial:</label>                         
-                        <select name="sailPower" id="sailPower"> 
-                            <option value="">Any</option>                             
-                            <option value="sail" ?php echo(isoptionselected("sail", $sailpower));?>Sail</option>                             
-                            <option value="power" ?php echo(isoptionselected("power", $sailpower));?>Power</option>                             
-                            <option value="commercial" ?php echo(isoptionselected("commercial", $sailpower));?>Commercial</option>                             
-                            <option value="other" ?php echo(isoptionselected("other", $sailpower));?>Other</option>                             
-                        </select>                         
-                        You can remove any of these options that are not relevant for your boat listings.
-                        <br /> 
-                        <label for="type">Boat type:</label>                         
-                        <select name="type[]" id="type" multiple="multiple"> 
-                            <option value="speed boat" ?php echo(isoptionselected("speed boat", $type));?>Speed boat</option>                             
-                            <option value="sports boat" ?php echo(isoptionselected("sports boat", $type));?>Sports boat</option>                             
-                            <option value="cruiser" ?php echo(isoptionselected("cruiser", $type));?>Cruiser</option>                             
-                        </select>                         
-                        You can remove any of these options that are not relevant for your boat listings.
-                        <br /> 
-                        <label for="makeModel">Make:</label>                         
-                        <select name="makeModel" id="makeModel"> 
-                            <option value="">Any</option>                             
-                            <?php
+				?>
+
+				<div class="entry-content">
+
+					<h1>Boat Search</h1>
+					This form shows all the search fields available.
+					<br />
+					You can remove any search fields you don't want to display or are not relevant for your boat listings.
+					<hr />
+					<form class="genericForm" method="post" action="<?php echo($_SERVER["REQUEST_URI"]);?>">
+						<label for="saleCharter">For sale / charter:</label>
+						<select name="saleCharter" id="saleCharter">
+							<option value="">Any</option>
+							<option value="sale"<?php echo(isOptionSelected("sale", $saleCharter));?>>For sale</option>
+							<option value="charter"<?php echo(isOptionSelected("charter", $saleCharter));?>>For charter</option>
+						</select>
+						<br />
+						<label for="newUsed">New / used:</label>
+						<select name="newUsed" id="newUsed">
+							<option value="">Any</option>
+							<option value="used"<?php echo(isOptionSelected("used", $newUsed));?>>Used</option>
+							<option value="new"<?php echo(isOptionSelected("new", $newUsed));?>>New</option>
+						</select>
+						<br />
+						<label for="sailPower">Sail / power / commercial:</label>
+						<select name="sailPower" id="sailPower">
+							<option value="">Any</option>
+							<option value="sail"<?php echo(isOptionSelected("sail", $sailPower));?>>Sail</option>
+							<option value="power"<?php echo(isOptionSelected("power", $sailPower));?>>Power</option>
+							<option value="commercial"<?php echo(isOptionSelected("commercial", $sailPower));?>>Commercial</option>
+							<option value="other"<?php echo(isOptionSelected("other", $sailPower));?>>Other</option>
+						</select>
+						You can remove any of these options that are not relevant for your boat listings.
+						<br />
+						<label for="type">Boat type:</label>
+						<select name="type[]" id="type" multiple="multiple">
+							<option value="speed boat"<?php echo(isOptionSelected("speed boat", $type));?>>Speed boat</option>
+							<option value="sports boat"<?php echo(isOptionSelected("sports boat", $type));?>>Sports boat</option>
+							<option value="cruiser"<?php echo(isOptionSelected("cruiser", $type));?>>Cruiser</option>
+						</select>
+						You can remove any of these options that are not relevant for your boat listings.
+						<br />
+						<label for="makeModel">Make:</label>
+						<select name="makeModel" id="makeModel">
+							<option value="">Any</option>
+							<?php
 							foreach ($manufacturers as $value){
 								$manufacturerEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
 								echo("<option value=\"" . $manufacturerEncoded . "\"" . isOptionSelected($value, $makeModel) . ">" . $manufacturerEncoded . "</option>");
 							}
-							?> 
-                        </select>                         
-                        See notes below
-                        <!--
+							?>
+						</select>
+						See notes below
+        <!--
         <br />
         <label for="makeModel">Make / model:</label>
         <input type="text" name="makeModel" id="makeModel" value="<?php //echo($makeModel);?>" />
         See notes below
-    -->                         
-                        <br /> 
-                        <label for="country">Location:</label>                         
-                        <select name="country" id="country"> 
-                            <option value="">Any</option>                             
-                            <?php
+    -->
+    <br />
+    <label for="country">Location:</label>
+    <select name="country" id="country">
+    	<option value="">Any</option>
+    	<?php
     	foreach ($countries as $value){
     		$countryEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
     		echo("<option value=\"" . $countryEncoded . "\"" . isOptionSelected($value, $country) . ">" . $countryEncoded . "</option>");
     	}
-    	?> 
-                        </select>                         
-                        The country where the boat is located. This is populated via LiveFeedback to list only the countries that are relevant for your boat listings.
-                        <br /> 
-                        <label for="priceFrom">Price from:</label>                         
-                        <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" /> 
-                        <br /> 
-                        <label for="priceTo">Price to:</label>                         
-                        <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" /> 
-                        <br /> 
-                        <label for="currency">Currency:</label>                         
-                        <select name="currency" id="currency"> 
-                            <option value="GBP" ?php echo(isoptionselected("gbp", $currency));?>GBP</option>                             
-                            <option value="EUR" ?php echo(isoptionselected("eur", $currency));?>EUR</option>                             
-                            <option value="USD" ?php echo(isoptionselected("usd", $currency));?>USD</option>                             
-                        </select>                         
-                        Specifies the currency of the price search. Most currencies are supported, you can add additional options to the select list using the ISO three letter currency code.
-                        <br /> 
-                        <label for="charterPeriod">Charter period:</label>                         
-                        <select name="charterPeriod" id="charterPeriod"> 
-                            <option value="hour" ?php echo(isoptionselected("hour", $charterperiod));?>per hour</option>                             
-                            <option value="day" ?php echo(isoptionselected("day", $charterperiod));?>per day</option>                             
-                            <option value="week" ?php echo(isoptionselected("week", $charterperiod));?>per week</option>                             
-                            <option value="month" ?php echo(isoptionselected("month", $charterperiod));?>per month</option>                             
-                        </select>                         
-                        If you do not have charter listings, you can remove this field. The value of this field will be ignored unless the saleCharter field is set to "charter".
-                        <br /> 
-                        <label for="lengthFrom">Length from:</label>                         
-                        <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" /> 
-                        <br /> 
-                        <label for="lengthTo">Length to:</label>                         
-                        <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" /> 
-                        <br /> 
-                        <label for="lengthUnit">Length unit:</label>                         
-                        <select name="lengthUnit" id="lengthUnit"> 
-                            <option value="metres" ?php echo(isoptionselected("metres", $lengthunit));?>Metres</option>                             
-                            <option value="feet" ?php echo(isoptionselected("feet", $lengthunit));?>Feet</option>                             
-                        </select>                         
-                        Specifies the length unit of the length search.
-                        <br /> 
-                        <label for="yearFrom">Year from:</label>                         
-                        <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" /> 
-                        <br /> 
-                        <label for="yearTo">Year to:</label>                         
-                        <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" /> 
-                        <br /> 
-                        <label for="orderBy">Order by:</label>                         
-                        <select name="orderBy" id="orderBy"> 
-                            <option value="datedesc" ?php echo(isoptionselected("datedesc", $orderby));?>Date listed - latest first</option>                             
-                            <option value="dateasc" ?php echo(isoptionselected("dateasc", $orderby));?>Date listed - oldest first</option>                             
-                            <option value="priceasc" ?php echo(isoptionselected("priceasc", $orderby));?>Price - low to high</option>                             
-                            <option value="pricedesc" ?php echo(isoptionselected("pricedesc", $orderby));?>Price - high to low</option>                             
-                            <option value="lengthasc" ?php echo(isoptionselected("lengthasc", $orderby));?>Length - low to high</option>                             
-                            <option value="lengthdesc" ?php echo(isoptionselected("lengthdesc", $orderby));?>Length - high to low</option>                             
-                            <option value="yeardesc" ?php echo(isoptionselected("yeardesc", $orderby));?>Year - newest first</option>                             
-                            <option value="yearasc" ?php echo(isoptionselected("yearasc", $orderby));?>Year - oldest first</option>                             
-                        </select>                         
-                        <br /> 
-                        <input type="submit" value="Search" /> 
-                        <input type="hidden" name="postBack" value="true" /> 
-                    </form>                     
-                    <hr /> 
-                    <div>
-                        <a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
-                    </div>                     
-                </div>
-                <!-- .entry-content -->                 
-            </article>
-            <!-- #post-## -->             
-        </div>
-        <!-- #content -->         
-    </div>
-    <!-- #primary -->     
-    <?php get_sidebar( 'content' ); ?> 
-</div>
-<!-- #main-content --> 
+    	?>
+    </select>
+    The country where the boat is located. This is populated via LiveFeedback to list only the countries that are relevant for your boat listings.
+    <br />
+    <label for="priceFrom">Price from:</label>
+    <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" />
+    <br />
+    <label for="priceTo">Price to:</label>
+    <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" />
+    <br />
+    <label for="currency">Currency:</label>
+    <select name="currency" id="currency">
+    	<option value="GBP"<?php echo(isOptionSelected("GBP", $currency));?>>GBP</option>
+    	<option value="EUR"<?php echo(isOptionSelected("EUR", $currency));?>>EUR</option>
+    	<option value="USD"<?php echo(isOptionSelected("USD", $currency));?>>USD</option>
+    </select>
+    Specifies the currency of the price search. Most currencies are supported, you can add additional options to the select list using the ISO three letter currency code.
+    <br />
+    <label for="charterPeriod">Charter period:</label>
+    <select name="charterPeriod" id="charterPeriod">
+    	<option value="hour"<?php echo(isOptionSelected("hour", $charterPeriod));?>>per hour</option>
+    	<option value="day"<?php echo(isOptionSelected("day", $charterPeriod));?>>per day</option>
+    	<option value="week"<?php echo(isOptionSelected("week", $charterPeriod));?>>per week</option>
+    	<option value="month"<?php echo(isOptionSelected("month", $charterPeriod));?>>per month</option>
+    </select>
+    If you do not have charter listings, you can remove this field. The value of this field will be ignored unless the saleCharter field is set to "charter".
+    <br />
+    <label for="lengthFrom">Length from:</label>
+    <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" />
+    <br />
+    <label for="lengthTo">Length to:</label>
+    <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" />
+    <br />
+    <label for="lengthUnit">Length unit:</label>
+    <select name="lengthUnit" id="lengthUnit">
+    	<option value="metres"<?php echo(isOptionSelected("metres", $lengthUnit));?>>Metres</option>
+    	<option value="feet"<?php echo(isOptionSelected("feet", $lengthUnit));?>>Feet</option>
+    </select>
+    Specifies the length unit of the length search.
+    <br />
+    <label for="yearFrom">Year from:</label>
+    <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" />
+    <br />
+    <label for="yearTo">Year to:</label>
+    <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" />
+    <br />
+    <label for="orderBy">Order by:</label>
+    <select name="orderBy" id="orderBy">
+    	<option value="datedesc"<?php echo(isOptionSelected("datedesc", $orderBy));?>>Date listed - latest first</option>
+    	<option value="dateasc"<?php echo(isOptionSelected("dateasc", $orderBy));?>>Date listed - oldest first</option>
+    	<option value="priceasc"<?php echo(isOptionSelected("priceasc", $orderBy));?>>Price - low to high</option>
+    	<option value="pricedesc"<?php echo(isOptionSelected("pricedesc", $orderBy));?>>Price - high to low</option>
+    	<option value="lengthasc"<?php echo(isOptionSelected("lengthasc", $orderBy));?>>Length - low to high</option>
+    	<option value="lengthdesc"<?php echo(isOptionSelected("lengthdesc", $orderBy));?>>Length - high to low</option>
+    	<option value="yeardesc"<?php echo(isOptionSelected("yeardesc", $orderBy));?>>Year - newest first</option>
+    	<option value="yearasc"<?php echo(isOptionSelected("yearasc", $orderBy));?>>Year - oldest first</option>
+    </select>
+    <br />
+    <input type="submit" value="Search" />
+    <input type="hidden" name="postBack" value="true" />
+</form>
+<hr />
+<h2>Notes</h2>
+<h3>Make and make/model fields</h3>
+<p>This sample form shows two options for searching by make/model - either a drop-down list of boat makes or a free text box for make and model.</p>
+<p>The make drop-down list is populated via LiveFeedback with only the relevant makes for your boat listings.</p>
+<p>Only one of these search fields should be used, not both. You should remove the code for whichever field you do not use. If you choose to use the free text search
+	then you can also remove the code near the top of this page that fetches the boat manufacturers from LiveFeedback - removing that code will
+	speed up this page slightly.</p>
+	<p>The drop-down list is intended to be a list of manufacturers (without models). However, if the boats have been uploaded on TheYachtMarket.com
+		with the make and model in the manufacturer field instead of separated into the manufacturer and model fields then this select list will
+		show models too. For best results, when the boats are uploaded to TheYachtMarket.com, separate the manufacturer and model into the separate fields provided.</p>
+
+		<h3>Location and make drop-down lists</h3>
+		<p>These two drop-down lists are populated via LiveFeedback. If you choose not to use these search options on your website, you should remove the code that calls LiveFeedback to populate them. This will speed up the loading of this page.</p>
+		<p>If you do use these options, and you still want to improve the page's load time, you could cache the data returned from LiveFeedback on your web server. For example, you could save the data to a text file.</p>
+		<div><a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a></div>
+
+
+	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+</div><!-- #content -->
+</div><!-- #primary -->
+<?php get_sidebar( 'content' ); ?>
+</div><!-- #main-content -->
+
 <?php
 get_sidebar();
 get_footer();

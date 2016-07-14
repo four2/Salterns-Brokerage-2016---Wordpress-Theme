@@ -339,55 +339,52 @@ if ($boatId == 0){
 		}
 	}
 }
-?>
-
+?> 
 <?php get_header(); ?>
-
-<div id="main-content" class="main-content">
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php
+<div class="container site-inner-width-1100">
+    <div id="main-content" class="main-content"> 
+        <div id="primary" class="content-area"> 
+            <div id="content" class="site-content" role="main"> 
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+                    <?php
 				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?>
-
-				<div class="entry-content">
-
-					<div>
-						<div>
-							<?php
+				?> 
+                    <div class="entry-content"> 
+                        <div> 
+                            <div> 
+                                <?php
 							if ($errorMessage){
 				//Show error message.
 								echo("<div id=\"errorMessage\">");
 								echo($errorMessage);
 								echo("</div>");
 							}else{
-								?>
-								<h1><?php echo($makeModel);?></h1>
-								<p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p>
-								<div>
-									<div>
-										<?php
+								?> 
+                                    <h1><?php echo($makeModel);?></h1> 
+                                    <p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p> 
+                                    <div> 
+                                        <div> 
+                                            <?php
 										foreach ($photos as $value){
 											$captionEncoded = htmlspecialchars($value["Caption"], ENT_COMPAT | ENT_XHTML);
-											?>
-											<a href="<?php echo($value["ImageUrlLarge"]);?>" target="_blank"><img alt="<?php echo($captionEncoded);?>" src="<?php echo($value["ImageUrlFeatured"]);?>" /></a>
-											<?php
+											?> 
+                                                <a href="<?php echo($value["ImageUrlLarge"]);?>" target="_blank">
+                                                    <img alt="<?php echo($captionEncoded);?>" src="<?php echo($value["ImageUrlFeatured"]);?>" />
+                                                </a>                                                 
+                                            <?php
 										}
-										?>
-									</div>
-									<div>
-										<?php
+										?> 
+                                        </div>                                         
+                                        <div> 
+                                            <?php
 										if($videoEmbedCode != ""){
-											?>
-											<p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p>
-											<?php
+											?> 
+                                                <p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p> 
+                                            <?php
 										}
-										?>
-										<hr />
-										<p>For more information please telephone: xxxx xxxx xxxx
-    					<?php //Create a string for the email subject line.
+										?> 
+                                            <hr /> 
+                                            <p>For more information please telephone: xxxx xxxx xxxx<?php //Create a string for the email subject line.
     					$emailSubjectArray = array();
     					array_push($emailSubjectArray, "Enquiry about ");
     					if ($boat["BoatName"] != ""){
@@ -400,16 +397,16 @@ if ($boatId == 0){
     						array_push($emailSubjectArray, "(" . $boat["SellerReference"] . ")");
     					}
     					$emailSubject = str_replace("+", "%20", urlencode(implode(" ", $emailSubjectArray)));
-    					?>
-    					or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
-    				</div>
-    			</div>
-    			<?php
+    					?> 
+    					or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p> 
+                                        </div>                                         
+                                    </div>                                     
+                                <?php
     		}
-    		?>
-    	</div>
-    	<div>
-    		<?php
+    		?> 
+                            </div>                             
+                            <div> 
+                                <?php
     		if ($generalInfoTable != ""){
     			echo($generalInfoTable);
     		}
@@ -446,42 +443,64 @@ if ($boatId == 0){
     		if ($disclaimer != ""){
     			echo("<div>" . $disclaimer . "</div>");
     		}
-    		?>
-    		<p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p>
-    		<ul>
-    			<?php
+    		?> 
+                                <p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p> 
+                                <ul> 
+                                    <?php
     			$photoCount = 0;
     			foreach ($photos as $value){
     				$photoCount ++;
-    				?>
-    				<li>Photo <?php echo($photoCount);?>
-    					<ul>
-    						<li><?php echo($value["ImageUrlFeatured"])?></li>
-    						<li><?php echo($value["ImageUrlThumb"])?></li>
-    						<li><?php echo($value["ImageUrlTinySquare"])?></li>
-    						<li><?php echo($value["ImageUrlFourByThree"])?></li>
-    						<li><?php echo($value["ImageUrlPdfThumb"])?></li>
-    						<li><?php echo($value["ImageUrlMain"]);?></li>
-    						<li><?php echo($value["ImageUrlLarge"]);?></li>
-    						<li><?php echo($value["ImageUrlOriginal"]);?></li>
-    					</ul>
-    				</li>
-    				<?php
+    				?> 
+                                        <li>Photo 
+                                            <?php echo($photoCount);?> 
+                                            <ul> 
+                                                <li>
+                                                    <?php echo($value["ImageUrlFeatured"])?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlThumb"])?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlTinySquare"])?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlFourByThree"])?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlPdfThumb"])?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlMain"]);?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlLarge"]);?>
+                                                </li>                                                 
+                                                <li>
+                                                    <?php echo($value["ImageUrlOriginal"]);?>
+                                                </li>                                                 
+                                            </ul>                                             
+                                        </li>                                         
+                                    <?php
     			}
-    			?>
-    		</ul>
-    	</div>
+    			?> 
+                                </ul>                                 
+                            </div>                             
+                        </div>                         
+                        <div>
+                            <a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
+                        </div>                         
+                    </div>
+                    <!-- .entry-content -->                     
+                </article>
+                <!-- #post-## -->                 
+            </div>
+            <!-- #content -->             
+        </div>
+        <!-- #primary -->         
+        <?php get_sidebar( 'content' ); ?> 
     </div>
-    <div><a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a></div>
-
-</div><!-- .entry-content -->
-</article><!-- #post-## -->
-
-</div><!-- #content -->
-</div><!-- #primary -->
-<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
-
+</div> 
+<!-- #main-content --> 
 <?php
 get_sidebar();
 get_footer();
