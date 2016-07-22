@@ -407,6 +407,7 @@ textarea {
 /*    BS Navbar Basic Customization   */
 .navbar {
   margin-bottom: 0;
+  background: #1c355e;
 }
 /*    Navbar Brand Customization    */
 .navbar-brand {
@@ -473,7 +474,7 @@ body.page-template-template-store .entry-title {
   text-transform: capitalize;
 }
 .site-footer {
-  background-color: #222222;
+  background-color: #1c355e;
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 80px;
@@ -946,10 +947,7 @@ div.bbp-template-notice p {
 }
 @media (min-width: 768px) {
   .boat_make {
-    z-index: 5;
-    text-align: center;
     margin-top: 100px;
-    position: relative;
     margin-bottom: -145px;
   }
 }
@@ -959,10 +957,12 @@ div.bbp-template-notice p {
 }
 @media (max-width: 767px) {
   .boat_make {
-    z-index: 5;
-    text-align: center;
     margin-top: 20px;
-    position: relative;
-    margin-bottom: -50px;
+    margin-bottom: -63px;
   }
+}
+.boat_make {
+  z-index: 5;
+  text-align: center;
+  position: relative;
 }
