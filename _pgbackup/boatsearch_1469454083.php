@@ -226,25 +226,25 @@ if ($err) {
                     <form class="genericForm" method="post" action="<?php echo($_SERVER["REQUEST_URI"]);?>">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="For sale / charter">
+                                <div class="col-md-4">
                                     <label for="saleCharter">For sale / charter:</label>
-                                    <select name="saleCharter" id="saleCharter" class="input-lg form-control">
+                                    <select name="saleCharter" id="saleCharter">
                                         <option value="">Any</option>
                                         <option value="sale" ?php echo(isoptionselected("sale", $salecharter));?>For sale</option>
                                         <option value="charter" ?php echo(isoptionselected("charter", $salecharter));?>For charter</option>
                                     </select>                                     
                                 </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="New / used">
+                                <div class="col-md-4">
                                     <label for="newUsed">New / used:</label>
-                                    <select name="newUsed" id="newUsed" class="input-lg form-control">
+                                    <select name="newUsed" id="newUsed">
                                         <option value="">Any</option>
                                         <option value="used" ?php echo(isoptionselected("used", $newused));?>Used</option>
                                         <option value="new" ?php echo(isoptionselected("new", $newused));?>New</option>
                                     </select>                                     
                                 </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Sail / power / commercial">
+                                <div class="col-md-4">
                                     <label for="sailPower">Sail / power / commercial:</label>
-                                    <select name="sailPower" id="sailPower" class="input-lg form-control">
+                                    <select name="sailPower" id="sailPower">
                                         <option value="">Any</option>
                                         <option value="sail" ?php echo(isoptionselected("sail", $sailpower));?>Sail</option>
                                         <option value="power" ?php echo(isoptionselected("power", $sailpower));?>Power</option>
@@ -253,115 +253,76 @@ if ($err) {
                                     </select>                                     
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Boat type">
-                                    <label for="type">Boat type:</label>
-                                    <select name="type[]" id="type" multiple="multiple" class="input-lg form-control">
-                                        <option value="speed boat" ?php echo(isoptionselected("speed boat", $type));?>Speed boat</option>
-                                        <option value="sports boat" ?php echo(isoptionselected("sports boat", $type));?>Sports boat</option>
-                                        <option value="cruiser" ?php echo(isoptionselected("cruiser", $type));?>Cruiser</option>
-                                    </select>                                     
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Make">
-                                    <label for="makeModel">Make:</label>
-                                    <select name="makeModel" id="makeModel" class="input-lg form-control">
-                                        <option value="">Any</option>
-                                        <?php
+                            <div class="row pg-empty-placeholder"></div>
+                            <label for="type">Boat type:</label>
+                            <select name="type[]" id="type" multiple="multiple">
+                                <option value="speed boat" ?php echo(isoptionselected("speed boat", $type));?>Speed boat</option>
+                                <option value="sports boat" ?php echo(isoptionselected("sports boat", $type));?>Sports boat</option>
+                                <option value="cruiser" ?php echo(isoptionselected("cruiser", $type));?>Cruiser</option>
+                            </select>
+                            <label for="makeModel">Make:</label>
+                            <select name="makeModel" id="makeModel">
+                                <option value="">Any</option>
+                                <?php
 							foreach ($manufacturers as $value){
 								$manufacturerEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
 								echo("<option value=\"" . $manufacturerEncoded . "\"" . isOptionSelected($value, $makeModel) . ">" . $manufacturerEncoded . "</option>");
 							}
 							?>
-                                    </select>                                     
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Location">
-                                    <label for="country">Location:</label>
-                                    <select name="country" id="country" class="input-lg form-control">
-                                        <option value="">Any</option>
-                                        <?php
+                            </select>
+                            <label for="country">Location:</label>
+                            <select name="country" id="country">
+                                <option value="">Any</option>
+                                <?php
     	foreach ($countries as $value){
     		$countryEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
     		echo("<option value=\"" . $countryEncoded . "\"" . isOptionSelected($value, $country) . ">" . $countryEncoded . "</option>");
     	}
     	?>
-                                    </select>                                     
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Currency">
-                                    <label for="currency">Currency:</label>
-                                    <select name="currency" id="currency" class="input-lg form-control">
-                                        <option value="GBP" ?php echo(isoptionselected("gbp", $currency));?>GBP</option>
-                                        <option value="EUR" ?php echo(isoptionselected("eur", $currency));?>EUR</option>
-                                        <option value="USD" ?php echo(isoptionselected("usd", $currency));?>USD</option>
-                                    </select>                                     
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Price from">
-                                    <label for="priceFrom">Price from:</label>
-                                    <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" class="input-lg form-control" /> 
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Price to">
-                                    <label for="priceTo">Price to:</label>
-                                    <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" class="input-lg form-control" /> 
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Length unit">
-                                    <label for="lengthUnit">Length unit:</label>
-                                    <select name="lengthUnit" id="lengthUnit" class="input-lg form-control">
-                                        <option value="metres" ?php echo(isoptionselected("metres", $lengthunit));?>Metres</option>
-                                        <option value="feet" ?php echo(isoptionselected("feet", $lengthunit));?>Feet</option>
-                                    </select>                                     
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Length from">
-                                    <label for="lengthFrom">Length from:</label>
-                                    <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" class="input-lg form-control" /> 
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Length to">
-                                    <label for="lengthTo">Length to:</label>
-                                    <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" class="input-lg form-control" /> 
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Charter period">
-                                    <label for="charterPeriod">Charter period:</label>
-                                    <select name="charterPeriod" id="charterPeriod" class="input-lg form-control">
-                                        <option value="hour" ?php echo(isoptionselected("hour", $charterperiod));?>per hour</option>
-                                        <option value="day" ?php echo(isoptionselected("day", $charterperiod));?>per day</option>
-                                        <option value="week" ?php echo(isoptionselected("week", $charterperiod));?>per week</option>
-                                        <option value="month" ?php echo(isoptionselected("month", $charterperiod));?>per month</option>
-                                    </select>                                     
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Year from">
-                                    <label for="yearFrom">Year from:</label>
-                                    <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" class="input-lg form-control" /> 
-                                </div>
-                                <div class="col-md-4 form-group-lg" data-pg-name="Year to">
-                                    <label for="yearTo">Year to:</label>
-                                    <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" class="input-lg form-control" /> 
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Order by">
-                                    <label for="orderBy">Order by:</label>
-                                    <select name="orderBy" id="orderBy" class="input-lg form-control">
-                                        <option value="datedesc" ?php echo(isoptionselected("datedesc", $orderby));?>Date listed - latest first</option>
-                                        <option value="dateasc" ?php echo(isoptionselected("dateasc", $orderby));?>Date listed - oldest first</option>
-                                        <option value="priceasc" ?php echo(isoptionselected("priceasc", $orderby));?>Price - low to high</option>
-                                        <option value="pricedesc" ?php echo(isoptionselected("pricedesc", $orderby));?>Price - high to low</option>
-                                        <option value="lengthasc" ?php echo(isoptionselected("lengthasc", $orderby));?>Length - low to high</option>
-                                        <option value="lengthdesc" ?php echo(isoptionselected("lengthdesc", $orderby));?>Length - high to low</option>
-                                        <option value="yeardesc" ?php echo(isoptionselected("yeardesc", $orderby));?>Year - newest first</option>
-                                        <option value="yearasc" ?php echo(isoptionselected("yearasc", $orderby));?>Year - oldest first</option>
-                                    </select>                                     
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 form-group-lg" data-pg-name="Submit">
-                                    <input type="submit" value="Search" class="input-lg form-control" />
-                                    <input type="hidden" name="postBack" value="true" /> 
-                                </div>
-                            </div>
+                            </select>
+                            <label for="priceFrom">Price from:</label>
+                            <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" />
+                            <label for="priceTo">Price to:</label>
+                            <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" />
+                            <label for="currency">Currency:</label>
+                            <select name="currency" id="currency">
+                                <option value="GBP" ?php echo(isoptionselected("gbp", $currency));?>GBP</option>
+                                <option value="EUR" ?php echo(isoptionselected("eur", $currency));?>EUR</option>
+                                <option value="USD" ?php echo(isoptionselected("usd", $currency));?>USD</option>
+                            </select>
+                            <label for="charterPeriod">Charter period:</label>
+                            <select name="charterPeriod" id="charterPeriod">
+                                <option value="hour" ?php echo(isoptionselected("hour", $charterperiod));?>per hour</option>
+                                <option value="day" ?php echo(isoptionselected("day", $charterperiod));?>per day</option>
+                                <option value="week" ?php echo(isoptionselected("week", $charterperiod));?>per week</option>
+                                <option value="month" ?php echo(isoptionselected("month", $charterperiod));?>per month</option>
+                            </select>
+                            <label for="lengthFrom">Length from:</label>
+                            <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" />
+                            <label for="lengthTo">Length to:</label>
+                            <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" />
+                            <label for="lengthUnit">Length unit:</label>
+                            <select name="lengthUnit" id="lengthUnit">
+                                <option value="metres" ?php echo(isoptionselected("metres", $lengthunit));?>Metres</option>
+                                <option value="feet" ?php echo(isoptionselected("feet", $lengthunit));?>Feet</option>
+                            </select>
+                            <label for="yearFrom">Year from:</label>
+                            <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" />
+                            <label for="yearTo">Year to:</label>
+                            <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" />
+                            <label for="orderBy">Order by:</label>
+                            <select name="orderBy" id="orderBy">
+                                <option value="datedesc" ?php echo(isoptionselected("datedesc", $orderby));?>Date listed - latest first</option>
+                                <option value="dateasc" ?php echo(isoptionselected("dateasc", $orderby));?>Date listed - oldest first</option>
+                                <option value="priceasc" ?php echo(isoptionselected("priceasc", $orderby));?>Price - low to high</option>
+                                <option value="pricedesc" ?php echo(isoptionselected("pricedesc", $orderby));?>Price - high to low</option>
+                                <option value="lengthasc" ?php echo(isoptionselected("lengthasc", $orderby));?>Length - low to high</option>
+                                <option value="lengthdesc" ?php echo(isoptionselected("lengthdesc", $orderby));?>Length - high to low</option>
+                                <option value="yeardesc" ?php echo(isoptionselected("yeardesc", $orderby));?>Year - newest first</option>
+                                <option value="yearasc" ?php echo(isoptionselected("yearasc", $orderby));?>Year - oldest first</option>
+                            </select>
+                            <input type="submit" value="Search" />
+                            <input type="hidden" name="postBack" value="true" />
                         </div>
                         <!--
         <br />
