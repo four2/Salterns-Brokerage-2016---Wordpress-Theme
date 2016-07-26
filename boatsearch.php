@@ -18,12 +18,12 @@ require_once("includes/TheYachtMarket-LiveFeedback.php");
 //Has the form been posted back?
 if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 	//Form has been posted back.
-	
+
 	//Load search criteria from form post.
 	$saleCharter = $_POST["saleCharter"];
 	$newUsed = $_POST["newUsed"];
 	$sailPower = $_POST["sailPower"];
-	
+
 	//Type allows multiple selection so check if it's an array
 	if(is_array($_POST["type"])){
 		//type is an array - convert to comma separated string
@@ -32,7 +32,7 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 		//type is not an array - no selection so use zero length string
 		$type = "";
 	}
-	
+
 	$makeModel = $_POST["makeModel"];
 	$country = $_POST["country"];
 	$priceFrom = $_POST["priceFrom"];
@@ -45,7 +45,7 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 	$yearFrom = $_POST["yearFrom"];
 	$yearTo = $_POST["yearTo"];
 	$orderBy = $_POST["orderBy"];
-	
+
 	//Validate numeric fields.
 	if($priceFrom != "" and !is_numeric($priceFrom)){
 		$validationErrors[] = "Price from must be a number";
@@ -65,8 +65,8 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 	if($yearTo != "" and !is_numeric($yearTo)){
 		$validationErrors[] = "Year to must be a number";
 	}
-	
-	
+
+
 	//Were there any validation errors?
 	if($validationErrors){
 		//Form validation failed, show error messages.
@@ -76,10 +76,10 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 			$errorMessage .= "<li>" . $value . "</li>\n";
 		}
 		$errorMessage .= "</ul>\n";
-		
+
 	}else{
 		//Form validation passed.
-		
+
 		//Clear all search session variables as this is a new search (the search results page will re-populate the session vars from the querystring values).
 		$_SESSION["saleCharter"] = "";
 		$_SESSION["newUsed"] = "";
@@ -97,7 +97,7 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 		$_SESSION["yearFrom"] = "";
 		$_SESSION["yearTo"] = "";
 		$_SESSION["orderBy"] = "";
-		
+
 		//Redirect to search results page.
 		header("Location: $search_result_url". createSearchPageQueryString(1, $saleCharter, $newUsed, $sailPower, $type, $makeModel, $country
 			, $priceFrom, $priceTo, $currency, $charterPeriod, $lengthFrom, $lengthTo, $lengthUnit, $yearFrom, $yearTo, $orderBy));
@@ -105,8 +105,8 @@ if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
 	}
 }else{
 	//Form has not been posted back yet.
-	
-	
+
+
 	//Load search criteria from session variables.
 	$saleCharter = $_SESSION["saleCharter"];
 	$newUsed = $_SESSION["newUsed"];
@@ -140,7 +140,7 @@ if ($err) {
 	//echo "<h2>Error at $client->getError()</h2><pre>";
 	//print_r($result);
 	//echo "</pre>";
-	
+
 	//Show friendly message to user.
 	$errorMessage = $liveFeedbackFetchError;
 }else{
@@ -150,20 +150,20 @@ if ($err) {
 	//onlyBoatsMarkedForExport: If true, this will only return data for boats that have been marked for inclusion in this LiveFeedback implementation. If false, all boats matching the search will be returned.
 	$param = array("apiKey" => $liveFeedbackApiKey, "onlyBoatsMarkedForExport" => $liveFeedbackOnlyBoatsMarkedForExport);
 	$result = $client->call("GetLiveCountries", $param);
-	
+
 	if ($client->fault) {
 		//Something went wrong - uncomment code below to debug.
 		//echo "<h2>Error at $client->fault</h2><pre>";
 		//print_r($result);
 		//echo "</pre>";
-		
+
 		//Show friendly message to user.
 		$errorMessage = $liveFeedbackFetchError;
-		
+
 	} else {
 		//Uncomment the line below for debugging.
-		//showWsdl($result);	
-		
+		//showWsdl($result);
+
 		//Put list of countries into array (how deep NuSoap nests the array depends on whether there are zero, one or mulitple countries).
 		if(!is_array($result["Countries"])){
 			//No countries
@@ -177,27 +177,27 @@ if ($err) {
 			}
 		}
 	}
-	
+
 	//Get the manufacturers for this API key from TheYachtMarket LiveFeedback.
 	//This section of code should be removed to improve the load speed of this page if you do not wish to show the country drop-down list.
 	//apiKey: Your LiveFeedback API key
 	//onlyBoatsMarkedForExport: If true, this will only return data for boats that have been marked for inclusion in this LiveFeedback implementation. If false, all boats matching the search will be returned.
 	$param = array("apiKey" => $liveFeedbackApiKey, "onlyBoatsMarkedForExport" => $liveFeedbackOnlyBoatsMarkedForExport);
 	$result = $client->call("GetLiveManufacturers", $param);
-	
+
 	if ($client->fault) {
 		//Something went wrong - uncomment code below to debug.
 		//echo "<h2>Error at $client->fault</h2><pre>";
 		//print_r($result);
 		//echo "</pre>";
-		
+
 		//Show friendly message to user.
 		$errorMessage = $liveFeedbackFetchError;
-		
+
 	} else {
 		//Uncomment the line below for debugging.
-		//showWsdl($result);	
-		
+		//showWsdl($result);
+
 		//Put list of manufacturers into array (how deep NuSoap nests the array depends on whether there are zero, one or mulitple records).
 		if(!is_array($result["Manufacturers"])){
 			//No records
@@ -212,15 +212,15 @@ if ($err) {
 		}
 	}
 }
-?> 
-<?php get_header(); ?> 
-<div id="main-content" class="main-content"> 
-    <div id="primary" class="content-area"> 
-        <div id="content" class="site-content" role="main"> 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+?>
+<?php get_header(); ?>
+<div id="main-content" class="main-content">
+    <div id="primary" class="content-area">
+        <div id="content" class="site-content" role="main">
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <?php
 				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?> 
+				?>
                 <div class="entry-content">
                     <hr />
                     <form class="genericForm" method="post" action="<?php echo($_SERVER["REQUEST_URI"]);?>">
@@ -232,7 +232,7 @@ if ($err) {
                                         <option value="">Any</option>
                                         <option value="sale" ?php echo(isoptionselected("sale", $salecharter));?>For sale</option>
                                         <option value="charter" ?php echo(isoptionselected("charter", $salecharter));?>For charter</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="New / used">
                                     <label for="newUsed">New / used:</label>
@@ -240,7 +240,7 @@ if ($err) {
                                         <option value="">Any</option>
                                         <option value="used" ?php echo(isoptionselected("used", $newused));?>Used</option>
                                         <option value="new" ?php echo(isoptionselected("new", $newused));?>New</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Sail / power / commercial">
                                     <label for="sailPower">Sail / power / commercial:</label>
@@ -250,7 +250,7 @@ if ($err) {
                                         <option value="power" ?php echo(isoptionselected("power", $sailpower));?>Power</option>
                                         <option value="commercial" ?php echo(isoptionselected("commercial", $sailpower));?>Commercial</option>
                                         <option value="other" ?php echo(isoptionselected("other", $sailpower));?>Other</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
@@ -260,7 +260,7 @@ if ($err) {
                                         <option value="speed boat" ?php echo(isoptionselected("speed boat", $type));?>Speed boat</option>
                                         <option value="sports boat" ?php echo(isoptionselected("sports boat", $type));?>Sports boat</option>
                                         <option value="cruiser" ?php echo(isoptionselected("cruiser", $type));?>Cruiser</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Make">
                                     <label for="makeModel">Make:</label>
@@ -272,7 +272,7 @@ if ($err) {
 								echo("<option value=\"" . $manufacturerEncoded . "\"" . isOptionSelected($value, $makeModel) . ">" . $manufacturerEncoded . "</option>");
 							}
 							?>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Location">
                                     <label for="country">Location:</label>
@@ -284,7 +284,7 @@ if ($err) {
     		echo("<option value=\"" . $countryEncoded . "\"" . isOptionSelected($value, $country) . ">" . $countryEncoded . "</option>");
     	}
     	?>
-                                    </select>                                     
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
@@ -294,15 +294,15 @@ if ($err) {
                                         <option value="GBP" ?php echo(isoptionselected("gbp", $currency));?>GBP</option>
                                         <option value="EUR" ?php echo(isoptionselected("eur", $currency));?>EUR</option>
                                         <option value="USD" ?php echo(isoptionselected("usd", $currency));?>USD</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Price from">
                                     <label for="priceFrom">Price from:</label>
-                                    <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" class="input-lg form-control" />
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Price to">
                                     <label for="priceTo">Price to:</label>
-                                    <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" class="input-lg form-control" />
                                 </div>
                             </div>
                             <div class="row">
@@ -311,15 +311,15 @@ if ($err) {
                                     <select name="lengthUnit" id="lengthUnit" class="input-lg form-control">
                                         <option value="metres" ?php echo(isoptionselected("metres", $lengthunit));?>Metres</option>
                                         <option value="feet" ?php echo(isoptionselected("feet", $lengthunit));?>Feet</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Length from">
                                     <label for="lengthFrom">Length from:</label>
-                                    <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" class="input-lg form-control" />
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Length to">
                                     <label for="lengthTo">Length to:</label>
-                                    <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" class="input-lg form-control" />
                                 </div>
                             </div>
                             <div class="row">
@@ -330,15 +330,15 @@ if ($err) {
                                         <option value="day" ?php echo(isoptionselected("day", $charterperiod));?>per day</option>
                                         <option value="week" ?php echo(isoptionselected("week", $charterperiod));?>per week</option>
                                         <option value="month" ?php echo(isoptionselected("month", $charterperiod));?>per month</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Year from">
                                     <label for="yearFrom">Year from:</label>
-                                    <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" class="input-lg form-control" />
                                 </div>
                                 <div class="col-md-4 form-group-lg" data-pg-name="Year to">
                                     <label for="yearTo">Year to:</label>
-                                    <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" class="input-lg form-control" /> 
+                                    <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" class="input-lg form-control" />
                                 </div>
                             </div>
                             <div class="row">
@@ -353,13 +353,13 @@ if ($err) {
                                         <option value="lengthdesc" ?php echo(isoptionselected("lengthdesc", $orderby));?>Length - high to low</option>
                                         <option value="yeardesc" ?php echo(isoptionselected("yeardesc", $orderby));?>Year - newest first</option>
                                         <option value="yearasc" ?php echo(isoptionselected("yearasc", $orderby));?>Year - oldest first</option>
-                                    </select>                                     
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4 form-group-lg" data-pg-name="Submit">
                                     <input type="submit" value="Search" class="input-lg form-control" />
-                                    <input type="hidden" name="postBack" value="true" /> 
+                                    <input type="hidden" name="postBack" value="true" />
                                 </div>
                             </div>
                         </div>
@@ -372,16 +372,16 @@ if ($err) {
                     </form>
                     <hr />
                 </div>
-                <!-- .entry-content -->                 
+                <!-- .entry-content -->
             </article>
-            <!-- #post-## -->             
+            <!-- #post-## -->
         </div>
-        <!-- #content -->         
+        <!-- #content -->
     </div>
-    <!-- #primary -->     
-    <?php get_sidebar( 'content' ); ?> 
+    <!-- #primary -->
+    <?php get_sidebar( 'content' ); ?>
 </div>
-<!-- #main-content --> 
+<!-- #main-content -->
 <?php
 get_sidebar();
 get_footer();

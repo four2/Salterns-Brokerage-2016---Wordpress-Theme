@@ -37,72 +37,72 @@ if($boatId != 0){$backToSearchUrl .= "#boat" . $boatId;}
 if ($boatId == 0){
 	//BoatId not present in querystring or not an integer.
 	$errorMessage = "No boat was specified in your search. Please go back to the search and select a boat to view.";
-	
+
 }else{
 	//BoatId is present and is an integer.
-	
+
 	//Create SOAP client.
 	$client = new nusoap_client($liveFeedbackApiUrl, "wsdl");
-	
+
 	//Set encoding to UTF-8 (may have to add or remove these lines depending on the server (Windows or Linux) to display some symbols such as pound or euro).
 	$client->soap_defencoding = "UTF-8";
 	$client->decode_utf8 = false;
-	
+
 	$err = $client->getError();
 	if ($err) {
 		//Something went wrong - uncomment code below to debug.
 		//echo "<h2>Error at $client->getError()</h2><pre>";
 		//print_r($result);
 		//echo "</pre>";
-		
+
 		//Show friendly message to user.
 		$errorMessage = $liveFeedbackFetchError;
 	}else{
-		
+
 		//Get the boat details from LiveFeedback.
 		$param = array("apiKey" => $liveFeedbackApiKey, "language" => "en", "boatId" => $boatId);
 		$result = $client->call("GetBoat", $param);
-		
+
 		if ($client->fault) {
 			//Something went wrong - uncomment code below to debug.
 			//echo "<h2>Error at $client->fault</h2><pre>";
 			//print_r($result);
 			//echo "</pre>";
-			
+
 			//Show friendly message to user.
 			$errorMessage = $liveFeedbackFetchError;
-			
+
 		} else {
 			//Fetch of data from LiveFeedback succeeded.
-			
+
 			// Display the result for debugging.
 			//showWsdl($result);
-			
-			
+
+
 			//Get the data for this boat into an array.
 			$boat = $result["GetBoatResult"];
-			
-			
+
+
 			//Does the boat exist?
 			if($boat["BoatExists"] == "true"){$boatExists = true;}
-			
-			
+
+
 			if(!$boatExists){
 				//Boat does not exist.
 				$errorMessage = "Sorry, the boat you were looking for could not be found; it may have been sold already.";
-				
+
 			}else{
 				//Boat exists.
-				
+
 				//Process boat details.
-				
+
 				//Make/model.
 				$makeModel = trim($boat["Manufacturer"] . " " . $boat["Model"]);
 				if ($makeModel == ""){
 					$makeModel = "Unknown";
 				}
-				
-				
+
+
 				//Show sale price, charter price or POA.
 				if($boat["Charter"] == "true"){
 					//Boat is for charter
@@ -116,36 +116,36 @@ if ($boatId == 0){
 						$priceString = $boat["CurrencySymbol"] . number_format($boat["SalePrice"], 0) . " ". $boat["Currency"];
 					}
 				}
-				
-				
+
+
 				//Description.
 				$description = $boat["Description"];
-				
+
 				//Remove excess line breaks.
 				$description = fixLineBreaks($description, true);
-				
+
 				//Add the description heading if description is not blank.
 				if($description != ""){$description = "<h3>Description</h3>\n" . $description;}
-				
-				
+
+
 				//Custom title/description 1.
 				$custom1 = trim($boat["CustomTitle1"]);
 				if($custom1 != ""){$custom1 = "<h3>" . $custom1 . "</h3>";}
 				$custom1 .= fixLineBreaks($boat["CustomDescription1"], true);
-				
-				
+
+
 				//Custom title/description 2.
 				$custom2 = trim($boat["CustomTitle2"]);
 				if($custom2 != ""){$custom2 = "<h3>" . $custom2 . "</h3>";}
 				$custom2 .= fixLineBreaks($boat["CustomDescription2"], true);
-				
-				
+
+
 				//Custom title/description 3.
 				$custom3 = trim($boat["CustomTitle3"]);
 				if($custom3 != ""){$custom3 = "<h3>" . $custom3 . "</h3>";}
 				$custom3 .= fixLineBreaks($boat["CustomDescription3"], true);
-				
-				
+
+
 				//VAT/tax.
 				$taxString = $boat["TaxIncluded"];
 				switch(strtolower($taxString)){
@@ -159,8 +159,8 @@ if ($boatId == 0){
 					$taxString = "";
 					break;
 				}
-				
-				
+
+
 				//Sail/power/commerical/other.
 				$categoryString = $boat["SailOrPower"];
 				switch(strtolower($categoryString)){
@@ -172,8 +172,8 @@ if ($boatId == 0){
 					$categoryString = $categoryString;
 					break;
 				}
-				
-				
+
+
 				//Fuel.
 				$fuelString = $boat["Fuel"];
 				if(strtolower($fuelString) == "gas/lpg"){
@@ -181,8 +181,8 @@ if ($boatId == 0){
 				}else{
 					$fuelString = ucfirst($fuelString);
 				}
-				
-				
+
+
 				//Location.
 				$locationArea = trim($boat["LyingArea"]);
 				$locationCountrySubDivision = trim($boat["LyingCountrySubDivision"]);
@@ -191,12 +191,12 @@ if ($boatId == 0){
 				if($locationCountrySubDivision != ""){$locationArray[] = $locationCountrySubDivision;}
 				if($locationCountry != ""){$locationArray[] = $locationCountry;}
 				$locationString = implode(", ", $locationArray);
-				
-				
+
+
 				//Disclaimer.
 				$disclaimer = $boat["Disclaimer"];
-				
-				
+
+
 				//General info table - add non blank items to an array.
 				addKeyValuePair($generalInfoArray, "Manufacturer / model", $boat["Manufacturer"] . " " . $boat["Model"]);
 				addKeyValuePair($generalInfoArray, "Name", $boat["BoatName"]);
@@ -210,7 +210,7 @@ if ($boatId == 0){
 				addKeyValuePair($generalInfoArray, "Price comment", $boat["PriceComment"]);
 				addKeyValuePair($generalInfoArray, "Lying", $locationString);
 				addKeyValuePair($generalInfoArray, "Reference", $boat["SellerReference"]);
-				
+
 				//General info table - build the table.
 				if(count($generalInfoArray) > 0){
 					$generalInfoTable = "\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
@@ -220,8 +220,8 @@ if ($boatId == 0){
 					}
 					$generalInfoTable .= "\n</table>";
 				}
-				
-				
+
+
 				//Specifications table - add non blank items to an array.
 				addKeyValuePair($specificationsArray, "Length overall", $boat["LengthOverallMetres"], " m", 2);
 				addKeyValuePair($specificationsArray, "Length waterline", $boat["LengthWaterlineMetres"], " m", 2);
@@ -231,7 +231,7 @@ if ($boatId == 0){
 				addKeyValuePair($specificationsArray, "Displacement", $boat["DisplacementKg"], " kg", -1);
 				addKeyValuePair($specificationsArray, "Hull", $boat["Hull"]);
 				addKeyValuePair($specificationsArray, "Keel", ucfirst(strtolower($boat["KeelType"])));
-				
+
 				//Specifications table - build the table.
 				if(count($specificationsArray) > 0){
 					$specificationsTable = "\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
@@ -241,8 +241,8 @@ if ($boatId == 0){
 					}
 					$specificationsTable .= "\n</table>";
 				}
-				
-				
+
+
 				//Propulsion table - add non blank items to an array.
 				addKeyValuePair($propulsionArray, "Engine", $boat["Engine"]);
 				addKeyValuePair($propulsionArray, "Engine hours", $boat["EngineHours"], " hours", -1);
@@ -251,7 +251,7 @@ if ($boatId == 0){
 				addKeyValuePair($propulsionArray, "Maximum speed", $boat["MaxSpeedKph"], " kph", 2);
 				addKeyValuePair($propulsionArray, "Cruising speed", $boat["CruisingSpeedKph"], " kph", 2);
 				addKeyValuePair($propulsionArray, "Range", $boat["RangeKm"], " km", -1);
-				
+
 				//Propulsion table - build the table.
 				if(count($propulsionArray) > 0){
 					$propulsionTable = "\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
@@ -261,15 +261,15 @@ if ($boatId == 0){
 					}
 					$propulsionTable .= "\n</table>";
 				}
-				
-				
+
+
 				//Accommodation table - add non blank items to an array.
 				addKeyValuePair($accommodationArray, "Number of berths", $boat["Berths"]);
 				addKeyValuePair($accommodationArray, "Number of cabins", $boat["Cabins"]);
 				addKeyValuePair($accommodationArray, "Passenger capacity", $boat["Passengers"]);
 				addKeyValuePair($accommodationArray, "Drinking water capacity", $boat["DrinkingWaterCapacityLitres"], " litres", -1);
 				addKeyValuePair($accommodationArray, "Further information", nl2br($boat["Accommodation"]));
-				
+
 				//Accommodation table - build the table.
 				if(count($accommodationArray) > 0){
 					$accommodationTable = "\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" class=\"lastTable\">";
@@ -279,8 +279,8 @@ if ($boatId == 0){
 					}
 					$accommodationTable .= "\n</table>";
 				}
-				
-				
+
+
 				//Get the photos for this boat into an array.
 				//If mulitple photos, the values will be in ["Photos"]["Photo"][0],[1],[2] etc.
 				//However, if only one photo, the values will be direclty in ["Photos"].
@@ -306,52 +306,52 @@ if ($boatId == 0){
 					$photos[0]["ImageUrlFourByThree"] = "/images/shared/boat-placeholder-large.gif";
 					$photos[0]["ImageUrlPdfThumb"] = "/images/shared/boat-placeholder.gif";
 				}
-				
-				
+
+
 				//Video.
 				$videoEmbedCode = $boat["VideoEmbedCode"];
-				
-				
+
+
 				//Generate meta keywords array.
 				if($makeModel != "Unknown"){array_push($metaKeywordsArray, $makeModel);}
 				if($categoryString != ""){array_push($metaKeywordsArray, $categoryString);}
 				if($fuelString != ""){array_push($metaKeywordsArray, $fuelString);}
 				if($locationString != ""){array_push($metaKeywordsArray, $locationString);}
 				if($boat["Year"] != ""){array_push($metaKeywordsArray, $boat["Year"]);}
-				
+
 				//Create comma separated string from keywords array.
 				$metaKeywords = implode(", ", $metaKeywordsArray);
-				
-				
+
+
 				//Generate meta description array.
 				if($boat["Year"] != ""){array_push($metaDescriptionArray, $boat["Year"]);}
 				if($makeModel != "Unknown"){array_push($metaDescriptionArray, $makeModel);}
 				if($priceString != "POA"){array_push($metaDescriptionArray, "for sale at " . $priceString);}
 				if($locationString != ""){array_push($metaDescriptionArray, "lying in " . $locationString);}
-				
+
 				//Create string from description array.
 				$metaDescription = implode(" ", $metaDescriptionArray);
 				if($metaDescription != ""){$metaDescription = "A " . $metaDescription;}
-				
-				
+
+
 				//End of processing boat details.
 			}
 		}
 	}
 }
-?> 
+?>
 <?php get_header(); ?>
 <div class="container site-inner-width-1100">
-    <div id="main-content" class="main-content"> 
-        <div id="primary" class="content-area"> 
-            <div id="content" class="site-content" role="main"> 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+    <div id="main-content" class="main-content">
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
 				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?> 
-                    <div class="entry-content"> 
-                        <div> 
-                            <div> 
+				?>
+                    <div class="entry-content">
+                        <div>
+                            <div>
                                 <?php
 							if ($errorMessage){
 				//Show error message.
@@ -359,31 +359,31 @@ if ($boatId == 0){
 								echo($errorMessage);
 								echo("</div>");
 							}else{
-								?> 
-                                    <h1><?php echo($makeModel);?></h1> 
-                                    <p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p> 
-                                    <div> 
-                                        <div> 
+								?>
+                                    <h1><?php echo($makeModel);?></h1>
+                                    <p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p>
+                                    <div>
+                                        <div>
                                             <?php
 										foreach ($photos as $value){
 											$captionEncoded = htmlspecialchars($value["Caption"], ENT_COMPAT | ENT_XHTML);
-											?> 
+											?>
                                                 <a href="<?php echo($value["ImageUrlLarge"]);?>" target="_blank">
                                                     <img alt="<?php echo($captionEncoded);?>" src="<?php echo($value["ImageUrlFeatured"]);?>" />
-                                                </a>                                                 
+                                                </a>
                                             <?php
 										}
-										?> 
-                                        </div>                                         
-                                        <div> 
+										?>
+                                        </div>
+                                        <div>
                                             <?php
 										if($videoEmbedCode != ""){
-											?> 
-                                                <p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p> 
+											?>
+                                                <p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p>
                                             <?php
 										}
-										?> 
-                                            <hr /> 
+										?>
+                                            <hr />
                                             <p>For more information please telephone: xxxx xxxx xxxx<?php //Create a string for the email subject line.
     					$emailSubjectArray = array();
     					array_push($emailSubjectArray, "Enquiry about ");
@@ -397,15 +397,15 @@ if ($boatId == 0){
     						array_push($emailSubjectArray, "(" . $boat["SellerReference"] . ")");
     					}
     					$emailSubject = str_replace("+", "%20", urlencode(implode(" ", $emailSubjectArray)));
-    					?> 
-    					or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p> 
-                                        </div>                                         
-                                    </div>                                     
+    					?>
+    					or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
+                                        </div>
+                                    </div>
                                 <?php
     		}
-    		?> 
-                            </div>                             
-                            <div> 
+    		?>
+                            </div>
+                            <div>
                                 <?php
     		if ($generalInfoTable != ""){
     			echo($generalInfoTable);
@@ -443,64 +443,64 @@ if ($boatId == 0){
     		if ($disclaimer != ""){
     			echo("<div>" . $disclaimer . "</div>");
     		}
-    		?> 
-                                <p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p> 
-                                <ul> 
+    		?>
+                                <p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p>
+                                <ul>
                                     <?php
     			$photoCount = 0;
     			foreach ($photos as $value){
     				$photoCount ++;
-    				?> 
+    				?>
                                         <li>Photo 
-                                            <?php echo($photoCount);?> 
-                                            <ul> 
+                                            <?php echo($photoCount);?>
+                                            <ul>
                                                 <li>
                                                     <?php echo($value["ImageUrlFeatured"])?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlThumb"])?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlTinySquare"])?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlFourByThree"])?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlPdfThumb"])?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlMain"]);?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlLarge"]);?>
-                                                </li>                                                 
+                                                </li>
                                                 <li>
                                                     <?php echo($value["ImageUrlOriginal"]);?>
-                                                </li>                                                 
-                                            </ul>                                             
-                                        </li>                                         
+                                                </li>
+                                            </ul>
+                                        </li>
                                     <?php
     			}
-    			?> 
-                                </ul>                                 
-                            </div>                             
-                        </div>                         
+    			?>
+                                </ul>
+                            </div>
+                        </div>
                         <div>
                             <a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
-                        </div>                         
+                        </div>
                     </div>
-                    <!-- .entry-content -->                     
+                    <!-- .entry-content -->
                 </article>
-                <!-- #post-## -->                 
+                <!-- #post-## -->
             </div>
-            <!-- #content -->             
+            <!-- #content -->
         </div>
-        <!-- #primary -->         
-        <?php get_sidebar( 'content' ); ?> 
+        <!-- #primary -->
+        <?php get_sidebar( 'content' ); ?>
     </div>
-</div> 
-<!-- #main-content --> 
+</div>
+<!-- #main-content -->
 <?php
 get_sidebar();
 get_footer();

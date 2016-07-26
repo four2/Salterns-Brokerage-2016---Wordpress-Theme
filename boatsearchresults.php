@@ -61,7 +61,7 @@ if ($err) {
 	//echo "<h2>Error at $client->getError()</h2><pre>";
 	//print_r($result);
 	//echo "</pre>";
-	
+
 	//Show friendly message to user.
 	$errorMessage = $liveFeedbackFetchError;
 }else{
@@ -81,7 +81,7 @@ if ($err) {
 	if($lengthUnit != ""){$searchParams[] = "lengthunit=" . urlencode($lengthUnit);}
 	if(is_numeric($yearFrom)){$searchParams[] = "yearfrom=" . urlencode($yearFrom);}
 	if(is_numeric($yearTo)){$searchParams[] = "yearto=" . urlencode($yearTo);}
-	
+
 	//Order by.
 	//$searchParams[] = "sortby=price&sortorder=desc";
 	switch($orderBy){
@@ -110,16 +110,16 @@ if ($err) {
 		$searchParams[] = "sortby=year&sortorder=asc";
 		break;
 	}
-	
+
 	//Join parameters into a string.
 	if(isset($searchParams)){
 		$liveFeedbackSearchString = join($searchParams, "&");
 	}else{
 		$liveFeedbackSearchString = "";
 	}
-	
+
 	//echo($liveFeedbackSearchString);
-	
+
 	//Get the search results from TheYachtMarket LiveFeedback.
 	//apiKey: Your LiveFeedback API key
 	//language: Two letter language code for the language you would like the boat's description returned in.
@@ -133,39 +133,39 @@ if ($err) {
 	//onlyBoatsMarkedForExport: If true, this will only return boats that have been marked for inclusion in this LiveFeedback implementation. If false, all boats matching the search will be returned.
 	$param = array("apiKey" => $liveFeedbackApiKey, "language" => "en", "descriptionLength" => $liveFeedbackSearchResultsDescriptionLength, "resultsPerPage" => $liveFeedbackSearchResultsPerPage, "pageNumber" => $page, "searchString" => $liveFeedbackSearchString, "onlyFeaturedBoats" => false, "onlyBoatsMarkedForExport" => $liveFeedbackOnlyBoatsMarkedForExport);
 	$result = $client->call("GetSearchResults", $param);
-	
+
 	if ($client->fault) {
 		//Something went wrong - uncomment code below to debug.
 		//echo "<h2>Error at $client->fault</h2><pre>";
 		//print_r($result);
 		//echo "</pre>";
-		
+
 		//Show friendly message to user.
 		$errorMessage = $liveFeedbackFetchError;
-		
+
 	} else {
 		//Fetch succeeded.
-		
+
 		//Get the paging info.
 		$totalResults = $result["GetSearchResultsResult"]["Paging"]["TotalResults"];
 		$numPages = $result["GetSearchResultsResult"]["Paging"]["NumPages"];
 		$resultsThisPage = $result["GetSearchResultsResult"]["Paging"]["ResultsThisPage"];
-		
+
 		if ($totalResults == 0){
 			//No results.
 			$errorMessage = "No boats were found matching your search. Please try widening your search criteria.";
 		}else{
 			//Boats found - get the details into an array.
-			
+
 			if($resultsThisPage == 1){
 				$boats = $result["GetSearchResultsResult"]["Boats"];
 			}else{
 				//If there's more than one result, the array will be nested one level deeper
 				$boats = $result["GetSearchResultsResult"]["Boats"]["SearchResultsBoat"];
 			}
-			
+
 			//Uncomment the line below for debugging.
-			//showWsdl($boats);	
+			//showWsdl($boats);
 		}
 	}
 }
@@ -178,7 +178,7 @@ function formatFeatures($length, $year, $saleStatus, $country, $countrySubDivisi
 	if($countrySubDivision != ""){array_push($location, $countrySubDivision);}
 	if($country != ""){array_push($location, $country);}
 	$locationString = join(", ", $location);
-	
+
 	$return = "<ul>\n";
 	if($length != ""){$return .= "<li>" . number_format($length, 2) . "m (" . metresToFeetAndInches($length) . ")" . "</li>";}
 	if($year != ""){$return .= "<li>" . $year . "</li>";}
@@ -203,7 +203,7 @@ function formatPrice($currency, $currencySymbol, $salePrice, $charter, $charterP
 			return $currencySymbol . number_format($salePrice, 0) . " " . $currency;
 		}
 	}
-	
+
 	//Price not specified
 	return "Contact us for price";
 }
@@ -219,166 +219,166 @@ function getImageUrl($imageUrl){
 		return $imageUrl;
 	}
 }
-?> 
+?>
 <?php get_header(); ?>
 <div class="container site-inner-width-1100">
-    <div id="main-content" class="main-content"> 
-        <div id="primary" class="content-area"> 
-            <div id="content" class="site-content" role="main"> 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+    <div id="main-content" class="main-content">
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
 				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?> 
-                    <div class="entry-content"> 
-                            <div> 
-                            <p>Page <?php echo($page)?></p> 
-                            <a href="<?= $search_url; ?>">&lt; New search</a> 
+				?>
+                    <div class="entry-content">
+                            <div>
+                            <p>Page <?php echo($page)?></p>
+                            <a href="<?= $search_url; ?>">&lt; New search</a>
                             <?php
 						if($errorMessage){
-							?> 
+							?>
                                 <div>
                                     <?php echo($errorMessage);?>
-                                </div>                                 
+                                </div>
                                 <?php
 						}else{
             //Iterate through this page of boats.
 							foreach($boats as $boat){
-								?> 
-                                    <div> 
-                                        <a name="boat<?php echo($boat["BoatId"]);?>"></a> 
-                                        <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h3> 
+								?>
+                                    <div>
+                                        <a name="boat<?php echo($boat["BoatId"]);?>"></a>
+                                        <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h3>
                                         <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>">
                                             <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
-                                        </a>                                         
-                                        <p><?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?></p> 
-                                        <p><?php echo($boat["PriceComment"]);?></p> 
+                                        </a>
+                                        <p><?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?></p>
+                                        <p><?php echo($boat["PriceComment"]);?></p>
                                         <?php
 									echo(formatFeatures($boat["LengthOverallMetres"], $boat["Year"], $boat["SaleStatus"], $boat["LyingCountry"], $boat["LyingCountrySubDivision"], $boat["LyingArea"]));
-									?> 
-                                        <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>">View details</a> 
+									?>
+                                        <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>">View details</a>
                                         <?php
 									if($boat["HasVideo"] == "true"){
-										?> 
-                                            <a href="<?= $search_video_url; ?>?boatid=<?php echo($boat["BoatId"])?>" target="_blank">View video</a> 
+										?>
+                                            <a href="<?= $search_video_url; ?>?boatid=<?php echo($boat["BoatId"])?>" target="_blank">View video</a>
                                         <?php
 									}
-									?> 
+									?>
                                         <br />
-                                        <strong>All available fields. You can choose which you include.</strong> 
-                                        <br />BoatId on TheYachtMarket: 
-                                        <?php echo($boat["BoatId"])?> 
-                                        <br />Broker/dealer's own reference: 
-                                        <?php echo($boat["SellerReference"])?> 
-                                        <br />Manufacturer: 
-                                        <?php echo($boat["Manufacturer"])?> 
-                                        <br />Model: 
-                                        <?php echo($boat["Model"])?> 
-                                        <br />Boat name: 
-                                        <?php echo($boat["BoatName"])?> 
-                                        <br />Snippet of description: 
-                                        <?php echo($boat["Description"])?> 
-                                        <br />Keel type: 
-                                        <?php echo($boat["KeelType"])?> 
-                                        <br />Sale price: 
-                                        <?php echo($boat["SalePrice"])?> 
-                                        <br />Currency of price: 
-                                        <?php echo($boat["Currency"])?> 
-                                        <br />Currency symbol: 
-                                        <?php echo($boat["CurrencySymbol"])?> 
-                                        <br />For charter? (true = boat is for charter; false = boat is for sale): 
-                                        <?php echo($boat["Charter"])?> 
-                                        <br />Charter price: 
-                                        <?php echo($boat["CharterPrice"])?> 
-                                        <br />Period the charter price represents (i.e. per hour/day/week/month): 
-                                        <?php echo($boat["CharterPricePeriod"])?> 
-                                        <br />Price comment (e.g. "or nearest offer", "reduced" etc.): 
-                                        <?php echo($boat["Price comment"])?> 
-                                        <br />Tax paid/included: 
-                                        <?php echo($boat["TaxIncluded"])?> 
-                                        <br />Length overall (in metres): 
-                                        <?php echo($boat["LengthOverallMetres"])?> 
-                                        <br />Length overall (in feet and inches: 
-                                        <?php echo(metresToFeetAndInches($boat["LengthOverallMetres"]))?> 
-                                        <br />Year: 
-                                        <?php echo($boat["Year"])?> 
-                                        <br />Country where the boat is located: 
-                                        <?php echo($boat["LyingCountry"])?> 
-                                        <br />Country subdivision (e.g. name of a state, province etc.) where the boat is located: 
-                                        <?php echo($boat["LyingCountrySubDivision"])?> 
-                                        <br />Area (region, city, village etc.) where the boat is located: 
-                                        <?php echo($boat["LyingArea"])?> 
-                                        <br />New or used boat: 
-                                        <?php echo($boat["NewOrUsed"])?> 
-                                        <br />Sail or power: 
-                                        <?php echo($boat["SailOrPower"])?> 
-                                        <br />Fuel: 
-                                        <?php echo($boat["Fuel"])?> 
-                                        <br />Sale status (i.e. available, underoffer, sold): 
-                                        <?php echo($boat["SaleStatus"])?> 
-                                        <br />Date listed: 
-                                        <?php echo($boat["DateListed"])?> 
-                                        <br />Video available?: 
-                                        <?php echo($boat["HasVideo"])?> 
+                                        <strong>All available fields. You can choose which you include.</strong>
+                                        <br />BoatId on TheYachtMarket:
+                                        <?php echo($boat["BoatId"])?>
+                                        <br />Broker/dealer's own reference:
+                                        <?php echo($boat["SellerReference"])?>
+                                        <br />Manufacturer:
+                                        <?php echo($boat["Manufacturer"])?>
+                                        <br />Model:
+                                        <?php echo($boat["Model"])?>
+                                        <br />Boat name:
+                                        <?php echo($boat["BoatName"])?>
+                                        <br />Snippet of description:
+                                        <?php echo($boat["Description"])?>
+                                        <br />Keel type:
+                                        <?php echo($boat["KeelType"])?>
+                                        <br />Sale price:
+                                        <?php echo($boat["SalePrice"])?>
+                                        <br />Currency of price:
+                                        <?php echo($boat["Currency"])?>
+                                        <br />Currency symbol:
+                                        <?php echo($boat["CurrencySymbol"])?>
+                                        <br />For charter? (true = boat is for charter; false = boat is for sale):
+                                        <?php echo($boat["Charter"])?>
+                                        <br />Charter price:
+                                        <?php echo($boat["CharterPrice"])?>
+                                        <br />Period the charter price represents (i.e. per hour/day/week/month):
+                                        <?php echo($boat["CharterPricePeriod"])?>
+                                        <br />Price comment (e.g. "or nearest offer", "reduced" etc.):
+                                        <?php echo($boat["Price comment"])?>
+                                        <br />Tax paid/included:
+                                        <?php echo($boat["TaxIncluded"])?>
+                                        <br />Length overall (in metres):
+                                        <?php echo($boat["LengthOverallMetres"])?>
+                                        <br />Length overall (in feet and inches:
+                                        <?php echo(metresToFeetAndInches($boat["LengthOverallMetres"]))?>
+                                        <br />Year:
+                                        <?php echo($boat["Year"])?>
+                                        <br />Country where the boat is located:
+                                        <?php echo($boat["LyingCountry"])?>
+                                        <br />Country subdivision (e.g. name of a state, province etc.) where the boat is located:
+                                        <?php echo($boat["LyingCountrySubDivision"])?>
+                                        <br />Area (region, city, village etc.) where the boat is located:
+                                        <?php echo($boat["LyingArea"])?>
+                                        <br />New or used boat:
+                                        <?php echo($boat["NewOrUsed"])?>
+                                        <br />Sail or power:
+                                        <?php echo($boat["SailOrPower"])?>
+                                        <br />Fuel:
+                                        <?php echo($boat["Fuel"])?>
+                                        <br />Sale status (i.e. available, underoffer, sold):
+                                        <?php echo($boat["SaleStatus"])?>
+                                        <br />Date listed:
+                                        <?php echo($boat["DateListed"])?>
+                                        <br />Video available?:
+                                        <?php echo($boat["HasVideo"])?>
                                         <br />
-                                        <strong>Primary image at various sizes (use whichever is closest to your design's requirements):</strong> 
-                                        <ul> 
+<!--                                        <strong>Primary image at various sizes (use whichever is closest to your design's requirements):</strong>
+                                        <ul>
                                             <li>
-                                                <?php echo($boat["ImageUrlFeatured"])?>
-                                            </li>                                             
+                                                <?php //echo($boat["ImageUrlFeatured"])?>
+                                            </li>
                                             <li>
-                                                <?php echo($boat["ImageUrlThumb"])?>
-                                            </li>                                             
+                                                <?php //echo($boat["ImageUrlThumb"])?>
+                                            </li>
                                             <li>
-                                                <?php echo($boat["ImageUrlTinySquare"])?>
-                                            </li>                                             
+                                                <?php //echo($boat["ImageUrlTinySquare"])?>
+                                            </li>
                                             <li>
-                                                <?php echo($boat["ImageUrlFourByThree"])?>
-                                            </li>                                             
+                                                <?php //echo($boat["ImageUrlFourByThree"])?>
+                                            </li>
                                             <li>
-                                                <?php echo($boat["ImageUrlPdfThumb"])?>
-                                            </li>                                             
-                                        </ul>                                         
-                                    </div>                                     
+                                                <?php //echo($boat["ImageUrlPdfThumb"])?>
+                                            </li>
+                                        </ul>-->
+                                    </div>
                                     <?php
 							}
 
 
             //Generate the page links.
 							if($totalResults > $liveFeedbackSearchResultsPerPage && $liveFeedbackSearchResultsPerPage != 0){
-								?> 
-                                    <div> 
-                                        <ul> 
+								?>
+                                    <div>
+                                        <ul>
                                             <?php
 										for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){
-											?> 
+											?>
                                                 <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
                                                     <a href="<?= $search_result; ?><?php if($i > 1){echo(" pg=" . $i);}?>">Page <?php echo($i);?></a>
-                                                </li>                                                 
+                                                </li>
                                             <?php
 										}
-										?> 
-                                        </ul>                                         
-                                    </div>                                     
-                                <?php	
+										?>
+                                        </ul>
+                                    </div>
+                                <?php
 							}
 						}
-						?> 
-                        </div>                         
+						?>
+                        </div>
                         <div>
                             <a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
-                        </div>                         
+                        </div>
                     </div>
-                    <!-- .entry-content -->                     
+                    <!-- .entry-content -->
                 </article>
-                <!-- #post-## -->                 
+                <!-- #post-## -->
             </div>
-            <!-- #content -->             
+            <!-- #content -->
         </div>
-        <!-- #primary -->         
-        <?php get_sidebar( 'content' ); ?> 
+        <!-- #primary -->
+        <?php get_sidebar( 'content' ); ?>
     </div>
-</div> 
-<!-- #main-content --> 
+</div>
+<!-- #main-content -->
 <?php
 get_sidebar();
 get_footer();
