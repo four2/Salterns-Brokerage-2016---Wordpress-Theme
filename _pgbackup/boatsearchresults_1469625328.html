@@ -1,6 +1,69 @@
-<?php
-get_header(); ?>
-
+<!doctype html>
+<html lang="en" wp-site wp-site-theme-name="" wp-site-theme-slug="" wp-site-themes-folder="" wp-site-master-page="index.html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pinegrow Web Editor">
+        <title wp-no-export>Page Title</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" wp-enqueue-style wp-enqueue-style-version="3.3.6">
+        <link href="assets/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="4.6.3">
+        <!-- Custom styles for this template -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link href="style.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="1.2">
+    </head>
+    <body wp-body-class>
+        <div class="site-container" data-pg-name="site-container">
+            <header id="masthead" class="site-header" data-pgc="master.header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-pgc="main.navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header site-branding">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand site-title" href="#" wp-site-name wp-if-custom="has_custom_logo()" wp-if-custom-not="true" wp-home-url wp-home-url-set="href">STARTER THEME 1.2</a>
+                            <a class="navbar-brand logo-navbar-brand" href="#" wp-call-function="pg_starter_the_custom_logo()" wp-hide wp-else-if>
+                                <img src="images/starter_custom_logo@2x.png" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right" wp-nav-menu wp-nav-menu-type="bootstrap" wp-nav-menu-theme-location="primary" wp-nav-menu-depth="2">
+                                <li>
+                                    <a href="#">Link</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div wp-call-function="wp_enqueue_script( 'comment-reply' );" wp-if-is-singular></div>
+            </header>
+            <main class="site-inner site-content" wp-site-content data-pg-name="site-inner">
                 <section>
                     <div class="container-fluid">
                         <div class="row">
@@ -232,10 +295,10 @@ function getImageUrl($imageUrl){
                                     <?php
 the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
 ?>
-                                <div class="entry-content">
-                                                <div>
-                                            <p><?php _e( 'Page', 'sb2016' ); ?> <?php echo($page)?></p>
-                                            <a href="<?= $search_url; ?>"><?php _e( '&lt; New search', 'sb2016' ); ?></a>
+                                    <div class="entry-content">
+                                            <div>
+                                            <p>Page <?php echo($page)?></p>
+                                            <a href="<?= $search_url; ?>">&lt; New search</a>
                                             <?php
 if($errorMessage){
 ?>
@@ -256,13 +319,13 @@ foreach($boats as $boat){
                                                         </div>
                                                         <div class="copyContainer">
                                                             <h2><?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?></h2>
-                                                            <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?> <?php _e( '|', 'sb2016' ); ?> <?php echo($boat["LyingCountry"]);?></h3>
-                                                            <p><?php echo($boat["Description"]);?><?php if($boat["Description"] != ""){echo("...");}?><?php _e( '.', 'sb2016' ); ?></p>
+                                                            <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?> | <?php echo($boat["LyingCountry"]);?></h3>
+                                                            <p><?php echo($boat["Description"]);?><?php if($boat["Description"] != ""){echo("...");}?>.</p>
                                                             <?php
 echo(formatFeatures($boat["NewOrUsed"], $boat["SailOrPower"], $boat["Year"], $boat["LengthOverallMetres"], $boat["Fuel"], $boat["SaleStatus"]));
 ?>
                                                             <div class="clearBoth"></div>
-                                                            <p class="readMore"><a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>"><?php _e( 'View Boat &#8250;', 'sb2016' ); ?></a></p>
+                                                            <p class="readMore"><a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>">View Boat &#8250;</a></p>
                                                         </div>
                                                         <div class="clearBoth"></div>
                                                     </div>
@@ -273,33 +336,90 @@ echo(formatFeatures($boat["NewOrUsed"], $boat["SailOrPower"], $boat["Year"], $bo
 
 //Generate the page links.
 if($totalResults > $liveFeedbackSearchResultsPerPage && $liveFeedbackSearchResultsPerPage != 0){ ?>
-                                                <div>
-                                                            <ul>
+                                                    <div>
+                                                        <ul>
                                                             <?php for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){ ?>
                                                                 <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
-                                                                    <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);}?>"><?php _e( 'Page', 'sb2016' ); ?> <?php echo($i); ?></a>
-                                                                </a>
-                                                        </li>
-                                                    <?php } ?>
-                                                    </ul>
-                                        </div>
-                                    <?php	
+                                                                    <a href="<?= $search_result; ?><?php if($i > 1){echo(" g=" . $i);}?>"> Page <?php echo($i);?></a>
+                                                                </li>
+                                                            <?php } ?>
+                                                        </ul>
+                                                    </div>
+                                                <?php	
 }
 }
 ?>
+                                        </div>
+                                        <!-- .entry-content -->
                                     </div>
-                                    <!-- .entry-content -->
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <?php if ( is_active_sidebar( 'right_sidebar' ) ) : ?>
-                                <aside id="main_sidebar">
-                                    <?php dynamic_sidebar( 'right_sidebar' ); ?>
+                            <div class="col-sm-3">
+                                <aside wp-dynamic-sidebar="right_sidebar" id="main_sidebar" data-pgc="PG_right_sidebar">
+                                    <h3>Widget Title</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                                 </aside>
-                            <?php endif; ?>
+                            </div>
+                        </div>
+                </section>
+            </main>
+            <footer class="site-footer" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div wp-dynamic-sidebar="footer01_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #01</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer02_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #02</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer03_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #03</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer04_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #04</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
                         </div>
                     </div>
-                </section>                
-
-<?php get_footer(); ?>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js" wp-enqueue-script></script>
+        <script src="bootstrap/js/bootstrap.min.js" wp-enqueue-script wp-enqueue-script-version="3.3.6"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js" wp-enqueue-script></script>
+    </body>
+</html>
