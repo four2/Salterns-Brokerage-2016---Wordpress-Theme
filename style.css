@@ -955,28 +955,19 @@ div.bbp-template-notice p {
   text-align: center;
   position: relative;
 }
-.boatFeatures {
-  clear: both;
+.bottom-boat {
+  border-bottom: solid 1px #ccc;
+  min-height: 76px;
+  padding-top: 20px;
 }
-.boatFeatures li {
-  display: inline;
-  padding: 10px;
+.boat-length {
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
 }
-.boatResultsPanel .copyContainer h4 {
-  padding: 10px 0 0 0px;
-  margin: -5px 0 0 0px;
+.boat-price {
+  font-size: larger;
+  line-height: 1.1em;
 }
-.boatResultsPanel .copyContainer h5 {
-  margin: 2px 0 0 0px;
-}
-.boatResultsPanel .imgContainer {
-  float: left;
-  margin: 0 20px 0 0;
-}
-.copyContainer .readMore {
-  width: 100%;
-  background-color: #cccccc;
-  padding: 3px;
-  text-align: center;
-  color: #1c355e;
+.listings-link {
+  color: #979797;
 }

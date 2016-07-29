@@ -1,6 +1,6 @@
 @jumboTB: 50px;
 @SalternsBlue: #1c355e;
-@SalternsGrey: #cccccc;
+@SalternsGrey: #ccc;
 
 
 /*
@@ -27,6 +27,7 @@ a
     -webkit-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in;
 }
+
 
 a:hover
 {
@@ -570,7 +571,7 @@ body.author .avatar
 
 .btn-outline:active
 {
-    background-color: rgba(255, 255, 255, 0.19)                                                !important;
+    background-color: rgba(255, 255, 255, 0.19)                                       !important;
     border: 2px solid white !important;
 }
 
@@ -1453,31 +1454,22 @@ div.bbp-template-notice p
     position: relative;
 }
 
-.boatResultsPanel
+
+/* Boat Listings */
+
+.boat-make
 {
+    text-transform: uppercase;
+    float: right;
+    width: 60%;
+    text-align: left;
+    min-height: 50px;
 }
 
-.bottom-boat
+.boat-image 
 {
-    border-bottom: solid 1px #ccc;
-    min-height: 76px;
-    padding-top: 20px;
+    height: auto;
+    max-width: 35%;
+    min-height: 140px;
+    float: left;
 }
-
-.boat-length
-{
-    border-left: solid 1px #ccc;
-    border-right: solid 1px #ccc;
-}
-
-.boat-price
-{
-    font-size: larger;
-    line-height: 1.1em;
-}
-
-.listings-link
-{
-    color: #979797;
-}
-

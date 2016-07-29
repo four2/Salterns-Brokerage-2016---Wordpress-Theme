@@ -1,15 +1,4 @@
 /*
-Theme Name: SB2016
-Theme URI: http://example.com
-Author: Your name
-Author URI: http://pinegrow.com/
-Description: This theme was created with Pinegrow Web Editor.
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: sb2016
-*/
-/*
 Tags: blog, e-commerce, news, portfolio, translation-ready, full-width-template, featured-images, editor-style
 */
 /*    Core CSS Properties   */
@@ -966,19 +955,28 @@ div.bbp-template-notice p {
   text-align: center;
   position: relative;
 }
-.bottom-boat {
-  border-bottom: solid 1px #ccc;
-  min-height: 76px;
-  padding-top: 20px;
+.boatFeatures {
+  clear: both;
 }
-.boat-length {
-  border-left: solid 1px #ccc;
-  border-right: solid 1px #ccc;
+.boatFeatures li {
+  display: inline;
+  padding: 10px;
 }
-.boat-price {
-  font-size: larger;
-  line-height: 1.1em;
+.boatResultsPanel .copyContainer h4 {
+  padding: 10px 0 0 0px;
+  margin: -5px 0 0 0px;
 }
-.listings-link {
-  color: #979797;
+.boatResultsPanel .copyContainer h5 {
+  margin: 2px 0 0 0px;
+}
+.boatResultsPanel .imgContainer {
+  float: left;
+  margin: 0 20px 0 0;
+}
+.copyContainer .readMore {
+  width: 100%;
+  background-color: #cccccc;
+  padding: 3px;
+  text-align: center;
+  color: #1c355e;
 }

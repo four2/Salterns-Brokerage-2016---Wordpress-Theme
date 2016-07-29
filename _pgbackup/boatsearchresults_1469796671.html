@@ -324,10 +324,10 @@
                                   ?>
                                                     <!--NEW style-->
                                                     <div class="boatResultsPanel col-md-12" data-pg-name="Results Panel">
-                                                        <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>" data-pg-name="Link" class="listings-link">
+                                                        <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>" data-pg-name="Link">
                                                             <div class="boat-make pull-right col-md-8">
                                                                 <div data-pg-name="Boat Make / Model">
-                                                                    <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h3>
+                                                                    <h5><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h5>
                                                                 </div>
                                                             </div>
                                                             <div class="boat-image pull-left col-md-4">
@@ -344,13 +344,13 @@
                                                                     <div data-pg-name="excerpt"></div>
                                                                 </div>
                                                                 <div class="bottom-boat" data-pg-name="bottom-boat">
-                                                                    <div class="boat-year col-md-4 text-center" data-pg-name="boat-year">
+                                                                    <div class="boat-year col-md-4" data-pg-name="boat-year">
                                                                         <span>Year<br><?php echo($boat["Year"]); ?></span>
                                                                     </div>
-                                                                    <div data-pg-name="boat-length" class="col-md-4 boat-length text-center">
-                                                                        <span>Length<br><?php echo($boat["LengthOverallMetres"]); ?>m</span>
+                                                                    <div data-pg-name="boat-length" class="col-md-4">
+                                                                        <span>Length<br><?php echo($boat["LengthOverallMetres"]); ?></span>
                                                                     </div>
-                                                                    <div data-pg-name="boat-price" class="col-md-4 text-center boat-price">
+                                                                    <div data-pg-name="boat-price" class="col-md-4">
                                                                         <?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?>
                                                                     </div>
                                                                 </div>
