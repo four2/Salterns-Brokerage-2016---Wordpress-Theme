@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en" wp-site wp-site-theme-name="" wp-site-theme-slug="" wp-site-themes-folder="" wp-site-master-page="index.html">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pinegrow Web Editor">
+        <title wp-no-export>Page Title</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" wp-enqueue-style wp-enqueue-style-version="3.3.6">
+        <link href="assets/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="4.6.3">
+        <!-- Custom styles for this template -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link href="style.css" rel="stylesheet" type="text/css" wp-enqueue-style wp-enqueue-style-version="1.2">
+    </head>
+    <body wp-body-class>
+        <div class="site-container" data-pg-name="site-container">
+            <header id="masthead" class="site-header" data-pgc="master.header">
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-pgc="main.navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header site-branding">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand site-title" href="#" wp-site-name wp-if-custom="has_custom_logo()" wp-if-custom-not="true" wp-home-url wp-home-url-set="href">STARTER THEME 1.2</a>
+                            <a class="navbar-brand logo-navbar-brand" href="#" wp-call-function="pg_starter_the_custom_logo()" wp-hide wp-else-if>
+                                <img src="images/starter_custom_logo@2x.png" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right" wp-nav-menu wp-nav-menu-type="bootstrap" wp-nav-menu-theme-location="primary" wp-nav-menu-depth="2">
+                                <li>
+                                    <a href="#">Link</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div wp-call-function="wp_enqueue_script( 'comment-reply' );" wp-if-is-singular></div>
+            </header>
+            <main class="site-inner site-content" wp-site-content data-pg-name="site-inner">
+                <section>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <div class="pg-empty-placeholder container-fluid"></div>
+                                <?php
+/* Template Name: Boat Search Template */
+//We're using session variables to store the search parameters so we need to call session_start().
+//This line needs to appear on every page in the website and must appear before anything else is sent out to the browser.
+//If your website uses a content management system you may need to put this line in the header file of the CMS.
+//If you don't want to use session variables, you could store the search parameters in a cookie or pass them around using querystrings instead.
+session_start();
+error_reporting(0);
+
+$search_result_url = site_url('boat-search-result');
+
+//Uncomment this line to hide warnings about session variables if they appear
+//ini_set('session.bug_compat_warn', 0);
+
+//Include TheYachtMarket LiveFeedback functions and variables.
+require_once("includes/TheYachtMarket-LiveFeedback.php");
+
+//Has the form been posted back?
+if(isset($_POST['postBack']) && $_POST["postBack"] == "true"){
+	//Form has been posted back.
+
+	//Load search criteria from form post.
+	$saleCharter = $_POST["saleCharter"];
+	$newUsed = $_POST["newUsed"];
+	$sailPower = $_POST["sailPower"];
+
+	//Type allows multiple selection so check if it's an array
+	if(is_array($_POST["type"])){
+		//type is an array - convert to comma separated string
+		$type = implode(",", $_POST["type"]);
+	}else{
+		//type is not an array - no selection so use zero length string
+		$type = "";
+	}
+
+	$makeModel = $_POST["makeModel"];
+	$country = $_POST["country"];
+	$priceFrom = $_POST["priceFrom"];
+	$priceTo = $_POST["priceTo"];
+	$currency = $_POST["currency"];
+	$charterPeriod = $_POST["charterPeriod"];
+	$lengthFrom = $_POST["lengthFrom"];
+	$lengthTo = $_POST["lengthTo"];
+	$lengthUnit = $_POST["lengthUnit"];
+	$yearFrom = $_POST["yearFrom"];
+	$yearTo = $_POST["yearTo"];
+	$orderBy = $_POST["orderBy"];
+
+	//Validate numeric fields.
+	if($priceFrom != "" and !is_numeric($priceFrom)){
+		$validationErrors[] = "Price from must be a number";
+	}
+	if($priceTo != "" and !is_numeric($priceTo)){
+		$validationErrors[] = "Price to must be a number";
+	}
+	if($lengthFrom != "" and !is_numeric($lengthFrom)){
+		$validationErrors[] = "Length from must be a number";
+	}
+	if($lengthTo != "" and !is_numeric($lengthTo)){
+		$validationErrors[] = "Length to must be a number";
+	}
+	if($yearFrom != "" and !is_numeric($yearFrom)){
+		$validationErrors[] = "Year from must be a number";
+	}
+	if($yearTo != "" and !is_numeric($yearTo)){
+		$validationErrors[] = "Year to must be a number";
+	}
+
+
+	//Were there any validation errors?
+	if($validationErrors){
+		//Form validation failed, show error messages.
+		$errorMessage = "Please correct the errors listed below\n";
+		$errorMessage .= "<ul>\n";
+		foreach($validationErrors as $value){
+			$errorMessage .= "<li>" . $value . "</li>\n";
+		}
+		$errorMessage .= "</ul>\n";
+
+	}else{
+		//Form validation passed.
+
+		//Clear all search session variables as this is a new search (the search results page will re-populate the session vars from the querystring values).
+		$_SESSION["saleCharter"] = "";
+		$_SESSION["newUsed"] = "";
+		$_SESSION["sailPower"] = "";
+		$_SESSION["type"] = "";
+		$_SESSION["makeModel"] = "";
+		$_SESSION["country"] = "";
+		$_SESSION["priceFrom"] = "";
+		$_SESSION["priceTo"] = "";
+		$_SESSION["currency"] = "";
+		$_SESSION["charterPeriod"] = "";
+		$_SESSION["lengthFrom"] = "";
+		$_SESSION["lengthTo"] = "";
+		$_SESSION["lengthUnit"] = "";
+		$_SESSION["yearFrom"] = "";
+		$_SESSION["yearTo"] = "";
+		$_SESSION["orderBy"] = "";
+
+		//Redirect to search results page.
+		header("Location: $search_result_url". createSearchPageQueryString(1, $saleCharter, $newUsed, $sailPower, $type, $makeModel, $country
+			, $priceFrom, $priceTo, $currency, $charterPeriod, $lengthFrom, $lengthTo, $lengthUnit, $yearFrom, $yearTo, $orderBy));
+		exit;
+	}
+}else{
+	//Form has not been posted back yet.
+
+
+	//Load search criteria from session variables.
+	$saleCharter = $_SESSION["saleCharter"];
+	$newUsed = $_SESSION["newUsed"];
+	$sailPower = $_SESSION["sailPower"];
+	$type = $_SESSION["type"];
+	$makeModel = $_SESSION["makeModel"];
+	$country = $_SESSION["country"];
+	$priceFrom = $_SESSION["priceFrom"];
+	$priceTo = $_SESSION["priceTo"];
+	$currency = $_SESSION["currency"];
+	$charterPeriod = $_SESSION["charterPeriod"];
+	$lengthFrom = $_SESSION["lengthFrom"];
+	$lengthTo = $_SESSION["lengthTo"];
+	$lengthUnit = $_SESSION["lengthUnit"];
+	$yearFrom = $_SESSION["yearFrom"];
+	$yearTo = $_SESSION["yearTo"];
+	$orderBy = $_SESSION["orderBy"];
+}
+
+
+//Create SOAP client.
+$client = new nusoap_client($liveFeedbackApiUrl, "wsdl");
+
+//Set encoding to UTF-8 (may have to add or remove these lines depending on the server (Windows or Linux) to display pound or euro symbols).
+$client->soap_defencoding = "UTF-8";
+$client->decode_utf8 = false;
+
+$err = $client->getError();
+if ($err) {
+	//Something went wrong - uncomment code below to debug.
+	//echo "<h2>Error at $client->getError()</h2><pre>";
+	//print_r($result);
+	//echo "</pre>";
+
+	//Show friendly message to user.
+	$errorMessage = $liveFeedbackFetchError;
+}else{
+	//Get the countries for this API key from TheYachtMarket LiveFeedback.
+	//This section of code should be removed to improve the load speed of this page if you do not wish to show the country drop-down list.
+	//apiKey: Your LiveFeedback API key
+	//onlyBoatsMarkedForExport: If true, this will only return data for boats that have been marked for inclusion in this LiveFeedback implementation. If false, all boats matching the search will be returned.
+	$param = array("apiKey" => $liveFeedbackApiKey, "onlyBoatsMarkedForExport" => $liveFeedbackOnlyBoatsMarkedForExport);
+	$result = $client->call("GetLiveCountries", $param);
+
+	if ($client->fault) {
+		//Something went wrong - uncomment code below to debug.
+		//echo "<h2>Error at $client->fault</h2><pre>";
+		//print_r($result);
+		//echo "</pre>";
+
+		//Show friendly message to user.
+		$errorMessage = $liveFeedbackFetchError;
+
+	} else {
+		//Uncomment the line below for debugging.
+		//showWsdl($result);
+
+		//Put list of countries into array (how deep NuSoap nests the array depends on whether there are zero, one or mulitple countries).
+		if(!is_array($result["Countries"])){
+			//No countries
+		}else{
+			if(is_array($result["Countries"]["Country"])){
+				//Mulitple countries
+				$countries = $result["Countries"]["Country"];
+			}else{
+				//Only one country
+				$countries = $result["Countries"];
+			}
+		}
+	}
+
+	//Get the manufacturers for this API key from TheYachtMarket LiveFeedback.
+	//This section of code should be removed to improve the load speed of this page if you do not wish to show the country drop-down list.
+	//apiKey: Your LiveFeedback API key
+	//onlyBoatsMarkedForExport: If true, this will only return data for boats that have been marked for inclusion in this LiveFeedback implementation. If false, all boats matching the search will be returned.
+	$param = array("apiKey" => $liveFeedbackApiKey, "onlyBoatsMarkedForExport" => $liveFeedbackOnlyBoatsMarkedForExport);
+	$result = $client->call("GetLiveManufacturers", $param);
+
+	if ($client->fault) {
+		//Something went wrong - uncomment code below to debug.
+		//echo "<h2>Error at $client->fault</h2><pre>";
+		//print_r($result);
+		//echo "</pre>";
+
+		//Show friendly message to user.
+		$errorMessage = $liveFeedbackFetchError;
+
+	} else {
+		//Uncomment the line below for debugging.
+		//showWsdl($result);
+
+		//Put list of manufacturers into array (how deep NuSoap nests the array depends on whether there are zero, one or mulitple records).
+		if(!is_array($result["Manufacturers"])){
+			//No records
+		}else{
+			if(is_array($result["Manufacturers"]["Manufacturer"])){
+				//Mulitple records
+				$manufacturers = $result["Manufacturers"]["Manufacturer"];
+			}else{
+				//Only one record
+				$manufacturers = $result["Manufacturers"];
+			}
+		}
+	}
+}
+?>
+                                <div class="pg-empty-placeholder container-fluid">
+                                    <?php
+				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+				?>
+                                    <div class="entry-content">
+                                        <hr />
+                                        <form class="genericForm" method="post" action="<?php echo($_SERVER["REQUEST_URI"]);?>">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="For sale / charter">
+                                                        <label for="saleCharter">For sale / charter:</label>
+                                                        <select name="saleCharter" id="saleCharter" class="input-lg form-control">
+                                                            <option value="">Any</option>
+                                                            <option value="sale" ?php echo(isoptionselected("sale", $salecharter));? for sale< option>
+
+                                                            <option value="charter" ?php echo(isoptionselected("charter", $salecharter));? for charter< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="New / used">
+                                                        <label for="newUsed">New / used:</label>
+                                                        <select name="newUsed" id="newUsed" class="input-lg form-control">
+                                                            <option value="">Any</option>
+                                                            <option value="used" ?php echo(isoptionselected("used", $newused));? used< option>
+
+                                                            <option value="new" ?php echo(isoptionselected("new", $newused));? new< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Sail / power / commercial">
+                                                        <label for="sailPower">Sail / power / commercial:</label>
+                                                        <select name="sailPower" id="sailPower" class="input-lg form-control">
+                                                            <option value="">Any</option>
+                                                            <option value="sail" ?php echo(isoptionselected("sail", $sailpower));? sail< option>
+
+                                                            <option value="power" ?php echo(isoptionselected("power", $sailpower));? power< option>
+
+                                                            <option value="commercial" ?php echo(isoptionselected("commercial", $sailpower));? commercial< option>
+
+                                                            <option value="other" ?php echo(isoptionselected("other", $sailpower));? other< option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Boat type">
+                                                        <label for="type">Boat type:</label>
+                                                        <select name="type[]" id="type" multiple="multiple" class="input-lg form-control">
+                                                            <option value="speed boat" ?php echo(isoptionselected("speed boat", $type));? speed boat< option>
+
+                                                            <option value="sports boat" ?php echo(isoptionselected("sports boat", $type));? sports boat< option>
+
+                                                            <option value="cruiser" ?php echo(isoptionselected("cruiser", $type));? cruiser< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Make">
+                                                        <label for="makeModel">Make:</label>
+                                                        <select name="makeModel" id="makeModel" class="input-lg form-control">
+                                                            <option value="">Any</option>
+                                                            <?php
+							foreach ($manufacturers as $value){
+								$manufacturerEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
+								echo("<option value=\"" . $manufacturerEncoded . "\"" . isOptionSelected($value, $makeModel) . ">" . $manufacturerEncoded . "</option>");
+							}
+							?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Location">
+                                                        <label for="country">Location:</label>
+                                                        <select name="country" id="country" class="input-lg form-control">
+                                                            <option value="">Any</option>
+                                                            <?php
+    	foreach ($countries as $value){
+    		$countryEncoded = htmlspecialchars($value, ENT_COMPAT | ENT_XHTML);
+    		echo("<option value=\"" . $countryEncoded . "\"" . isOptionSelected($value, $country) . ">" . $countryEncoded . "</option>");
+    	}
+    	?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Currency">
+                                                        <label for="currency">Currency:</label>
+                                                        <select name="currency" id="currency" class="input-lg form-control">
+                                                            <option value="GBP" ?php echo(isoptionselected("gbp", $currency));? gbp< option>
+
+                                                            <option value="EUR" ?php echo(isoptionselected("eur", $currency));? eur< option>
+
+                                                            <option value="USD" ?php echo(isoptionselected("usd", $currency));? usd< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Price from">
+                                                        <label for="priceFrom">Price from:</label>
+                                                        <input type="text" name="priceFrom" id="priceFrom" value="<?php echo($priceFrom);?>" class="input-lg form-control" />
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Price to">
+                                                        <label for="priceTo">Price to:</label>
+                                                        <input type="text" name="priceTo" id="priceTo" value="<?php echo($priceTo);?>" class="input-lg form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Length unit">
+                                                        <label for="lengthUnit">Length unit:</label>
+                                                        <select name="lengthUnit" id="lengthUnit" class="input-lg form-control">
+                                                            <option value="metres" ?php echo(isoptionselected("metres", $lengthunit));? metres< option>
+
+                                                            <option value="feet" ?php echo(isoptionselected("feet", $lengthunit));? feet< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Length from">
+                                                        <label for="lengthFrom">Length from:</label>
+                                                        <input type="text" name="lengthFrom" id="lengthFrom" value="<?php echo($lengthFrom);?>" class="input-lg form-control" />
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Length to">
+                                                        <label for="lengthTo">Length to:</label>
+                                                        <input type="text" name="lengthTo" id="lengthTo" value="<?php echo($lengthTo);?>" class="input-lg form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Charter period">
+                                                        <label for="charterPeriod">Charter period:</label>
+                                                        <select name="charterPeriod" id="charterPeriod" class="input-lg form-control">
+                                                            <option value="hour" ?php echo(isoptionselected("hour", $charterperiod));? per hour< option>
+
+                                                            <option value="day" ?php echo(isoptionselected("day", $charterperiod));? per day< option>
+
+                                                            <option value="week" ?php echo(isoptionselected("week", $charterperiod));? per week< option>
+
+                                                            <option value="month" ?php echo(isoptionselected("month", $charterperiod));? per month< option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Year from">
+                                                        <label for="yearFrom">Year from:</label>
+                                                        <input type="text" name="yearFrom" id="yearFrom" value="<?php echo($yearFrom);?>" class="input-lg form-control" />
+                                                    </div>
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Year to">
+                                                        <label for="yearTo">Year to:</label>
+                                                        <input type="text" name="yearTo" id="yearTo" value="<?php echo($yearTo);?>" class="input-lg form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Order by">
+                                                        <label for="orderBy">Order by:</label>
+                                                        <select name="orderBy" id="orderBy" class="input-lg form-control">
+                                                            <option value="datedesc" ?php echo(isoptionselected("datedesc", $orderby));? date listed - latest first< option>
+
+                                                            <option value="dateasc" ?php echo(isoptionselected("dateasc", $orderby));? date listed - oldest first< option>
+
+                                                            <option value="priceasc" ?php echo(isoptionselected("priceasc", $orderby));? price - low to high< option>
+
+                                                            <option value="pricedesc" ?php echo(isoptionselected("pricedesc", $orderby));? price - high to low< option>
+
+                                                            <option value="lengthasc" ?php echo(isoptionselected("lengthasc", $orderby));? length - low to high< option>
+
+                                                            <option value="lengthdesc" ?php echo(isoptionselected("lengthdesc", $orderby));? length - high to low< option>
+
+                                                            <option value="yeardesc" ?php echo(isoptionselected("yeardesc", $orderby));? year - newest first< option>
+
+                                                            <option value="yearasc" ?php echo(isoptionselected("yearasc", $orderby));? year - oldest first< option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 form-group-lg" data-pg-name="Submit">
+                                                        <input type="submit" value="Search" class="input-lg form-control" />
+                                                        <input type="hidden" name="postBack" value="true" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--
+        <br />
+        <label for="makeModel">Make / model:</label>
+        <input type="text" name="makeModel" id="makeModel" value="<?php //echo($makeModel);?>" />
+        See notes below
+    -->
+                                        </form>
+                                        <hr />
+                                    </div>
+                                    <!-- .entry-content -->
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <aside wp-dynamic-sidebar="right_sidebar" id="main_sidebar" data-pgc="PG_right_sidebar">
+                                    <h3>Widget Title</h3>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                </aside>
+                            </div>
+                        </div>
+                </section>
+            </main>
+            <footer class="site-footer" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div wp-dynamic-sidebar="footer01_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #01</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer02_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #02</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer03_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #03</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                        <div wp-dynamic-sidebar="footer04_sidebar" class="col-sm-3">
+                            <aside class="">
+                                <h3>Footer #04</h3>
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                </dl>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js" wp-enqueue-script></script>
+        <script src="bootstrap/js/bootstrap.min.js" wp-enqueue-script wp-enqueue-script-version="3.3.6"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js" wp-enqueue-script></script>
+    </body>
+</html>

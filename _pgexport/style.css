@@ -966,3 +966,28 @@ div.bbp-template-notice p {
   text-align: center;
   position: relative;
 }
+.boatFeatures {
+  clear: both;
+}
+.boatFeatures li {
+  display: inline;
+  padding: 10px;
+}
+.boatResultsPanel .copyContainer h4 {
+  padding: 10px 0 0 0px;
+  margin: -5px 0 0 0px;
+}
+.boatResultsPanel .copyContainer h5 {
+  margin: 2px 0 0 0px;
+}
+.boatResultsPanel .imgContainer {
+  float: left;
+  margin: 0 20px 0 0;
+}
+.copyContainer .readMore {
+  width: 100%;
+  background-color: #cccccc;
+  padding: 3px;
+  text-align: center;
+  color: #1c355e;
+}

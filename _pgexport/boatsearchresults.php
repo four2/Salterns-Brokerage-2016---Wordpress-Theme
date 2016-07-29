@@ -180,19 +180,32 @@ if ($err) {
 
 
 //Returns an unordered list of the non-empty items.
-function formatFeatures($length, $year, $saleStatus, $country, $countrySubDivision, $area){
-	$location = array();
-	if($area != ""){array_push($location, $area);}
-	if($countrySubDivision != ""){array_push($location, $countrySubDivision);}
-	if($country != ""){array_push($location, $country);}
-	$locationString = join(", ", $location);
+//function formatFeatures($length, $year, $saleStatus, $country, $countrySubDivision, $area){
+//	$location = array();
+//	if($area != ""){array_push($location, $area);}
+//	if($countrySubDivision != ""){array_push($location, $countrySubDivision);}
+//	if($country != ""){array_push($location, $country);}
+//	$locationString = join(", ", $location);
 
-	$return = "<ul>\n";
-	if($length != ""){$return .= "<li>" . number_format($length, 2) . "m (" . metresToFeetAndInches($length) . ")" . "</li>";}
-	if($year != ""){$return .= "<li>" . $year . "</li>";}
-	if($locationString != ""){$return .= "<li>" . ucwords($locationString) . "</li>";}
-	if($saleStatus != ""){$return .= "<li>" . formatSalesStatus($saleStatus) . "</li>";}
-	if($priceComment != ""){$return .= "<li>" . $priceComment . "</li>";}
+//	$return = "<ul>\n";
+//	if($length != ""){$return .= "<li>" . number_format($length, 2) . "m (" . metresToFeetAndInches($length) . ")" . "</li>";}
+//	if($year != ""){$return .= "<li>" . $year . "</li>";}
+//	if($locationString != ""){$return .= "<li>" . ucwords($locationString) . "</li>";}
+//	if($saleStatus != ""){$return .= "<li>" . formatSalesStatus($saleStatus) . "</li>";}
+//	if($priceComment != ""){$return .= "<li>" . $priceComment . "</li>";}
+//	$return .= "</ul>\n";
+//	return $return;
+//}
+
+//Returns an unordered list of the non-empty items.
+function formatFeatures($newOrUsed, $sailOrPower, $year, $length, $fuel, $saleStatus){
+	$return = "<ul class=\"boatFeatures\">\n";
+	if($newOrUsed != ""){$return .= "<li> &#8226; &nbsp;" . ucfirst(strtolower($newOrUsed)) . "</li>";}
+	if($sailOrPower != ""){$return .= "<li> &#8226; &nbsp;" . ucfirst(strtolower($sailOrPower)) . "</li>";}
+	if($year != ""){$return .= "<li> &#8226; &nbsp;" . $year . "</li>";}
+	if($length != ""){$return .= "<li> &#8226; &nbsp;" . number_format($length, 2) . "m (" . metresToFeetAndInches($length) . ")" . "</li>";}
+	if($fuel != ""){$return .= "<li> &#8226; &nbsp;" . ucfirst(strtolower($fuel)) . "</li>";}
+	if($saleStatus != ""){$return .= "<li> &#8226; &nbsp;" . formatSalesStatus($saleStatus) . "</li>";}
 	$return .= "</ul>\n";
 	return $return;
 }
@@ -255,8 +268,9 @@ foreach($boats as $boat){
                                                             </a>
                                                         </div>
                                                         <div class="copyContainer">
-                                                            <h2><?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?></h2>
-                                                            <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?> <?php _e( '|', 'sb2016' ); ?> <?php echo($boat["LyingCountry"]);?></h3>
+                                                            <h4><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h4>
+                                                            <h5><?php echo($boat["LyingCountry"]);?></h5>
+                                                            <h5><?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?></h5>
                                                             <p><?php echo($boat["Description"]);?><?php if($boat["Description"] != ""){echo("...");}?><?php _e( '.', 'sb2016' ); ?></p>
                                                             <?php
 echo(formatFeatures($boat["NewOrUsed"], $boat["SailOrPower"], $boat["Year"], $boat["LengthOverallMetres"], $boat["Fuel"], $boat["SaleStatus"]));
@@ -266,7 +280,6 @@ echo(formatFeatures($boat["NewOrUsed"], $boat["SailOrPower"], $boat["Year"], $bo
                                                         </div>
                                                         <div class="clearBoth"></div>
                                                     </div>
-                                                    <hr>
                                                     <!--OLD style END-->
                                                     <?php
 }
@@ -283,7 +296,7 @@ if($totalResults > $liveFeedbackSearchResultsPerPage && $liveFeedbackSearchResul
                                                     <?php } ?>
                                                     </ul>
                                         </div>
-                                    <?php	
+                                    <?php
 }
 }
 ?>
