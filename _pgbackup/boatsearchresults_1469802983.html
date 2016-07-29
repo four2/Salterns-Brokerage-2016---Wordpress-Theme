@@ -331,7 +331,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="boat-image pull-left col-md-4 col-sm-12 col-xs-12" data-pg-name="boat-image">
-                                                                <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
+                                                                <img src="<?php echo(getImageUrl($boat["ImageUrlLarge"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
                                                             </div>
                                                             <div class="boat-details col-md-8 col-sm-12 col-xs-12" data-pg-name="boat-details">
                                                                 <div class="top-boat" data-pg-name="top-boat">
@@ -340,15 +340,15 @@
                                                                         <?php echo($boat["LyingCountry"]);?>
                                                                     </div>
                                                                 </div>
-                                                                <div class="middle-boat" data-pg-name="middle-boat" data-pg-collapsed>
+                                                                <div class="middle-boat" data-pg-name="middle-boat">
                                                                     <div data-pg-name="excerpt"></div>
                                                                 </div>
                                                                 <div class="bottom-boat" data-pg-name="bottom-boat">
                                                                     <div class="boat-year col-md-4 text-center" data-pg-name="boat-year">
-                                                                        <span>Year <br class="hidden-sm hidden-xs"><?php echo($boat["Year"]); ?></span>
+                                                                        <span>Year<br><?php echo($boat["Year"]); ?></span>
                                                                     </div>
                                                                     <div data-pg-name="boat-length" class="col-md-4 boat-length text-center">
-                                                                        <span>Length <br class="hidden-sm hidden-xs"><?php echo($boat["LengthOverallMetres"]); ?>m</span>
+                                                                        <span>Length<br><?php echo($boat["LengthOverallMetres"]); ?>m</span>
                                                                     </div>
                                                                     <div data-pg-name="boat-price" class="col-md-4 text-center boat-price">
                                                                         <?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?>

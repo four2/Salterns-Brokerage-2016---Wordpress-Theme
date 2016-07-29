@@ -331,7 +331,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="boat-image pull-left col-md-4 col-sm-12 col-xs-12" data-pg-name="boat-image">
-                                                                <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
+                                                                <img src="<?php echo(getImageUrl($boat["ImageUrlOriginal"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
                                                             </div>
                                                             <div class="boat-details col-md-8 col-sm-12 col-xs-12" data-pg-name="boat-details">
                                                                 <div class="top-boat" data-pg-name="top-boat">
@@ -340,7 +340,7 @@
                                                                         <?php echo($boat["LyingCountry"]);?>
                                                                     </div>
                                                                 </div>
-                                                                <div class="middle-boat" data-pg-name="middle-boat" data-pg-collapsed>
+                                                                <div class="middle-boat" data-pg-name="middle-boat">
                                                                     <div data-pg-name="excerpt"></div>
                                                                 </div>
                                                                 <div class="bottom-boat" data-pg-name="bottom-boat">

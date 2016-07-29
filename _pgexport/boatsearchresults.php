@@ -260,17 +260,17 @@ if ($err) {
                   foreach($boats as $boat){
                     ?>
                                       <!--NEW style-->
-                                      <div class="boatResultsPanel col-md-12">
+                                      <div class="boatResultsPanel col-md-12 col-sm-12 col-xs-12">
                                           <a href="<?= $search_detail; ?>?boatid=<?php echo($boat["BoatId"]);?>" class="listings-link">
-                                              <div class="boat-make pull-right col-md-8">
+                                              <div class="boat-make pull-right col-md-8 col-sm-12 col-xs-12">
                                                   <div>
                                                       <h3><?php echo(trim($boat["Manufacturer"] . " " . $boat["Model"]));?></h3>
                                                   </div>
                                               </div>
-                                              <div class="boat-image pull-left col-md-4">
+                                              <div class="boat-image pull-left col-md-4 col-sm-12 col-xs-12">
                                                   <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
                                               </div>
-                                              <div class="boat-details col-md-8">
+                                              <div class="boat-details col-md-8 col-sm-12 col-xs-12">
                                                   <div class="top-boat">
                                                       <div class="boat-location">
                                                           <div class="glyphicon glyphicon-map-marker"></div>
@@ -282,10 +282,10 @@ if ($err) {
                                                   </div>
                                                   <div class="bottom-boat">
                                                       <div class="boat-year col-md-4 text-center">
-                                                          <span><?php _e( 'Year', 'sb2016' ); ?><br><?php echo($boat["Year"]); ?></span>
+                                                          <span><?php _e( 'Year', 'sb2016' ); ?> <br class="hidden-sm hidden-xs"><?php echo($boat["Year"]); ?></span>
                                                       </div>
                                                       <div class="col-md-4 boat-length text-center">
-                                                          <span><?php _e( 'Length', 'sb2016' ); ?><br><?php echo($boat["LengthOverallMetres"]); ?><?php _e( 'm', 'sb2016' ); ?></span>
+                                                          <span><?php _e( 'Length', 'sb2016' ); ?> <br class="hidden-sm hidden-xs"><?php echo($boat["LengthOverallMetres"]); ?><?php _e( 'm', 'sb2016' ); ?></span>
                                                       </div>
                                                       <div class="col-md-4 text-center boat-price">
                                                           <?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?>
