@@ -291,7 +291,6 @@
                           return "Contact us for price";
                         }
 
-
                         //Show image or placeholder.
                         function getImageUrl($imageUrl){
                           if($imageUrl == ""){
@@ -300,7 +299,7 @@
                           }else{
                             //Image present, return the url.
                             return $imageUrl;
-                            $ImageUrlLarge = str_replace ('Thumb', 'Large', $ImageUrlThumb);
+//                            $ImageUrlThumb = str_replace ('Thumb', 'Large', $ImageUrlLarge);
                           }
                         }
                         ?>
@@ -342,7 +341,7 @@
                                             <?php echo($boat["NewOrUsed"])?>
                                           </div>
                                         </div>
-                                        <div class="middle-boat" data-pg-name="middle-boat" data-pg-collapsed>
+                                        <div class="middle-boat" data-pg-name="middle-boat">
                                           <div data-pg-name="excerpt"></div>
                                         </div>
                                         <div class="bottom-boat" data-pg-name="bottom-boat">
@@ -350,7 +349,7 @@
                                             <span>Year <br class="hidden-sm hidden-xs"><?php echo($boat["Year"]); ?></span>
                                           </div>
                                           <div data-pg-name="boat-length" class="col-md-4 boat-length text-center">
-                                            <span>Length <br class="hidden-sm hidden-xs"><?php echo($boat["LengthOverallMetres"]); ?>m</span>
+                                            <span>Length <br class="hidden-sm hidden-xs"><?php echo(round($boat["LengthOverallMetres"],2)); ?>m &nbsp; <?php echo($boat["metresToFeetAndInches"]); ?></span>
                                           </div>
                                           <div data-pg-name="boat-price" class="col-md-4 text-center boat-price">
                                             <?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?>
@@ -370,7 +369,7 @@
                                     <ul>
                                       <?php for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){ ?>
                                         <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
-                                        <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);}?>">Page <?php echo($i); ?></a>
+                                        <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);}?>">Page <?php echo($i); ?>
                                       </a>
                                     </li>
                                     <?php } ?>

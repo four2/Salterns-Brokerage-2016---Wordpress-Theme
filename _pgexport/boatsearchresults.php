@@ -233,10 +233,11 @@ if ($err) {
           function getImageUrl($imageUrl){
             if($imageUrl == ""){
               //No image, return placeholder image.
-              return "/images/no-boat-image.gif";
+              return "../wp-content/themes/sb2016/images/no-boat-image.gif";
             }else{
               //Image present, return the url.
               return $imageUrl;
+              $ImageUrlLarge = str_replace ('Thumb', 'Large', $ImageUrlThumb);
             }
           }
           ?>
@@ -272,9 +273,11 @@ if ($err) {
                                               </div>
                                               <div class="boat-details col-md-8 col-sm-12 col-xs-12">
                                                   <div class="top-boat">
-                                                      <div class="boat-location">
+                                                      <div class="boat-location col-md-12">
                                                           <div class="glyphicon glyphicon-map-marker"></div>
                                                           <?php echo($boat["LyingCountry"]);?>
+                                                          <?php _e( '&nbsp;|&nbsp;', 'sb2016' ); ?>
+                                                          <?php echo($boat["NewOrUsed"])?>
                                                       </div>
                                                   </div>
                                                   <div class="middle-boat">
@@ -294,6 +297,7 @@ if ($err) {
                                               </div>
                                           </a>
                                       </div>
+                                      <div class="clearfix"></div>
                                       <!--NEW style END-->
                                       <?php
                   }

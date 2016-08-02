@@ -384,7 +384,7 @@ if ($boatId == 0){
 										}
 										?>
                                             <hr />
-                                            <p>For more information please telephone: xxxx xxxx xxxx<?php //Create a string for the email subject line.
+                                            <p>For more information please telephone: <a href="tel:+441202707222">+44 (0)1202 707222</a><?php //Create a string for the email subject line.
     					$emailSubjectArray = array();
     					array_push($emailSubjectArray, "Enquiry about ");
     					if ($boat["BoatName"] != ""){
@@ -398,7 +398,7 @@ if ($boatId == 0){
     					}
     					$emailSubject = str_replace("+", "%20", urlencode(implode(" ", $emailSubjectArray)));
     					?>
-    					or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
+    					or, <a href="mailto:info@salterns.co.uk?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
                                         </div>
                                     </div>
                                 <?php
@@ -451,7 +451,7 @@ if ($boatId == 0){
     			foreach ($photos as $value){
     				$photoCount ++;
     				?>
-                                        <li>Photo 
+                                        <li>Photo
                                             <?php echo($photoCount);?>
                                             <ul>
                                                 <li>
