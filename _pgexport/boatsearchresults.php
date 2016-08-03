@@ -21,7 +21,7 @@ $search_detail = site_url('boat-detail');
 $search_video_url = site_url('boat-video');
 
 //Uncomment this line to hide warnings about session variables if they appear
-//ini_set('session.bug_compat_warn', 0);
+ini_set('session.bug_compat_warn', 0);
 
 //Include TheYachtMarket LiveFeedback functions and variables.
 require_once("includes/TheYachtMarket-LiveFeedback.php");
@@ -237,7 +237,6 @@ if ($err) {
             }else{
               //Image present, return the url.
               return $imageUrl;
-              $ImageUrlLarge = str_replace ('Thumb', 'Large', $ImageUrlThumb);
             }
           }
           ?>
@@ -288,7 +287,7 @@ if ($err) {
                                                           <span><?php _e( 'Year', 'sb2016' ); ?> <br class="hidden-sm hidden-xs"><?php echo($boat["Year"]); ?></span>
                                                       </div>
                                                       <div class="col-md-4 boat-length text-center">
-                                                          <span><?php _e( 'Length', 'sb2016' ); ?> <br class="hidden-sm hidden-xs"><?php echo($boat["LengthOverallMetres"]); ?><?php _e( 'm', 'sb2016' ); ?></span>
+                                                          <span><?php _e( 'Length', 'sb2016' ); ?> <br class="hidden-sm hidden-xs"><?php echo (number_format($boat["LengthOverallMetres"],2)); ?><?php _e( 'm', 'sb2016' ); ?></span>
                                                       </div>
                                                       <div class="col-md-4 text-center boat-price">
                                                           <?php echo(formatPrice($boat["Currency"], $boat["CurrencySymbol"], $boat["SalePrice"], $boat["Charter"], $boat["CharterPrice"], $boat["CharterPricePeriod"]));?>
