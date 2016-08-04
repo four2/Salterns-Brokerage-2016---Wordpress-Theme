@@ -1016,10 +1016,9 @@ div.bbp-template-notice p {
   .boat-image {
     text-align: center;
   }
-}
-@media (max-width: 991px) {
   img {
     max-width: 100%;
     width: 100%;
+    height: auto;
   }
 }

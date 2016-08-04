@@ -48,7 +48,7 @@ get_header(); ?>
                     <a href="<?php echo esc_url( the_permalink() ); ?>">
                         <div class="slider">
                             <?php the_post_thumbnail( 'full', array(
-                                    'class' => 'img-responsive'
+                                    'class' => 'img-responsive wp-post-image'
                             ) ); ?>
                             <div class="carousel-caption">
                                 <h1><?php the_title(); ?></h1>
