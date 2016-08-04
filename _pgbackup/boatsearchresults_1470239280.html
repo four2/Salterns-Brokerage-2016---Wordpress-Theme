@@ -341,7 +341,7 @@
                                                                         <?php echo($boat["NewOrUsed"])?>
                                                                     </div>
                                                                 </div>
-                                                                <div class="middle-boat" data-pg-name="middle-boat">
+                                                                <div class="middle-boat" data-pg-name="middle-boat" data-pg-collapsed>
                                                                     <div data-pg-name="excerpt"></div>
                                                                 </div>
                                                                 <div class="bottom-boat" data-pg-name="bottom-boat">
@@ -369,7 +369,7 @@
                                                             <ul>
                                                             <?php for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){ ?>
                                                                 <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
-                                                                    <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);} ?></a>">Page <?php echo($i); ?></a>
+                                                                    <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);}?>">Page <?php echo($i); ?></a>
                                                                 </a>
                                                         </li>
                                                     <?php } ?>

@@ -307,7 +307,7 @@ if ($err) {
                                               <ul>
                                               <?php for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){ ?>
                                                   <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
-                                                      <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);}?>"><?php _e( 'Page', 'sb2016' ); ?> <?php echo($i); ?></a>
+                                                      <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);} ?></a>"><?php _e( 'Page', 'sb2016' ); ?> <?php echo($i); ?></a>
                                                   </a>
                                           </li>
                                       <?php } ?>
