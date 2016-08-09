@@ -939,6 +939,13 @@ div.bbp-template-notice p {
   border: none;
   margin: 0;
 }
+.footer_logo {
+  width: 120px;
+  border: none;
+}
+.textwidget address {
+  padding: 0 0 0 7px;
+}
 .site-inner-width-1100 {
   max-width: 1100px;
 }
@@ -965,6 +972,9 @@ div.bbp-template-notice p {
   z-index: 5;
   text-align: center;
   position: relative;
+}
+.boat-location .glyphicon {
+  font-size: large;
 }
 .bottom-boat {
   border-bottom: solid 1px #ccc;
@@ -1020,5 +1030,81 @@ div.bbp-template-notice p {
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+}
+/* ------------------------------------------------------------------
+=Paging
+-------------------------------------------------------------------*/
+.paging {
+  width: auto;
+  float: right;
+  margin: 10px 0;
+}
+.paging ul {
+  list-style-type: none;
+}
+.paging ul li {
+  margin-right: 5px;
+  font-size: 12px;
+  float: left;
+}
+.paging ul li:last-child {
+  margin-right: 0;
+}
+.paging ul li:last-child {
+  margin-right: 0;
+}
+.paging ul li a {
+  display: block;
+  color: #fff;
+  background: #1c355e;
+  padding: 0 5px;
+  height: 25px;
+  min-width: 79px;
+  text-align: center;
+  line-height: 25px;
+  text-decoration: none;
+}
+.paging ul li a:hover {
+  background: #ececec;
+  color: #808080;
+  webkit-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+.paging ul li.selected a {
+  background: #ececec;
+  color: #808080;
+  height: 25px;
+  min-width: 79px;
+  text-align: center;
+  line-height: 25px;
+  padding: 0 5px;
+}
+@media (max-width: 991px) {
+  .paging {
+    width: auto;
+    float: none;
+    margin: 20px auto 0px auto;
+  }
+  .paging ul li {
+    /* margin-right: 5px; */
+    font-size: 14px;
+    /* float: left; */
+    margin: 5px 0px;
+    width: 100%;
+  }
+  .paging ul li a {
+    padding: 13px 5px;
+    height: 25px;
+    min-width: 79px;
+    min-height: 50px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .paging ul li.selected a {
+    height: 25px;
+    min-width: 79px;
+    min-height: 50px;
+    padding: 13px 5px;
   }
 }

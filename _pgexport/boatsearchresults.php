@@ -177,25 +177,6 @@ if ($err) {
       }
     }
 
-
-    //Returns an unordered list of the non-empty items.
-    //function formatFeatures($length, $year, $saleStatus, $country, $countrySubDivision, $area){
-      //	$location = array();
-      //	if($area != ""){array_push($location, $area);}
-      //	if($countrySubDivision != ""){array_push($location, $countrySubDivision);}
-      //	if($country != ""){array_push($location, $country);}
-      //	$locationString = join(", ", $location);
-
-      //	$return = "<ul>\n";
-        //	if($length != ""){$return .= "<li>" . number_format($length, 2) . "m (" . metresToFeetAndInches($length) . ")" . "</li>";}
-        //	if($year != ""){$return .= "<li>" . $year . "</li>";}
-        //	if($locationString != ""){$return .= "<li>" . ucwords($locationString) . "</li>";}
-        //	if($saleStatus != ""){$return .= "<li>" . formatSalesStatus($saleStatus) . "</li>";}
-        //	if($priceComment != ""){$return .= "<li>" . $priceComment . "</li>";}
-        //	$return .= "</ul>\n";
-        //	return $return;
-        //}
-
         //Returns an unordered list of the non-empty items.
         function formatFeatures($newOrUsed, $sailOrPower, $year, $length, $fuel, $saleStatus){
           $return = "<ul class=\"boatFeatures\">\n";
@@ -228,7 +209,6 @@ if ($err) {
             return "Contact us for price";
           }
 
-
           //Show image or placeholder.
           function getImageUrl($imageUrl){
             if($imageUrl == ""){
@@ -244,8 +224,8 @@ if ($err) {
                       <?php
             the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
             ?>
-                  <div class="entry-content">
-                                  <div>
+                      <div class="entry-content">
+                              <div>
                               <p><?php _e( 'Page', 'sb2016' ); ?> <?php echo($page)?></p>
                               <a href="<?= $search_url; ?>"><?php _e( '&lt; New search', 'sb2016' ); ?></a>
                               <?php
@@ -268,6 +248,7 @@ if ($err) {
                                                   </div>
                                               </div>
                                               <div class="boat-image pull-left col-md-4 col-sm-12 col-xs-12">
+                                                  <p><?php _e( 'Below image url needs the suffix changing from thumb to large:', 'sb2016' ); ?><br /><?php echo(getImageUrl($boat["ImageUrlThumb"]));?></p>
                                                   <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
                                               </div>
                                               <div class="boat-details col-md-8 col-sm-12 col-xs-12">
@@ -303,33 +284,32 @@ if ($err) {
 
                   //Generate the page links.
                   if($totalResults > $liveFeedbackSearchResultsPerPage && $liveFeedbackSearchResultsPerPage != 0){ ?>
-                                  <div>
-                                              <ul>
+                                      <div class="paging col-md-12">
+                                          <ul class="col-md-12">
                                               <?php for($i = 1; $i <= ceil($totalResults / $liveFeedbackSearchResultsPerPage); $i++){ ?>
                                                   <li<?php if($i == $page){echo(" class=\"selected\"");}?>>
-                                                      <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);} ?></a>"><?php _e( 'Page', 'sb2016' ); ?> <?php echo($i); ?></a>
-                                                  </a>
-                                          </li>
-                                      <?php } ?>
-                                      </ul>
-                          </div>
-                      <?php
+                                                      <a href="<?= $search_result; ?><?php if($i > 1){echo(" ?pg=" . $i);} ?>"><?php _e( 'Page', 'sb2016' ); ?> <?php echo($i); ?></a>
+                                                  </li>
+                                              <?php } ?>
+                                          </ul>
+                                      </div>
+                                  <?php
+                  }
                 }
-              }
-              ?>
+                ?>
+                          </div>
+                          <!-- .entry-content -->
                       </div>
-                      <!-- .entry-content -->
                   </div>
               </div>
+              <div class="col-sm-3">
+                  <?php if ( is_active_sidebar( 'right_sidebar' ) ) : ?>
+                      <aside id="main_sidebar">
+                          <?php dynamic_sidebar( 'right_sidebar' ); ?>
+                      </aside>
+                  <?php endif; ?>
+              </div>
           </div>
-          <div class="col-sm-3">
-              <?php if ( is_active_sidebar( 'right_sidebar' ) ) : ?>
-                  <aside id="main_sidebar">
-                      <?php dynamic_sidebar( 'right_sidebar' ); ?>
-                  </aside>
-              <?php endif; ?>
-          </div>
-      </div>
   </section>                
 
 <?php get_footer(); ?>
