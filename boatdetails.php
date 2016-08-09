@@ -342,163 +342,183 @@ if ($boatId == 0){
 ?>
 <?php get_header(); ?>
 <div class="container site-inner-width-1100">
-    <div id="main-content" class="main-content">
-        <div id="primary" class="content-area">
-            <div id="content" class="site-content" role="main">
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <?php
-				the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-				?>
-                    <div class="entry-content">
-                        <div>
-                            <div>
-                                <?php
-							if ($errorMessage){
+	<div id="main-content" class="main-content">
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php
+					the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+					?>
+					<div class="entry-content">
+						<div>
+							<div>
+								<?php
+								if ($errorMessage){
 				//Show error message.
-								echo("<div id=\"errorMessage\">");
-								echo($errorMessage);
-								echo("</div>");
-							}else{
-								?>
-                                    <h1><?php echo($makeModel);?></h1>
-                                    <p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p>
-                                    <div>
-                                        <div>
-                                            <?php
-										foreach ($photos as $value){
-											$captionEncoded = htmlspecialchars($value["Caption"], ENT_COMPAT | ENT_XHTML);
+									echo("<div id=\"errorMessage\">");
+									echo($errorMessage);
+									echo("</div>");
+								}else{
+									?>
+									<h1><?php echo($makeModel);?></h1>
+									<p><a href="<?php echo($backToSearchUrl);?>">&#8249; Back to listings</a></p>
+									<div>
+										<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+											<ol class="carousel-indicators hide">
+												<?php foreach($photos as $k => $v) { ?>
+												<li data-target="#carousel-example-generic" data-slide-to="<?= $k; ?>" <?= $k === 0 ?'class="active"' : ''; ?>></li>
+												<?php } ?>
+											</ol>
+											<div class="carousel-inner" role="listbox">
+												<?php
+												$i = 1;
+												foreach ($photos as $key => $value){
+													$captionEncoded = htmlspecialchars($value["Caption"], ENT_COMPAT | ENT_XHTML);
+													?>
+													<div class="item<?php echo $key === 0 ? ' active' : ''; ?>">
+														<a href="<?php echo($value["ImageUrlLarge"]);?>" target="_blank">
+															<img alt="<?php echo($captionEncoded);?>" src="<?php echo($value["ImageUrlLarge"]);?>" />
+														</a>
+													</div>
+													<?php
+													$i++;
+												}
+												?>
+											</div>
+											<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+												<span class="sr-only">Previous</span>
+											</a>
+											<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+												<span class="sr-only">Next</span>
+											</a>
+										</div>
+										<div>
+											<?php
+											if($videoEmbedCode != ""){
+												?>
+												<p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p>
+												<?php
+											}
 											?>
-                                                <a href="<?php echo($value["ImageUrlLarge"]);?>" target="_blank">
-                                                    <img alt="<?php echo($captionEncoded);?>" src="<?php echo($value["ImageUrlFeatured"]);?>" />
-                                                </a>
-                                            <?php
-										}
-										?>
-                                        </div>
-                                        <div>
-                                            <?php
-										if($videoEmbedCode != ""){
-											?>
-                                                <p><a href="<?= $search_video_url; ?>?boatid=<?php echo($boatId)?>" target="_blank">View video</a></p>
-                                            <?php
-										}
-										?>
-                                            <hr />
-                                            <p>For more information please telephone: <a href="tel:+441202707222">+44 (0)1202 707222</a><?php //Create a string for the email subject line.
-    					$emailSubjectArray = array();
-    					array_push($emailSubjectArray, "Enquiry about ");
-    					if ($boat["BoatName"] != ""){
-    						array_push($emailSubjectArray, "\"" . $boat["BoatName"] . "\"");
-    					}
-    					if ($makeModel != ""){
-    						array_push($emailSubjectArray, $makeModel);
-    					}
-    					if ($boat["SellerReference"] != ""){
-    						array_push($emailSubjectArray, "(" . $boat["SellerReference"] . ")");
-    					}
-    					$emailSubject = str_replace("+", "%20", urlencode(implode(" ", $emailSubjectArray)));
-    					?>
-    					or, <a href="mailto:info@salterns.co.uk?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
-                                        </div>
-                                    </div>
-                                <?php
-    		}
-    		?>
-                            </div>
-                            <div>
-                                <?php
-    		if ($generalInfoTable != ""){
-    			echo($generalInfoTable);
-    		}
-    		if ($specificationsArray != ""){
-    			echo($specificationsTable);
-    		}
-    		if ($propulsionArray != ""){
-    			echo($propulsionTable);
-    		}
-    		if ($accommodationArray != ""){
-    			echo($accommodationTable);
-    		}
-    		if ($description != ""){
-    			echo("<div>" . $description . "</div>");
-    		}
-    		if ($custom1 != ""){
-    			echo("<div>" . $custom1 . "</div>");
-    		}
-    		if ($custom2 != ""){
-    			echo("<div>" . $custom2 . "</div>");
-    		}
-    		if ($custom3 != ""){
-    			echo("<div>" . $custom3 . "</div>");
-    		}
-    		if ($boat["DateListed"] != ""){
-    			echo("<div>Date listed: " . $boat["DateListed"] . "</div>");
-    		}
-    		if ($boat["MoreInformationUrl"] != ""){
-    			echo("<div><a href=\"" . $boat["MoreInformationUrl"] . "\" target=\"_blank\">More information</a></div>");
-    		}
-    		if ($boat["ViewOnTheYachtMarketUrl"] != ""){
-    			echo("<div><a href=\"" . $boat["ViewOnTheYachtMarketUrl"] . "\" target=\"_blank\">View this boat on TheYachtMarket</a></div>");
-    		}
-    		if ($disclaimer != ""){
-    			echo("<div>" . $disclaimer . "</div>");
-    		}
-    		?>
-                                <p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p>
-                                <ul>
-                                    <?php
-    			$photoCount = 0;
-    			foreach ($photos as $value){
-    				$photoCount ++;
-    				?>
-                                        <li>Photo
-                                            <?php echo($photoCount);?>
-                                            <ul>
-                                                <li>
-                                                    <?php echo($value["ImageUrlFeatured"])?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlThumb"])?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlTinySquare"])?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlFourByThree"])?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlPdfThumb"])?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlMain"]);?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlLarge"]);?>
-                                                </li>
-                                                <li>
-                                                    <?php echo($value["ImageUrlOriginal"]);?>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    <?php
-    			}
-    			?>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
-                        </div>
-                    </div>
-                    <!-- .entry-content -->
-                </article>
-                <!-- #post-## -->
-            </div>
-            <!-- #content -->
-        </div>
-        <!-- #primary -->
-        <?php get_sidebar( 'content' ); ?>
-    </div>
+											<hr />
+											<p>For more information please telephone: xxxx xxxx xxxx
+<?php //Create a string for the email subject line.
+$emailSubjectArray = array();
+array_push($emailSubjectArray, "Enquiry about ");
+if ($boat["BoatName"] != ""){
+	array_push($emailSubjectArray, "\"" . $boat["BoatName"] . "\"");
+}
+if ($makeModel != ""){
+	array_push($emailSubjectArray, $makeModel);
+}
+if ($boat["SellerReference"] != ""){
+	array_push($emailSubjectArray, "(" . $boat["SellerReference"] . ")");
+}
+$emailSubject = str_replace("+", "%20", urlencode(implode(" ", $emailSubjectArray)));
+?>
+or, <a href="mailto:email@domain.com?subject=<?php echo($emailSubject)?>">send an email</a> to enquire about this boat</p>
+</div>
+</div>
+<?php
+}
+?>
+</div>
+<div>
+	<?php
+	if ($generalInfoTable != ""){
+		echo($generalInfoTable);
+	}
+	if ($specificationsArray != ""){
+		echo($specificationsTable);
+	}
+	if ($propulsionArray != ""){
+		echo($propulsionTable);
+	}
+	if ($accommodationArray != ""){
+		echo($accommodationTable);
+	}
+	if ($description != ""){
+		echo("<div>" . $description . "</div>");
+	}
+	if ($custom1 != ""){
+		echo("<div>" . $custom1 . "</div>");
+	}
+	if ($custom2 != ""){
+		echo("<div>" . $custom2 . "</div>");
+	}
+	if ($custom3 != ""){
+		echo("<div>" . $custom3 . "</div>");
+	}
+	if ($boat["DateListed"] != ""){
+		echo("<div>Date listed: " . $boat["DateListed"] . "</div>");
+	}
+	if ($boat["MoreInformationUrl"] != ""){
+		echo("<div><a href=\"" . $boat["MoreInformationUrl"] . "\" target=\"_blank\">More information</a></div>");
+	}
+	if ($boat["ViewOnTheYachtMarketUrl"] != ""){
+		echo("<div><a href=\"" . $boat["ViewOnTheYachtMarketUrl"] . "\" target=\"_blank\">View this boat on TheYachtMarket</a></div>");
+	}
+	if ($disclaimer != ""){
+		echo("<div>" . $disclaimer . "</div>");
+	}
+	?>
+	<p><strong>URLs to all size versions of the photos - use whichever are the closest to the size you need for your design:</strong></p>
+	<ul>
+		<?php
+		$photoCount = 0;
+		foreach ($photos as $value){
+			$photoCount ++;
+			?>
+			<li>Photo
+				<?php echo($photoCount);?>
+				<ul>
+					<li>
+						<?php echo($value["ImageUrlFeatured"])?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlThumb"])?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlTinySquare"])?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlFourByThree"])?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlPdfThumb"])?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlMain"]);?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlLarge"]);?>
+					</li>
+					<li>
+						<?php echo($value["ImageUrlOriginal"]);?>
+					</li>
+				</ul>
+			</li>
+			<?php
+		}
+		?>
+	</ul>
+</div>
+</div>
+<div>
+	<a href="http://www.theyachtmarket.com/" target="_blank">Boat listings powered by TheYachtMarket</a>
+</div>
+</div>
+<!-- .entry-content -->
+</article>
+<!-- #post-## -->
+</div>
+<!-- #content -->
+</div>
+<!-- #primary -->
+<?php get_sidebar( 'content' ); ?>
+</div>
 </div>
 <!-- #main-content -->
 <?php

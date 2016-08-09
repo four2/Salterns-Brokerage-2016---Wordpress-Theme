@@ -248,8 +248,7 @@ if ($err) {
                                                   </div>
                                               </div>
                                               <div class="boat-image pull-left col-md-4 col-sm-12 col-xs-12">
-                                                  <p><?php _e( 'Below image url needs the suffix changing from thumb to large:', 'sb2016' ); ?><br /><?php echo(getImageUrl($boat["ImageUrlThumb"]));?></p>
-                                                  <img src="<?php echo(getImageUrl($boat["ImageUrlThumb"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
+                                                  <img src="<?php echo str_replace(array('thumb', 'featured'), 'large', getImageUrl($boat["ImageUrlFeatured"]));?>" alt="<?php echo(htmlspecialchars(trim($boat["Manufacturer"] . " " . $boat["Model"])));?>" />
                                               </div>
                                               <div class="boat-details col-md-8 col-sm-12 col-xs-12">
                                                   <div class="top-boat">
